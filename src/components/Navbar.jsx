@@ -6,7 +6,9 @@ export default function Navbar({ sections, activeId, isDark, toggleDark, resumeU
     <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/75">
       <Container>
         <div className="flex h-14 items-center justify-between">
-          <a href="#home" className="font-semibold tracking-tight">RS</a>
+          <a href="#home" className="font-semibold tracking-tight">
+            RS
+          </a>
 
           <nav className="hidden items-center gap-5 md:flex">
             {sections.map((s) => {

@@ -4,12 +4,13 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Section from "./components/Section";
 import ScrollProgress from "./components/ScrollProgress";
+import Journey from "./components/Journey";
 
 export default function App() {
   const sections = useMemo(
     () => [
       { id: "about", label: "About" },
-      { id: "experience", label: "Experience" },
+      { id: "journey", label: "Journey" },
       { id: "projects", label: "Projects" },
       { id: "skills", label: "Skills" },
       { id: "contact", label: "Contact" },
@@ -71,6 +72,7 @@ export default function App() {
       className="bg-ambient min-h-screen bg-white text-zinc-950 dark:bg-zinc-950 dark:text-white"
     >
       <ScrollProgress />
+
       <Navbar
         sections={sections}
         activeId={activeId}
@@ -103,44 +105,12 @@ export default function App() {
           </div>
         </Section>
 
-        <Section id="experience" title="Experience">
-          <div className="space-y-4">
-            {profile.experience.map((e) => (
-              <div
-                key={`${e.company}-${e.role}-${e.dates}`}
-                className="rounded-2xl border border-zinc-200 bg-white/60 p-5 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/40"
-              >
-                <div className="flex flex-wrap items-start justify-between gap-2">
-                  <div>
-                    <div className="text-base font-semibold">{e.role}</div>
-                    <div className="text-sm text-zinc-600 dark:text-zinc-300">
-                      {e.company}{e.location ? `, ${e.location}` : ""}
-                    </div>
-                  </div>
-                  <div className="text-sm text-zinc-600 dark:text-zinc-300">{e.dates}</div>
-                </div>
-
-                <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-700 dark:text-zinc-200">
-                  {e.bullets.map((b) => (
-                    <li key={b}>{b}</li>
-                  ))}
-                </ul>
-
-                {e.tags?.length ? (
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {e.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full border border-zinc-200 px-3 py-1 text-xs text-zinc-700 dark:border-zinc-800 dark:text-zinc-200"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                ) : null}
-              </div>
-            ))}
-          </div>
+        <Section
+          id="journey"
+          title="Journey"
+          subtitle="Education first, then professional experience. Expand each item for details."
+        >
+          <Journey />
         </Section>
 
         <Section id="projects" title="Projects">
@@ -148,7 +118,7 @@ export default function App() {
             {profile.projects.map((p) => (
               <div
                 key={p.title}
-                className="rounded-2xl border border-zinc-200 bg-white/60 p-5 backdrop-blur hover:shadow-lg transition-shadow dark:border-zinc-800 dark:bg-zinc-950/40"
+                className="rounded-2xl border border-zinc-200 bg-white/60 p-5 backdrop-blur transition-shadow hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-950/40"
               >
                 <div className="text-base font-semibold">{p.title}</div>
                 <div className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">{p.subtitle}</div>
@@ -196,11 +166,18 @@ export default function App() {
             <div className="space-y-2 text-sm text-zinc-700 dark:text-zinc-200">
               <div>
                 <span className="text-zinc-600 dark:text-zinc-300">Email: </span>
-                <a className="hover:underline" href={`mailto:${profile.email}`}>{profile.email}</a>
+                <a className="hover:underline" href={`mailto:${profile.email}`}>
+                  {profile.email}
+                </a>
               </div>
               <div>
                 <span className="text-zinc-600 dark:text-zinc-300">LinkedIn: </span>
-                <a className="hover:underline" href={profile.links.linkedin} target="_blank" rel="noreferrer">
+                <a
+                  className="hover:underline"
+                  href={profile.links.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {profile.links.linkedin}
                 </a>
               </div>
@@ -211,7 +188,9 @@ export default function App() {
         <footer className="border-t border-zinc-200 py-10 dark:border-zinc-800">
           <div className="mx-auto w-full max-w-6xl px-4">
             <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-zinc-600 dark:text-zinc-300">
-              <div>© {new Date().getFullYear()} {profile.name}</div>
+              <div>
+                © {new Date().getFullYear()} {profile.name}
+              </div>
               <div className="flex gap-4">
                 <a className="hover:underline" href={profile.links.linkedin} target="_blank" rel="noreferrer">
                   LinkedIn
