@@ -1,30 +1,38 @@
-cat > src/App.jsx <<'EOF'
-import "./App.css"
+import React from "react";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+import ScrollProgress from "./components/ScrollProgress";
+import BackToTop from "./components/BackToTop";
+import CommandPalette from "./components/CommandPalette";
+
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import Resume from "./pages/Resume";
+import CaseStudy from "./pages/CaseStudy";
 
 export default function App() {
   return (
-    <div className="wrap">
-      <header className="hero">
-        <img className="photo" src="/profile.jpg" alt="Ramana Prabhu Sana" />
-        <div>
-          <h1>Ramana Prabhu Sana</h1>
-          <p className="subtitle">
-            MSBAIM at Purdue. Pharma forecasting and analytics. Excel, VBA, Python, SQL, Power BI, Tableau.
-          </p>
-          <div className="buttons">
-            <a className="primary" href="/Ramana_PrabhuSana_Resume.pdf" target="_blank" rel="noreferrer">
-              Download Resume
-            </a>
-            <a className="secondary" href="https://www.linkedin.com/in/ramanaprabhusana/" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a className="secondary" href="https://github.com/ramanaprabhusana" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-          </div>
-        </div>
-      </header>
-    </div>
-  )
+    <HashRouter>
+      <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50">
+        <ScrollProgress />
+        <NavBar />
+        <CommandPalette />
+
+        <main className="pt-16">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/case-studies/:slug" element={<CaseStudy />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
+
+        <Footer />
+        <BackToTop />
+      </div>
+    </HashRouter>
+  );
 }
-EOF
