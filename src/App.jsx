@@ -1144,7 +1144,7 @@ export default function App() {
           title="Certifications"
           subtitle="Professional credentials and certifications."
         >
-          <div className="grid gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {certifications.map((c) => (
               <Card key={c.name}>
                 {c.credentialUrl ? (
