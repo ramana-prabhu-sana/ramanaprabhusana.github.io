@@ -1145,31 +1145,26 @@ export default function App() {
           subtitle="Professional credentials and certifications."
         >
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {certifications.map((c) => (
-              <Card key={c.name}>
-                {c.credentialUrl ? (
-                  <a
-                    href={c.credentialUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="block p-5 hover:bg-white/10 transition rounded-2xl -m-px"
-                  >
-                    <div>
-                      <h3 className="font-semibold">{c.name}</h3>
-                      <div className="mt-1 text-sm text-neutral-200/70">{c.issuer}</div>
-                      <span className="mt-2 inline-block text-xs text-lime-300/90">View credential →</span>
-                    </div>
-                  </a>
-                ) : (
-                  <div className="p-5">
-                    <div>
-                      <h3 className="font-semibold">{c.name}</h3>
-                      <div className="mt-1 text-sm text-neutral-200/70">{c.issuer}</div>
-                    </div>
-                  </div>
-                )}
-              </Card>
-            ))}
+            {certifications.map((c) =>
+              c.credentialUrl ? (
+                <a
+                  key={c.name}
+                  href={c.credentialUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition"
+                >
+                  <h3 className="font-semibold">{c.name}</h3>
+                  <div className="mt-1 text-sm text-neutral-200/70">{c.issuer}</div>
+                  <span className="mt-2 inline-block text-xs text-lime-300/90">View credential →</span>
+                </a>
+              ) : (
+                <div key={c.name} className="p-4">
+                  <h3 className="font-semibold">{c.name}</h3>
+                  <div className="mt-1 text-sm text-neutral-200/70">{c.issuer}</div>
+                </div>
+              )
+            )}
           </div>
         </Section>
 
