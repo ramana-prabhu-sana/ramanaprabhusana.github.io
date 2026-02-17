@@ -677,15 +677,33 @@ export default function App() {
     []
   );
 
+  const certifications = useMemo(
+    () => [
+      { name: "AWS Certified Cloud Practitioner", issuer: "AWS", date: "December 2025", credentialUrl: "https://www.credly.com/badges/bb65d3af-859f-4311-b9fc-ec13f1e5b663/linked_in_profile" },
+      { name: "Microsoft Certified: Azure AI Fundamentals", issuer: "Microsoft", date: "December 2025", credentialUrl: "" },
+      { name: "INFORMS Business Problem Framing", issuer: "INFORMS", date: "December 2025", credentialUrl: "https://bcert.me/bc/html/show-badge.html?b=ikawgzvr" },
+      { name: "Associate Data Scientist in Python", issuer: "DataCamp", date: "December 2025", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/5c519d9ae2057a710f941cac7807479556b4d55c?raw=1" },
+      { name: "SQL Fundamentals", issuer: "DataCamp", date: "November 2025", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/f92b2de66aa79382aedd27ac51a1ad04997414f0?raw=1" },
+      { name: "Python Data Fundamentals", issuer: "DataCamp", date: "November 2025", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/daa91e42e57949b4906f13d49ff4a54bef12649d?raw=1" },
+      { name: "Supervised Machine Learning: Regression", issuer: "IBM", date: "July 2025", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/EZHE7LIHZWDF" },
+      { name: "Visualization for Data Analysis with Power BI", issuer: "Microsoft", date: "July 2025", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/PAEX2ITCZSDI" },
+      { name: "From Excel to Power BI", issuer: "Microsoft", date: "July 2025", credentialUrl: "https://www.coursera.org/account/accomplishments/certificate/KWFBCLIXX0WQ" },
+      { name: "Fundamentals of Visualization with Tableau", issuer: "UC Davis", date: "June 2025", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/J6WUIT1O83NX" },
+      { name: "SQL for Data Science", issuer: "UC Davis", date: "April 2025", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/VLFEBX7SAHSP" },
+    ],
+    []
+  );
+
   // Scroll-based background themes
   const THEMES = useMemo(
     () => ({
       top: { a: "rgba(255,255,255,0.10)", b: "rgba(255,255,255,0.06)" },
       highlights: { a: "rgba(120,80,255,0.18)", b: "rgba(0,200,255,0.12)" },
       experience: { a: "rgba(255,120,80,0.16)", b: "rgba(255,255,255,0.06)" },
-      projects: { a: "rgba(80,255,170,0.14)", b: "rgba(255,255,255,0.06)" },
-      skills: { a: "rgba(255,200,0,0.14)", b: "rgba(255,255,255,0.06)" },
       education: { a: "rgba(0,160,255,0.14)", b: "rgba(255,255,255,0.06)" },
+      skills: { a: "rgba(255,200,0,0.14)", b: "rgba(255,255,255,0.06)" },
+      certifications: { a: "rgba(180,120,255,0.14)", b: "rgba(255,255,255,0.06)" },
+      projects: { a: "rgba(80,255,170,0.14)", b: "rgba(255,255,255,0.06)" },
       contact: { a: "rgba(120,255,80,0.16)", b: "rgba(255,255,255,0.06)" },
     }),
     []
@@ -698,9 +716,10 @@ export default function App() {
     const ids = [
       { id: "highlights", key: "highlights" },
       { id: "experience", key: "experience" },
-      { id: "projects", key: "projects" },
-      { id: "skills", key: "skills" },
       { id: "education", key: "education" },
+      { id: "skills", key: "skills" },
+      { id: "certifications", key: "certifications" },
+      { id: "projects", key: "projects" },
       { id: "contact", key: "contact" },
     ];
 
@@ -849,9 +868,10 @@ export default function App() {
           <nav className="hidden sm:flex items-center gap-6">
             <NavLink href="#highlights">Highlights</NavLink>
             <NavLink href="#experience">Experience</NavLink>
-            <NavLink href="#projects">Projects</NavLink>
-            <NavLink href="#skills">Skills</NavLink>
             <NavLink href="#education">Education</NavLink>
+            <NavLink href="#skills">Skills</NavLink>
+            <NavLink href="#certifications">Certifications</NavLink>
+            <NavLink href="#projects">Projects</NavLink>
             <NavLink href="#contact">Contact</NavLink>
           </nav>
 
@@ -1035,27 +1055,43 @@ export default function App() {
           </div>
         </Section>
 
-        {/* projects */}
-        <Section
-          id="projects"
-          title="Selected work"
-          subtitle="Short case-study cards that scan fast."
-        >
-          <div className="grid sm:grid-cols-2 gap-4">
-            {projects.map((p) => (
-              <Card key={p.name}>
-                <div className="p-5">
-                  <h3 className="font-semibold">{p.name}</h3>
-                  <p className="mt-2 text-sm text-neutral-200/70">{p.desc}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {p.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="text-xs rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-neutral-200/80"
-                      >
-                        {t}
+        {/* education */}
+        <Section id="education" title="Education">
+          <div className="grid gap-4">
+            {education.map((ed) => (
+              <Card key={ed.school}>
+                <div className="p-5 flex gap-4">
+                  <div className="h-12 w-12 rounded-xl bg-white/10 p-2 grid place-items-center overflow-hidden">
+                    {ed.logo ? (
+                      <SafeImg
+                        src={asset(ed.logo)}
+                        alt={ed.school}
+                        className="h-full w-full object-contain"
+                        fallbackText={ed.school.slice(0, 2).toUpperCase()}
+                      />
+                    ) : (
+                      <SmartImg
+                        sources={ed.logoChoices}
+                        alt={ed.school}
+                        className="h-full w-full object-contain"
+                        fallbackText={ed.school.slice(0, 2).toUpperCase()}
+                      />
+                    )}
+                  </div>
+
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <h3 className="font-semibold">{ed.school}</h3>
+                      <span className="text-xs text-neutral-200/60">
+                        {ed.dates}
                       </span>
-                    ))}
+                    </div>
+                    <div className="mt-2 text-sm text-neutral-200/70">
+                      {ed.degree}
+                    </div>
+                    <div className="mt-1 text-xs text-neutral-200/60">
+                      {ed.location}
+                    </div>
                   </div>
                 </div>
               </Card>
@@ -1102,43 +1138,70 @@ export default function App() {
           </div>
         </Section>
 
-        {/* education */}
-        <Section id="education" title="Education">
+        {/* certifications */}
+        <Section
+          id="certifications"
+          title="Certifications"
+          subtitle="Professional credentials and certifications."
+        >
           <div className="grid gap-4">
-            {education.map((ed) => (
-              <Card key={ed.school}>
-                <div className="p-5 flex gap-4">
-                  <div className="h-12 w-12 rounded-xl bg-white/10 p-2 grid place-items-center overflow-hidden">
-                    {ed.logo ? (
-                      <SafeImg
-                        src={asset(ed.logo)}
-                        alt={ed.school}
-                        className="h-full w-full object-contain"
-                        fallbackText={ed.school.slice(0, 2).toUpperCase()}
-                      />
-                    ) : (
-                      <SmartImg
-                        sources={ed.logoChoices}
-                        alt={ed.school}
-                        className="h-full w-full object-contain"
-                        fallbackText={ed.school.slice(0, 2).toUpperCase()}
-                      />
-                    )}
+            {certifications.map((c) => (
+              <Card key={c.name}>
+                {c.credentialUrl ? (
+                  <a
+                    href={c.credentialUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block p-5 hover:bg-white/10 transition rounded-2xl -m-px"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                      <div>
+                        <h3 className="font-semibold">{c.name}</h3>
+                        <div className="mt-1 text-sm text-neutral-200/70">{c.issuer}</div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs text-neutral-200/60">{c.date}</span>
+                        <span className="text-xs text-lime-300/90">View credential →</span>
+                      </div>
+                    </div>
+                  </a>
+                ) : (
+                  <div className="p-5">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                      <div>
+                        <h3 className="font-semibold">{c.name}</h3>
+                        <div className="mt-1 text-sm text-neutral-200/70">{c.issuer}</div>
+                      </div>
+                      <span className="text-xs text-neutral-200/60">{c.date}</span>
+                    </div>
                   </div>
+                )}
+              </Card>
+            ))}
+          </div>
+        </Section>
 
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <h3 className="font-semibold">{ed.school}</h3>
-                      <span className="text-xs text-neutral-200/60">
-                        {ed.dates}
+        {/* projects */}
+        <Section
+          id="projects"
+          title="Selected work"
+          subtitle="Short case-study cards that scan fast."
+        >
+          <div className="grid sm:grid-cols-2 gap-4">
+            {projects.map((p) => (
+              <Card key={p.name}>
+                <div className="p-5">
+                  <h3 className="font-semibold">{p.name}</h3>
+                  <p className="mt-2 text-sm text-neutral-200/70">{p.desc}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {p.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="text-xs rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-neutral-200/80"
+                      >
+                        {t}
                       </span>
-                    </div>
-                    <div className="mt-2 text-sm text-neutral-200/70">
-                      {ed.degree}
-                    </div>
-                    <div className="mt-1 text-xs text-neutral-200/60">
-                      {ed.location}
-                    </div>
+                    ))}
                   </div>
                 </div>
               </Card>
