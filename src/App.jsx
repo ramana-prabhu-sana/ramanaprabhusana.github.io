@@ -641,12 +641,16 @@ export default function App() {
         "Predictive modeling (ARIMA, trend analysis)",
         "Data visualization and reporting",
         "Market research and competitive intelligence",
-        "Commercial analytics",
-        "Sales force effectiveness (SFE) and territory planning",
-        "Demand and launch forecasting",
-        "Brand performance and prescribing analytics",
-        "Pricing, access, and revenue analytics",
-        "Customer segmentation and channel analytics",
+        {
+          group: "Commercial analytics",
+          items: [
+            "Sales force effectiveness (SFE) and territory planning",
+            "Demand and launch forecasting",
+            "Brand performance and prescribing analytics",
+            "Pricing, access, and revenue analytics",
+            "Customer segmentation and channel analytics",
+          ],
+        },
         "Machine learning (supervised, regression)",
         "Statistical modeling and optimization",
         "Scenario and portfolio modeling",
@@ -1119,12 +1123,26 @@ export default function App() {
               <div className="p-5">
                 <h3 className="font-semibold">Skills</h3>
                 <ul className="mt-3 space-y-2 text-sm text-neutral-200/70">
-                  {skills.core.map((x) => (
-                    <li key={x} className="flex gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-white/40" />
-                      <span>{x}</span>
-                    </li>
-                  ))}
+                  {skills.core.map((x) =>
+                    typeof x === "string" ? (
+                      <li key={x} className="flex gap-2">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-white/40 flex-shrink-0" />
+                        <span>{x}</span>
+                      </li>
+                    ) : (
+                      <li key={x.group} className="mt-4 first:mt-0">
+                        <div className="font-medium text-neutral-100">{x.group}</div>
+                        <ul className="mt-2 ml-3 space-y-1">
+                          {x.items.map((item) => (
+                            <li key={item} className="flex gap-2">
+                              <span className="mt-2 h-1 w-1 rounded-full bg-white/30 flex-shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
             </Card>
