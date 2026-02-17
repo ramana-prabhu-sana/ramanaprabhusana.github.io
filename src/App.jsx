@@ -679,17 +679,17 @@ export default function App() {
 
   const certifications = useMemo(
     () => [
-      { name: "AWS Certified Cloud Practitioner", issuer: "AWS", date: "December 2025", credentialUrl: "https://www.credly.com/badges/bb65d3af-859f-4311-b9fc-ec13f1e5b663/linked_in_profile" },
-      { name: "Microsoft Certified: Azure AI Fundamentals", issuer: "Microsoft", date: "December 2025", credentialUrl: "" },
-      { name: "INFORMS Business Problem Framing", issuer: "INFORMS", date: "December 2025", credentialUrl: "https://bcert.me/bc/html/show-badge.html?b=ikawgzvr" },
-      { name: "Associate Data Scientist in Python", issuer: "DataCamp", date: "December 2025", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/5c519d9ae2057a710f941cac7807479556b4d55c?raw=1" },
-      { name: "SQL Fundamentals", issuer: "DataCamp", date: "November 2025", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/f92b2de66aa79382aedd27ac51a1ad04997414f0?raw=1" },
-      { name: "Python Data Fundamentals", issuer: "DataCamp", date: "November 2025", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/daa91e42e57949b4906f13d49ff4a54bef12649d?raw=1" },
-      { name: "Supervised Machine Learning: Regression", issuer: "IBM", date: "July 2025", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/EZHE7LIHZWDF" },
-      { name: "Visualization for Data Analysis with Power BI", issuer: "Microsoft", date: "July 2025", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/PAEX2ITCZSDI" },
-      { name: "From Excel to Power BI", issuer: "Microsoft", date: "July 2025", credentialUrl: "https://www.coursera.org/account/accomplishments/certificate/KWFBCLIXX0WQ" },
-      { name: "Fundamentals of Visualization with Tableau", issuer: "UC Davis", date: "June 2025", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/J6WUIT1O83NX" },
-      { name: "SQL for Data Science", issuer: "UC Davis", date: "April 2025", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/VLFEBX7SAHSP" },
+      { name: "AWS Certified Cloud Practitioner", issuer: "AWS", credentialUrl: "https://www.credly.com/badges/bb65d3af-859f-4311-b9fc-ec13f1e5b663/linked_in_profile", image: "https://images.credly.com/size/200x200/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" },
+      { name: "Microsoft Certified: Azure AI Fundamentals", issuer: "Microsoft", credentialUrl: "", image: "https://logo.clearbit.com/microsoft.com" },
+      { name: "INFORMS Business Problem Framing", issuer: "INFORMS", credentialUrl: "https://bcert.me/bc/html/show-badge.html?b=ikawgzvr", image: "https://logo.clearbit.com/informs.org" },
+      { name: "Associate Data Scientist in Python", issuer: "DataCamp", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/5c519d9ae2057a710f941cac7807479556b4d55c?raw=1", image: "https://logo.clearbit.com/datacamp.com" },
+      { name: "SQL Fundamentals", issuer: "DataCamp", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/f92b2de66aa79382aedd27ac51a1ad04997414f0?raw=1", image: "https://logo.clearbit.com/datacamp.com" },
+      { name: "Python Data Fundamentals", issuer: "DataCamp", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/daa91e42e57949b4906f13d49ff4a54bef12649d?raw=1", image: "https://logo.clearbit.com/datacamp.com" },
+      { name: "Supervised Machine Learning: Regression", issuer: "IBM", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/EZHE7LIHZWDF", image: "https://logo.clearbit.com/ibm.com" },
+      { name: "Visualization for Data Analysis with Power BI", issuer: "Microsoft", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/PAEX2ITCZSDI", image: "https://logo.clearbit.com/microsoft.com" },
+      { name: "From Excel to Power BI", issuer: "Microsoft", credentialUrl: "https://www.coursera.org/account/accomplishments/certificate/KWFBCLIXX0WQ", image: "https://logo.clearbit.com/microsoft.com" },
+      { name: "Fundamentals of Visualization with Tableau", issuer: "UC Davis", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/J6WUIT1O83NX", image: "https://logo.clearbit.com/ucdavis.edu" },
+      { name: "SQL for Data Science", issuer: "UC Davis", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/VLFEBX7SAHSP", image: "https://logo.clearbit.com/ucdavis.edu" },
     ],
     []
   );
@@ -1154,25 +1154,41 @@ export default function App() {
                     rel="noreferrer"
                     className="block p-5 hover:bg-white/10 transition rounded-2xl -m-px"
                   >
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                      <div>
+                    <div className="flex items-start gap-4">
+                      <div className="flex-1 min-w-0">
                         <h3 className="font-semibold">{c.name}</h3>
                         <div className="mt-1 text-sm text-neutral-200/70">{c.issuer}</div>
+                        <span className="mt-2 inline-block text-xs text-lime-300/90">View credential →</span>
                       </div>
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs text-neutral-200/60">{c.date}</span>
-                        <span className="text-xs text-lime-300/90">View credential →</span>
-                      </div>
+                      {c.image ? (
+                        <div className="flex-shrink-0 h-14 w-14 rounded-xl overflow-hidden border border-white/10 bg-white/5">
+                          <SafeImg
+                            src={c.image}
+                            alt={c.issuer}
+                            className="h-full w-full object-contain p-1.5"
+                            fallbackText={c.issuer.slice(0, 2).toUpperCase()}
+                          />
+                        </div>
+                      ) : null}
                     </div>
                   </a>
                 ) : (
                   <div className="p-5">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                      <div>
+                    <div className="flex items-start gap-4">
+                      <div className="flex-1 min-w-0">
                         <h3 className="font-semibold">{c.name}</h3>
                         <div className="mt-1 text-sm text-neutral-200/70">{c.issuer}</div>
                       </div>
-                      <span className="text-xs text-neutral-200/60">{c.date}</span>
+                      {c.image ? (
+                        <div className="flex-shrink-0 h-14 w-14 rounded-xl overflow-hidden border border-white/10 bg-white/5">
+                          <SafeImg
+                            src={c.image}
+                            alt={c.issuer}
+                            className="h-full w-full object-contain p-1.5"
+                            fallbackText={c.issuer.slice(0, 2).toUpperCase()}
+                          />
+                        </div>
+                      ) : null}
                     </div>
                   </div>
                 )}
