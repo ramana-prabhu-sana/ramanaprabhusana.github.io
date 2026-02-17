@@ -679,17 +679,24 @@ export default function App() {
 
   const certifications = useMemo(
     () => [
+      // AWS CCP - Credly official badge
       { name: "AWS Certified Cloud Practitioner", issuer: "AWS", credentialUrl: "https://www.credly.com/badges/bb65d3af-859f-4311-b9fc-ec13f1e5b663/linked_in_profile", image: "https://images.credly.com/size/200x200/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" },
-      { name: "Microsoft Certified: Azure AI Fundamentals", issuer: "Microsoft", credentialUrl: "", image: "https://logo.clearbit.com/microsoft.com" },
-      { name: "INFORMS Business Problem Framing", issuer: "INFORMS", credentialUrl: "https://bcert.me/bc/html/show-badge.html?b=ikawgzvr", image: "https://logo.clearbit.com/informs.org" },
-      { name: "Associate Data Scientist in Python", issuer: "DataCamp", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/5c519d9ae2057a710f941cac7807479556b4d55c?raw=1", image: "https://logo.clearbit.com/datacamp.com" },
-      { name: "SQL Fundamentals", issuer: "DataCamp", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/f92b2de66aa79382aedd27ac51a1ad04997414f0?raw=1", image: "https://logo.clearbit.com/datacamp.com" },
-      { name: "Python Data Fundamentals", issuer: "DataCamp", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/daa91e42e57949b4906f13d49ff4a54bef12649d?raw=1", image: "https://logo.clearbit.com/datacamp.com" },
-      { name: "Supervised Machine Learning: Regression", issuer: "IBM", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/EZHE7LIHZWDF", image: "https://logo.clearbit.com/ibm.com" },
-      { name: "Visualization for Data Analysis with Power BI", issuer: "Microsoft", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/PAEX2ITCZSDI", image: "https://logo.clearbit.com/microsoft.com" },
-      { name: "From Excel to Power BI", issuer: "Microsoft", credentialUrl: "https://www.coursera.org/account/accomplishments/certificate/KWFBCLIXX0WQ", image: "https://logo.clearbit.com/microsoft.com" },
-      { name: "Fundamentals of Visualization with Tableau", issuer: "UC Davis", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/J6WUIT1O83NX", image: "https://logo.clearbit.com/ucdavis.edu" },
-      { name: "SQL for Data Science", issuer: "UC Davis", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/VLFEBX7SAHSP", image: "https://logo.clearbit.com/ucdavis.edu" },
+      // Microsoft Azure AI Fundamentals - Credly official badge
+      { name: "Microsoft Certified: Azure AI Fundamentals", issuer: "Microsoft", credentialUrl: "", image: "https://images.credly.com/images/4136ced8-75d5-4afb-8677-40b6236e2672/azure-ai-fundamentals-600x600.png" },
+      // INFORMS - Wikimedia Commons logo
+      { name: "INFORMS Business Problem Framing", issuer: "INFORMS", credentialUrl: "https://bcert.me/bc/html/show-badge.html?b=ikawgzvr", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Informs_logo_287blue.gif/220px-Informs_logo_287blue.gif" },
+      // DataCamp - official certification badges
+      { name: "Associate Data Scientist in Python", issuer: "DataCamp", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/5c519d9ae2057a710f941cac7807479556b4d55c?raw=1", image: "https://media.datacamp.com/legacy/Certification/Badges%202024/outline/DS_Associate_-_badge_with_outline.png" },
+      { name: "SQL Fundamentals", issuer: "DataCamp", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/f92b2de66aa79382aedd27ac51a1ad04997414f0?raw=1", image: "https://logo.svgcdn.com/simple-icons/datacamp-dark.svg" },
+      { name: "Python Data Fundamentals", issuer: "DataCamp", credentialUrl: "https://www.datacamp.com/statement-of-accomplishment/track/daa91e42e57949b4906f13d49ff4a54bef12649d?raw=1", image: "https://logo.svgcdn.com/simple-icons/datacamp-dark.svg" },
+      // IBM Coursera - Credly IBM badge
+      { name: "Supervised Machine Learning: Regression", issuer: "IBM", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/EZHE7LIHZWDF", image: "https://images.credly.com/size/200x200/images/854d76bf-4f74-4d51-98a0-d969214bfba7/IBM%2BLogo%2Bfor%2BAcclaim%2BProfile.png" },
+      // Microsoft Coursera - Microsoft Learn badge
+      { name: "Visualization for Data Analysis with Power BI", issuer: "Microsoft", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/PAEX2ITCZSDI", image: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamental-badge.svg" },
+      { name: "From Excel to Power BI", issuer: "Microsoft", credentialUrl: "https://www.coursera.org/account/accomplishments/certificate/KWFBCLIXX0WQ", image: "https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamental-badge.svg" },
+      // UC Davis Coursera - university logo
+      { name: "Fundamentals of Visualization with Tableau", issuer: "UC Davis", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/J6WUIT1O83NX", image: "https://brand.ucdavis.edu/assets/images/logos/uc-davis-logo-gold-and-blue.svg" },
+      { name: "SQL for Data Science", issuer: "UC Davis", credentialUrl: "https://www.coursera.org/account/accomplishments/verify/VLFEBX7SAHSP", image: "https://brand.ucdavis.edu/assets/images/logos/uc-davis-logo-gold-and-blue.svg" },
     ],
     []
   );
