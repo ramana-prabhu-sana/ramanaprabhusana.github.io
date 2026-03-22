@@ -143,36 +143,6 @@ const Section = ({ id, title, subtitle, children }) => (
   </section>
 );
 
-function MarqueeStrip({ items, seconds = 22 }) {
-  const repeated = [...items, ...items];
-  return (
-    <div
-      className="relative overflow-hidden border-y border-white/10 bg-white/[0.03]"
-      style={{
-        maskImage:
-          "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-        WebkitMaskImage:
-          "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-      }}
-      aria-hidden="true"
-    >
-      <div
-        className="flex w-max gap-10 py-3"
-        style={{ animation: `marquee ${seconds}s linear infinite` }}
-      >
-        {repeated.map((t, i) => (
-          <span
-            key={`${t}-${i}`}
-            className="text-3xl sm:text-4xl font-semibold tracking-tight text-neutral-200/80"
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function StickyStory({ title, subtitle, items }) {
   const wrapRef = useRef(null);
   const [active, setActive] = useState(0);
@@ -492,17 +462,6 @@ export default function App() {
     []
   );
 
-  const marqueeItems = useMemo(
-    () => [
-      "PHARMA FORECASTING",
-      "ANALYTICS",
-      "PREDICTIVE MODELING",
-      "DATA VISUALIZATION",
-      "AUTOMATION",
-    ],
-    []
-  );
-
   const highlights = useMemo(
     () => [
       {
@@ -799,11 +758,6 @@ export default function App() {
         .reveal-init { opacity: 0; transform: translateY(12px); }
         .reveal-in { opacity: 1; transform: translateY(0); transition: opacity 650ms ease, transform 650ms ease; }
 
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-
         @keyframes drift {
           0% { transform: translate3d(0,0,0); }
           50% { transform: translate3d(10px,-8px,0); }
@@ -1024,11 +978,6 @@ export default function App() {
             </div>
           </div>
         </section>
-
-        {/* marquee */}
-        <div data-reveal className="reveal-init">
-          <MarqueeStrip items={marqueeItems} seconds={22} />
-        </div>
 
         {/* sticky highlights */}
         <div id="highlights" data-reveal className="reveal-init">
