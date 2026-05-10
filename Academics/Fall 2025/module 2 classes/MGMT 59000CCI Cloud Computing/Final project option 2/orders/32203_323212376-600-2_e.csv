@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+32203,2021-06-10T09:38:16Z,323212376-600-2,RIBBED TANK TOP,39.9,5,199.5,Allen,Carolyn,294 Leonard Ferry Apt. 052,Port Natalie,South Dakota,37585,lori21@example.org

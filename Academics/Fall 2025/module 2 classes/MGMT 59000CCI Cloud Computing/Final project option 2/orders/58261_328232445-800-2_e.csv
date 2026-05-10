@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+58261,2020-10-14T20:41:33Z,328232445-800-2,SEMI-SHEER KNIT SHIRT LIMITED EDITION,45.9,1,45.9,Gonzalez,Michelle,565 Kim Lakes Apt. 274,Kristineland,Idaho,36195,freed@example.org

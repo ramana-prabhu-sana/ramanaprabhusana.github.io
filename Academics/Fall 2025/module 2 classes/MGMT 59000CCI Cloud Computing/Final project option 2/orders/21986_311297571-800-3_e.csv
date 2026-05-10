@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+21986,2019-09-20T05:43:37Z,311297571-800-3,RUBBERIZED BACKPACK,59.9,1,59.9,Taylor,Robert,380 David Shoals,West David,New Hampshire,12609,sarahvaldez@example.org

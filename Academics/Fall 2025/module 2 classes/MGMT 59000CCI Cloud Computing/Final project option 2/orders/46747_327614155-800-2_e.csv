@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+46747,2017-06-03T00:13:56Z,327614155-800-2,INTERLOCK SHORT SLEEVE T-SHIRT,27.9,1,27.9,Cox,Willie,63004 Dawn Prairie,Scottstad,Utah,33148,clementsmichael@example.com

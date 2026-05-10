@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+40875,2013-04-25T11:16:39Z,312320662-800-3,ROCKER MINI CROSSBODY BAG,35.9,1,35.9,Pittman,Michael,6678 Devin Parkways Apt. 805,Jaimehaven,Ohio,44423,josequinn@example.net

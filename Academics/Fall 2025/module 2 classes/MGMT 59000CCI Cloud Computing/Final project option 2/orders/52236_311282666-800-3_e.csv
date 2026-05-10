@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+52236,2013-11-23T22:02:19Z,311282666-800-3,RUBBERIZED CROSSBODY BAG,29.9,2,59.8,Sandoval,Michael,9768 Cabrera Causeway Apt. 829,North Christineport,West Virginia,52579,cuevaskristin@example.org

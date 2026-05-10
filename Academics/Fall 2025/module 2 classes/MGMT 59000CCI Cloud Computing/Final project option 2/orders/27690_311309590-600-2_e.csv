@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+27690,2015-09-27T10:26:01Z,311309590-600-2,TEXTURED FAUX FUR KNIT SHORTS,49.9,1,49.9,Jenkins,Bethany,43011 Mcdowell Track Apt. 411,North Christine,Wyoming,08707,charles63@example.org

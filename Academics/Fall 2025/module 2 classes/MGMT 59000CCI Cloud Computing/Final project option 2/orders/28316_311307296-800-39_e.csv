@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+28316,2022-08-16T13:32:31Z,311307296-800-39,CHUNKY SOLE PATENT FINISH PENNY LOAFERS,89.9,1,89.9,Lewis,Robert,02793 Raymond Trail,West Dwaynechester,Mississippi,68539,william68@example.org

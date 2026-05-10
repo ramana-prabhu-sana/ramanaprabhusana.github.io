@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+24273,2016-01-02T10:27:20Z,317330918-251-2,TEXT PRINT T-SHIRT,39.9,3,119.69999999999999,Smith,Jacob,934 Michelle Islands,Wrightside,Vermont,00819,lopezpedro@example.org

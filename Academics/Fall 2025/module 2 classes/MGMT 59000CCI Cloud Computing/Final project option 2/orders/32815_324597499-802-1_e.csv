@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+32815,2012-08-11T10:25:57Z,324597499-802-1,PLEATED SKORT,45.9,1,45.9,Robertson,Joshua,113 Brian Shoals Apt. 870,Harrisfort,New York,90122,biancamason@example.net

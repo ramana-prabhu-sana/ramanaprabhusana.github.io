@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+50893,2013-11-04T20:42:20Z,316934462-800-1,TAILORED OFF-THE-SHOULDER DRESS,39.9,4,159.6,Gibson,Ryan,65260 Jackson Plains Apt. 279,Lorishire,Pennsylvania,74387,john47@example.com

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+59252,2020-02-14T20:34:42Z,312508486-800-1,DRAPED KNIT MINI DRESS,49.9,5,249.5,Fuller,Jon,307 Gabriella Ridge,Bryanside,Delaware,96564,hbradley@example.org

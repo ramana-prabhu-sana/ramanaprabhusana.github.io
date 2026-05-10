@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+37804,2018-12-16T23:47:14Z,315622757-800-1,SHORT LACE DRESS,49.9,1,49.9,Tyler,Mark,8312 Frank Circle Apt. 691,New Antonio,Michigan,55957,veronica40@example.net

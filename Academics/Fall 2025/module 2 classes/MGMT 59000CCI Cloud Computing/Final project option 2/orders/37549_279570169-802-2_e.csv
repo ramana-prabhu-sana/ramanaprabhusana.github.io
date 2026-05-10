@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+37549,2016-12-07T00:34:31Z,279570169-802-2,ASYMMETRICAL ALPACA BLEND KNIT CAPE BOLERO,7.99,1,7.99,Houston,Donna,940 Peter Wall,North Mariahstad,Florida,46328,wilkersonjessica@example.net

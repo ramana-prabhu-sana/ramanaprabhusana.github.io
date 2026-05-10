@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+50948,2015-04-19T17:06:26Z,322451424-084-2,LONG BUTTON DRESS,49.9,1,49.9,Parsons,Brooke,076 Robinson Terrace,South Franciscoland,Montana,63762,youngerica@example.com

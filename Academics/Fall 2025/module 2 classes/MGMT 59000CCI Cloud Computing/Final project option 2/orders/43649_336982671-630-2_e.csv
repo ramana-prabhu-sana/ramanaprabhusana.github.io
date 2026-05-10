@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+43649,2014-10-19T17:16:27Z,336982671-630-2,TAILORED SQUARE NECK DRESS,35.9,1,35.9,Harris,Keith,687 Heidi Alley Apt. 691,North Jamesbury,Nevada,64867,colleen59@example.org

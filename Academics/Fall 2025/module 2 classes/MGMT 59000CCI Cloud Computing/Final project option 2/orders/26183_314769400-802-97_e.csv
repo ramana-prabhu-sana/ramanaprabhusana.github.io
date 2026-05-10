@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+26183,2022-07-19T07:29:25Z,314769400-802-97,OVERSIZED KNIT SWEATER,47.9,4,191.6,Gordon,Jacqueline,8744 Williams Crossroad,East Bryan,Washington,37867,scotttorres@example.org

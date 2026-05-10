@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+49369,2014-03-05T16:55:01Z,311287483-032-3,RIPSTOP EXPLORER BACKPACK,45.9,1,45.9,Garcia,Alisha,09652 Nunez Mountains Suite 519,Fergusonton,West Virginia,76189,charles59@example.com

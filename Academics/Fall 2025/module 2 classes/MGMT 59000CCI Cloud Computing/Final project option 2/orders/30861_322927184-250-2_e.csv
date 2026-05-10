@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+30861,2012-10-31T01:56:06Z,322927184-250-2,RUCHED ASYMMETRICAL HEM T-SHIRT,27.9,1,27.9,Brady,Brandon,9008 Curtis Estate,North Justin,New Jersey,82026,jennifer78@example.org

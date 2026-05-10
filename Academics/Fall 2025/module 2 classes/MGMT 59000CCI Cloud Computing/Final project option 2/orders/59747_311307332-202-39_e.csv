@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+59747,2017-01-05T19:18:06Z,311307332-202-39,CHUNKY SNEAKERS,59.9,2,119.8,Johnson,Michael,76886 Bradley Path,Lake Shawntown,Alabama,48644,chaneycarol@example.org

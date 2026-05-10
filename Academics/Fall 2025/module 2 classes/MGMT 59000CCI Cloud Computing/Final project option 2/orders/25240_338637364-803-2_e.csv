@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+25240,2018-06-21T05:20:37Z,338637364-803-2,OVERSIZED HOODIE SWEATSHIRT,49.9,1,49.9,Molina,Todd,72647 Diana Pass Suite 884,Kristinville,Minnesota,42604,smay@example.org

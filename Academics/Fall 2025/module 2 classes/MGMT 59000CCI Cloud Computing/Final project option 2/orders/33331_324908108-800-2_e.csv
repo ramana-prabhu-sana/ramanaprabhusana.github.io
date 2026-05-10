@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+33331,2023-01-23T13:58:35Z,324908108-800-2,NEOPRENE EFFECT BOMBER SWEATSHIRT,59.9,1,59.9,Martinez,Bradley,66226 Christine Course Apt. 301,Barnesbury,Mississippi,31744,alvarezsteve@example.com

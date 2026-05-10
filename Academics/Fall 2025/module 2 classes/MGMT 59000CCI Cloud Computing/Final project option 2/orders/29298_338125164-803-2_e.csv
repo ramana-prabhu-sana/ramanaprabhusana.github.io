@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+29298,2022-09-07T18:52:36Z,338125164-803-2,DELICATE POLO COLLAR BODYSUIT,29.9,1,29.9,Miller,Lisa,8015 Powell Square,South Rosefurt,Tennessee,37554,stevencameron@example.com

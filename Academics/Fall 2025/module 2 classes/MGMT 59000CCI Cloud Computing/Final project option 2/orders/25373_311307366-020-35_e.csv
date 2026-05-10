@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+25373,2013-10-12T02:54:51Z,311307366-020-35,PATENT EFFECT FAUX LEATHER MARY JANES,39.9,2,79.8,Noble,Laurie,9941 Richard Stream,Thomasberg,Mississippi,21276,heathersmith@example.net

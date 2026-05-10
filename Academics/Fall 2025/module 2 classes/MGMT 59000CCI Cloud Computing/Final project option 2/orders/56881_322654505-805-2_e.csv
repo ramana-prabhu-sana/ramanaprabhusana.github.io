@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+56881,2015-01-20T15:51:15Z,322654505-805-2,DENIM SHIRT,45.9,3,137.7,Dixon,Nicole,1205 Jesse Shoals,Ellishaven,Missouri,02643,wilkersonmelissa@example.com

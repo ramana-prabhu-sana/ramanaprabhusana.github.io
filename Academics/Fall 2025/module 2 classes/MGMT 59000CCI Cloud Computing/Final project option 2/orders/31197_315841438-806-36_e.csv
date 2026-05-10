@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+31197,2021-04-14T05:16:54Z,315841438-806-36,UTILITY POCKET JEANS,89.9,1,89.9,Lowery,Katherine,361 Robert Shore,West Donnatown,Illinois,61772,gileskim@example.org

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+47403,2015-09-16T03:01:12Z,290475185-401-8,LONG SLEEVE SLIM T-SHIRT,7.99,1,7.99,Allen,Alan,281 Henry Crossroad Apt. 298,Strongmouth,Pennsylvania,52309,danielhays@example.com

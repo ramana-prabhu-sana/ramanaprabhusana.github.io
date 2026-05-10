@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+50619,2016-02-26T08:48:19Z,313890672-712-2,ASYMMETRIC KNIT SWEATER,45.9,2,91.8,Tucker,Justin,069 Lori Lane Apt. 865,South Mark,Connecticut,10832,hwu@example.net

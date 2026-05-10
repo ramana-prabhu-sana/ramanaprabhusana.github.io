@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+35809,2018-09-17T15:49:07Z,323184968-441-2,QUARTER ZIP SWEATSHIRT,59.9,3,179.7,Let,Tommy,849 Garcia Spring,Brownfort,New York,43282,jwells@example.org

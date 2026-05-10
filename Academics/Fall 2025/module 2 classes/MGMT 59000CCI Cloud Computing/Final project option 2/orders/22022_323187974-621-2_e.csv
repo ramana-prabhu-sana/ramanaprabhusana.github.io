@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+22022,2021-12-29T16:27:30Z,323187974-621-2,SEMI-SHEER PIPED BRA,45.9,2,91.8,Schultz,Lori,4287 Charles Mall,West John,Louisiana,33968,norrisamanda@example.com

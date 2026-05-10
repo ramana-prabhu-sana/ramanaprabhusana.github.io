@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+47359,2017-11-19T04:37:07Z,311302380-111-35,RHINESTONE VINYL HIGH HEEL SANDALS,69.9,3,209.70000000000002,Greer,Timothy,9179 Stephenson Tunnel,New Adam,California,19799,eshaffer@example.com

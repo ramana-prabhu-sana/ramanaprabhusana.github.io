@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+55477,2012-09-27T17:53:03Z,321496836-400-36,RELAXED CARGO JEANS,89.9,1,89.9,Hart,Amber,9930 Joseph Viaduct,Christinestad,New Hampshire,32720,montescarlos@example.net

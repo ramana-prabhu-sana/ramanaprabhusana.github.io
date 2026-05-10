@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+57614,2020-11-25T21:34:51Z,319558955-711-2,COTTON POCKET PARKA,129.0,2,258.0,Moore,Andrew,987 Diaz Rapid,Jamieport,Hawaii,32482,melanie03@example.org

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+35440,2022-06-14T14:47:59Z,311297169-250-2,PHOTOGRAPHIC PATCH T-SHIRT,39.9,1,39.9,Rogers,Laura,407 Joseph Vista,South Amy,Texas,80753,michael72@example.org

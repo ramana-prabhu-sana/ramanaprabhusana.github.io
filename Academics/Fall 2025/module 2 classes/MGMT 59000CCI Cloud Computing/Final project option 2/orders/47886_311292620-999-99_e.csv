@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+47886,2013-08-29T03:06:45Z,311292620-999-99,BLANC ENSOLEILLÉ EDP 100 ML,35.9,1,35.9,Smith,Andrew,59105 Jamie Ports Apt. 870,Mayerport,Arizona,64050,jacqueline68@example.com

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+38508,2017-11-10T08:56:33Z,332967579-500-1,DRAPED SHEATH DRESS ZW COLLECTION,129.0,1,129.0,Ochoa,Krista,0469 Alyssa Springs,Lake David,Georgia,02575,solisbenjamin@example.net

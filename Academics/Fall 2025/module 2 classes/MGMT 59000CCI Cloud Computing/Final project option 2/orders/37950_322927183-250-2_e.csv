@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+37950,2014-08-19T09:33:35Z,322927183-250-2,SLUB COTTON DELICATE SHIRT,27.9,1,27.9,Sims,Diana,913 Kelly Freeway,Port Michael,Maryland,99052,munozjohn@example.org

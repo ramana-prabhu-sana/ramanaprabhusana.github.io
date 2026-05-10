@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+48823,2018-03-12T03:32:42Z,311292073-709-2,UTILITY POCKET JACKET,109.0,4,436.0,Campbell,Frank,59826 Natalie Meadows Suite 578,North Monica,Rhode Island,52497,brandonpatel@example.com

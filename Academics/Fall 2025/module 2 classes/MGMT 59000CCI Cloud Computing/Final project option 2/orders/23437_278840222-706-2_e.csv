@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+23437,2021-02-06T01:27:08Z,278840222-706-2,OVERSIZED TOPSTITCHED T-SHIRT,7.99,3,23.97,Wilson,Robert,0222 William Throughway Apt. 351,West Jacob,Minnesota,45633,wking@example.com

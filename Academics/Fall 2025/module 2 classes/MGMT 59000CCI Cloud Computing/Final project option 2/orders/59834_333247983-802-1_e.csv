@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+59834,2014-05-11T21:39:00Z,333247983-802-1,STRIPED SHIRT WITH TRIM,45.9,1,45.9,Reed,Melissa,0615 Elizabeth Walks Apt. 298,South Brian,Texas,96955,elliskenneth@example.org

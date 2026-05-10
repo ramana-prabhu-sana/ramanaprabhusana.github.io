@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+38408,2016-07-19T21:48:54Z,317894322-251-1,FAUX LEATHER BIKER JACKET,89.9,4,359.6,Marsh,Sandra,29298 Peggy Well,Evanshaven,South Carolina,67313,bradleybautista@example.com

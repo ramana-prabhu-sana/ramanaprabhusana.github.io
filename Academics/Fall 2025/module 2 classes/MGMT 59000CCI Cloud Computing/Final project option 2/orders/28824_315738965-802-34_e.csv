@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+28824,2018-10-27T13:02:20Z,315738965-802-34,BAGGY FIT JEANS,69.9,1,69.9,Lindsey,Peggy,5659 Curtis Drive,Kathrynshire,Oregon,07208,huntsergio@example.org

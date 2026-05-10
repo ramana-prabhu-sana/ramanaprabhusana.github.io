@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+57728,2017-04-18T15:21:16Z,314769394-802-2,KNIT CULOTTES,45.9,1,45.9,Howard,Sarah,674 Richard Terrace,North Michael,Illinois,06052,williammiller@example.net

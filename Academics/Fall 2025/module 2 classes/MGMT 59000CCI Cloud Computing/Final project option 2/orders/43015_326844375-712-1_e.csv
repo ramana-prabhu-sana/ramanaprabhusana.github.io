@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+43015,2019-06-29T01:54:07Z,326844375-712-1,RUFFLED HEM CREPE MIDI SKIRT,49.9,1,49.9,Brown,Jennifer,67185 Emily Wall,West Antonio,New Mexico,03417,gwu@example.org

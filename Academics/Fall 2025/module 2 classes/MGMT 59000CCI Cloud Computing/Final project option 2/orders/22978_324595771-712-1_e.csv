@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+22978,2021-01-03T21:15:29Z,324595771-712-1,FLEECE JACKET,89.9,4,359.6,Kaufman,Blake,4400 Carl Rapid,Port Kurtville,New Hampshire,48672,phillipskatelyn@example.net

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+25240,2018-06-21T05:20:37Z,311307564-800-3,RIGID MINI CROSSBODY VERTICAL BOX BAG,45.9,1,45.9,Molina,Todd,72647 Diana Pass Suite 884,Kristinville,Minnesota,42604,smay@example.org

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+41940,2014-02-09T21:10:45Z,324595027-811-2,BUTTONED HIGH COLLAR KNIT SWEATER,49.9,1,49.9,Morgan,Christopher,6047 Kirby Trail,West Joshuaview,Colorado,32978,amy16@example.org

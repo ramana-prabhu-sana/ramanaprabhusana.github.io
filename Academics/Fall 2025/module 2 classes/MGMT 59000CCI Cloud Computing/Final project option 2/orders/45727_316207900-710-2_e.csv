@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+45727,2014-07-14T17:54:40Z,316207900-710-2,HERRINGBONE TEXTURED JACKET,129.0,2,258.0,Davis,Allison,652 Young Unions,South Elizabeth,Pennsylvania,66406,kflynn@example.net

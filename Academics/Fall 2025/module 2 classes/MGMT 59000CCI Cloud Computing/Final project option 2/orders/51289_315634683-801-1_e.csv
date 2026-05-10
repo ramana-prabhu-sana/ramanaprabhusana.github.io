@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+51289,2019-11-12T16:53:28Z,315634683-801-1,WOOL PENCIL SKIRT ZW COLLECTION,89.9,1,89.9,You,Matthew,3430 Cobb Village Suite 120,South Alexanderburgh,Minnesota,97005,amitchell@example.org

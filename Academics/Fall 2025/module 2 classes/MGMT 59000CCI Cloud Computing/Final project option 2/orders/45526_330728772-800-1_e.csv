@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+45526,2022-11-25T10:49:26Z,330728772-800-1,SATIN EFFECT CARGO PANTS,49.9,1,49.9,Hurst,Benjamin,199 Eric Estates,Ashleystad,Alabama,44930,kenneth70@example.com

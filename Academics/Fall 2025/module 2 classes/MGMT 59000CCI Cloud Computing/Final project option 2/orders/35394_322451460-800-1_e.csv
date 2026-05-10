@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+35394,2015-10-05T09:28:20Z,322451460-800-1,GATHERED WAIST KNIT SWEATER,47.9,1,47.9,Thompson,Sandra,7979 Melissa View Apt. 597,Savannahfurt,Wyoming,18795,awyatt@example.net

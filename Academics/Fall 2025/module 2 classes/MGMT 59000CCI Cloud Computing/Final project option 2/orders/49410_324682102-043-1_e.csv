@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+49410,2015-06-20T20:27:32Z,324682102-043-1,PRINTED SATIN EFFECT MIDI SKIRT,47.9,1,47.9,Harris,Dawn,980 Mark Locks Apt. 348,West Beth,Kentucky,55501,lisa29@example.com

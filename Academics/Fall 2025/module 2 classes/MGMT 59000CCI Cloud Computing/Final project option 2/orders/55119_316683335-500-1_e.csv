@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+55119,2020-05-21T15:56:23Z,316683335-500-1,SATIN EFFECT SHIRT ZW COLLECTION,49.9,1,49.9,Faulkner,Tyler,648 Daniel Vista,West Jennifer,Arizona,93069,coxdaryl@example.com

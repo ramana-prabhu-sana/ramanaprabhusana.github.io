@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+23742,2012-05-09T11:36:11Z,324251215-802-1,ZIPPERED CARGO PANTS ZW COLLECTION,89.9,3,269.70000000000005,Chang,David,4522 White Alley,Morgantown,Pennsylvania,27033,dana77@example.net

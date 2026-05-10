@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+54556,2016-01-21T02:13:24Z,267182188-700-3,TEXTURED BIFOLD WALLET,5.99,1,5.99,Gould,Zachary,892 Clark Spring,East Shannon,Kansas,12796,bpowers@example.org

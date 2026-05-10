@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+47517,2023-02-11T23:47:26Z,314756346-401-38,RIPPED SKINNY JEANS,59.9,1,59.9,Boyd,Rebecca,355 Dana Burgs,Barryville,Georgia,33211,orose@example.org

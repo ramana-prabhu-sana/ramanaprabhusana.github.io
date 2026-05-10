@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+39016,2014-12-05T18:13:17Z,311287175-002-35,FAUX FUR ANKLE BOOTS,109.0,1,109.0,Jackson,Brenda,68335 Erin Centers,Wilsonmouth,South Carolina,40292,wardcarrie@example.com

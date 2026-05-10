@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+37728,2021-12-19T11:09:16Z,326455633-250-2,TEXT PRINT INTERLOCK T-SHIRT,27.9,1,27.9,Never,Sophia,583 Lauren Summit Apt. 287,West Matthew,North Carolina,37150,karen72@example.org

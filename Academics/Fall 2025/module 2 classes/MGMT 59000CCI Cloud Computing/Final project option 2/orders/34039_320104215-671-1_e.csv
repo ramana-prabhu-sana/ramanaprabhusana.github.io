@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+34039,2017-07-29T10:25:20Z,320104215-671-1,SATIN EFFECT PLEATED MIDI SKIRT,45.9,1,45.9,Cooper,Michele,662 Melissa Mission Apt. 836,Emilyville,Alaska,48483,harrisonbradley@example.net

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+50996,2018-09-12T18:48:09Z,322291429-600-1,SOFT TANK TOP,39.9,3,119.69999999999999,Williams,Harry,8461 Kevin Fords,New Nicholestad,Wyoming,57028,kelsey42@example.com

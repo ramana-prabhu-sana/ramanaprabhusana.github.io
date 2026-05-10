@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+35282,2023-06-28T08:11:19Z,326794986-800-2,LONG KNIT DRESS,49.9,1,49.9,Down ,Amy,14191 Mann Shores,Port Steven,New Jersey,88380,cookjames@example.org

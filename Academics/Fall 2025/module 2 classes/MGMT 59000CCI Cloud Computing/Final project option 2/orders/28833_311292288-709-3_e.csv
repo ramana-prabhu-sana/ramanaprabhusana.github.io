@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+28833,2016-09-25T21:03:12Z,311292288-709-3,TOPSTITCHED BUCKET BAG,49.9,1,49.9,Hardy,Ronald,107 Flores Inlet Suite 499,Geraldport,Missouri,50583,michellelin@example.com

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+25335,2022-02-07T12:02:59Z,330607142-104-2,STRIPED KNIT SWEATER,49.9,1,49.9,Flowers,Hunter,53314 Sarah Mission Suite 384,Port Daniellefurt,New Mexico,26088,nicholsonterri@example.net

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+34680,2020-04-06T20:03:09Z,317782436-800-2,SWEATSHIRT WITH SEAM DETAIL,49.9,3,149.7,Parker,Nicole,17299 Stacey Junction Apt. 338,Port Jason,Minnesota,01773,atkinsonrobert@example.org

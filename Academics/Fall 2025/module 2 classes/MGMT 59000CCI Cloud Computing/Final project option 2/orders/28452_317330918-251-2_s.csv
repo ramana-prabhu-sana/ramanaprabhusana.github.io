@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,store_id
+28452,2016-11-17T10:43:41Z,317330918-251-2,TEXT PRINT T-SHIRT,39.9,1,39.9,2330

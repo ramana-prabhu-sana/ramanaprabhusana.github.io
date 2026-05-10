@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+24488,2023-03-05T23:03:44Z,336472226-800-1,STRAIGHT CUT SHOULDER PAD BLAZER,79.9,1,79.9,Schmidt,Alexander,8073 Jennifer Springs Suite 645,Millerland,South Carolina,31299,john73@example.com

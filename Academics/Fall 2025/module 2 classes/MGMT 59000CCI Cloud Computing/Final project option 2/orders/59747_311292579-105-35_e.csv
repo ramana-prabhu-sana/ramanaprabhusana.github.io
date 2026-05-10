@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+59747,2017-01-05T19:18:06Z,311292579-105-35,RUBBERIZED SOLE SUEDE ANKLE BOOTS,109.0,1,109.0,Johnson,Michael,76886 Bradley Path,Lake Shawntown,Alabama,48644,chaneycarol@example.org

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+35282,2023-06-28T08:11:19Z,323184958-022-3,NAPPA LEATHER CROSSBODY BAG - LIMITED EDITION,159.0,5,795.0,Down ,Amy,14191 Mann Shores,Port Steven,New Jersey,88380,cookjames@example.org

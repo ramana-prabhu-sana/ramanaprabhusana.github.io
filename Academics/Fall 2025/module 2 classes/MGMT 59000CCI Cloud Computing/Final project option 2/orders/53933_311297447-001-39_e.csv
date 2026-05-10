@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+53933,2019-07-09T18:13:16Z,311297447-001-39,CHUNKY BLOCK SOLE SNEAKERS,69.9,1,69.9,Vargas,Daniel,856 Patricia Bridge Apt. 301,Barnettview,Mississippi,18504,mitchellaustin@example.org

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+49943,2015-04-24T20:38:31Z,328250627-251-46,SUIT JACKET,169.0,1,169.0,Wilkerson,Kimberly,787 Soto Knoll,East Amberbury,Nevada,47627,leecheryl@example.net

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+21795,2019-11-28T08:05:42Z,316715530-809-2,DRAPED KNIT SWEATER,49.9,1,49.9,Hernandez,Tonya,05765 Williams Forest Suite 517,North Paulaville,Illinois,32324,jacobobrien@example.net

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+46783,2012-06-15T05:16:48Z,326844393-798-2,WASHED EFFECT TECHNICAL OVERSHIRT,109.0,3,327.0,Johnson,Lawrence,972 Gilbert Cove Apt. 058,Jenniferville,Texas,48753,katelyn46@example.org

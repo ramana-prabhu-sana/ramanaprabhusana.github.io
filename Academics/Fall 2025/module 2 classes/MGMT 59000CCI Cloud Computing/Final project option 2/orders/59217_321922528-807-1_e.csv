@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+59217,2016-02-18T17:06:56Z,321922528-807-1,HEAVYWEIGHT SATIN JACKET ZW COLLECTION,89.9,5,449.5,Stafford,Tracy,903 Hoffman Courts Apt. 790,Port Dale,Arizona,94064,michellerowland@example.net

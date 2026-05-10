@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+24440,2015-11-21T16:53:32Z,324596011-505-1,OVERSIZED BLAZER,69.9,1,69.9,Dixon,Jesse,913 Alvarez Place Apt. 638,Veronicamouth,Maine,76756,samantharogers@example.org

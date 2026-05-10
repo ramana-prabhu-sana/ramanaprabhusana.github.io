@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+52263,2012-05-14T13:18:10Z,333165125-704-1,FLARED HIGH WAIST PANTS,59.9,1,59.9,Marshall,Jerry,087 Blackburn Divide,Port Lacey,Mississippi,43984,kholmes@example.net

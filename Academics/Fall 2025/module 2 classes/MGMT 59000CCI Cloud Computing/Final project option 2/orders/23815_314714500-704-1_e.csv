@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+23815,2019-02-07T05:22:55Z,314714500-704-1,MIDI SKIRT WITH BELT,59.9,1,59.9,Smith,David,258 Jay Green,North Linda,Washington,51758,eric39@example.com

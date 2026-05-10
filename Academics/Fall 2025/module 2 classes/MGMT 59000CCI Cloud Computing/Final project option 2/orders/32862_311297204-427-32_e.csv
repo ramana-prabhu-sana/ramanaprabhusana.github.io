@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+32862,2021-12-18T02:32:58Z,311297204-427-32,FLARE Z1975 JEANS WITH A HIGH WAIST,45.9,1,45.9,Mendez,Lori,92240 Daniel Grove,West Catherinechester,Texas,95754,hollywoods@example.org

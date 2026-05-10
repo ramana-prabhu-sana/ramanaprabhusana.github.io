@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+30861,2012-10-31T01:56:06Z,316783055-800-3,BELT DETAIL SHOULDER BAG,49.9,2,99.8,Brady,Brandon,9008 Curtis Estate,North Justin,New Jersey,82026,jennifer78@example.org

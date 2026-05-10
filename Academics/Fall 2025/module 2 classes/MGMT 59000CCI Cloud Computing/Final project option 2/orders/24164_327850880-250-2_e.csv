@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+24164,2019-06-07T09:55:44Z,327850880-250-2,FITTED CROP T-SHIRT,15.9,1,15.9,Stevens,Marie,72906 Evelyn Village,Susanstad,Oklahoma,55128,susangoodwin@example.com

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+41208,2021-10-24T12:10:14Z,330734750-800-1,HIGH WAIST SHORT SHORTS,39.9,1,39.9,Young,James,0424 Anthony Pines Apt. 853,Jasonmouth,Oregon,16521,shannonsanchez@example.org

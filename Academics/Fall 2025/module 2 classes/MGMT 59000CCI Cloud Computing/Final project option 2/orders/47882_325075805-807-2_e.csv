@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+47882,2020-02-20T01:32:35Z,325075805-807-2,EVERLAST® X ZARA HOODIE SWEATSHIRT,59.9,1,59.9,Alvarado,Jeffrey,293 Ellen Station Suite 295,Lake Robin,Kansas,94998,cassandraharris@example.org

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+50812,2018-08-02T20:14:29Z,267889554-405-32,FULL LENGTH TRF MID-RISE WIDE LEG JEANS,7.99,1,7.99,Thompson,Richard,55138 Taylor Ranch,North Cynthiaton,Texas,35746,xgutierrez@example.org

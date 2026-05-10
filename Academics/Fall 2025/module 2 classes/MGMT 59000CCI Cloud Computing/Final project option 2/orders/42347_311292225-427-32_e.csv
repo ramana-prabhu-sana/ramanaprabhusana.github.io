@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+42347,2023-02-19T00:16:32Z,311292225-427-32,ZW HIGH RISE ‘80S SKINNY JEANS,49.9,3,149.7,Cruz,Destiny,8388 Park Trafficway Suite 533,South Codymouth,California,29077,jeffrey85@example.com

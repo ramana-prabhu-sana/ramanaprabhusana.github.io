@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+42685,2014-04-21T12:16:15Z,311309654-032-3,RUBBERIZED CROSSBODY BAG,39.9,2,79.8,Barnes,Stacey,944 James Knolls Suite 685,Annchester,Florida,37268,danny86@example.org

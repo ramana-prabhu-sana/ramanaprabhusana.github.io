@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+38389,2017-07-19T02:54:01Z,321345354-802-1,LOW RISE STRAIGHT LEG PANTS,49.9,1,49.9,Ray,Jerry,26014 Beasley Mountains Apt. 793,North Jackieton,South Dakota,06570,ctaylor@example.org

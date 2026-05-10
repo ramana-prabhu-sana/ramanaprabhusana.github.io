@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+30495,2022-12-03T00:19:03Z,323110923-110-2,POCKET JACKET,129.0,2,258.0,Johnson,Richard,3922 Roth Turnpike,New Blakeville,North Dakota,46729,tracyvasquez@example.net

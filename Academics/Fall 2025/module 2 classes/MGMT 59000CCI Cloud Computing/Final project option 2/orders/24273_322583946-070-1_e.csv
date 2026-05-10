@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+24273,2016-01-02T10:27:20Z,322583946-070-1,DOTTED MINI DRESS,49.9,1,49.9,Smith,Jacob,934 Michelle Islands,Wrightside,Vermont,00819,lopezpedro@example.org

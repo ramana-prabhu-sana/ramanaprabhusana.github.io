@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+50944,2017-04-05T13:09:17Z,324596617-250-2,COTTON AND MODAL T-SHIRT,10.9,2,21.8,Burke,Clinton,05791 Murphy Center,Hallchester,Wyoming,63238,vmitchell@example.net

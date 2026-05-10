@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+37728,2021-12-19T11:09:16Z,321148322-712-2,COTTON - WOOL QUARTER ZIP SWEATER,89.9,3,269.70000000000005,Never,Sophia,583 Lauren Summit Apt. 287,West Matthew,North Carolina,37150,karen72@example.org

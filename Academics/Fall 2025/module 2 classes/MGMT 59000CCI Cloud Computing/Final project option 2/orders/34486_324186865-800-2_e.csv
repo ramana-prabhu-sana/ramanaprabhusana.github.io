@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+34486,2015-11-18T10:27:12Z,324186865-800-2,OVERSIZED HOODED SWEATSHIRT LIMITED EDITION,69.9,1,69.9,Cox,Dakota,802 Hansen Branch,Greenchester,Maine,43714,justin15@example.net

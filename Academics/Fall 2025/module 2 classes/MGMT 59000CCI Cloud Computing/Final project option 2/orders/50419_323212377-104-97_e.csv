@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+50419,2015-03-07T02:22:55Z,323212377-104-97,STRIPED JACQUARD T-SHIRT,45.9,1,45.9,Parker,Aaron,4096 Dominguez Well,West Marilynfurt,Maryland,73129,sjohnson@example.net

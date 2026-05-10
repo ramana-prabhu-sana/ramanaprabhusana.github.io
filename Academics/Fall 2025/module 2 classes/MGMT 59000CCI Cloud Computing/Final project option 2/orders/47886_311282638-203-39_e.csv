@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+47886,2013-08-29T03:06:45Z,311282638-203-39,CHUNKY SOLE PAINT CHELSEA BOOTS,89.9,5,449.5,Smith,Andrew,59105 Jamie Ports Apt. 870,Mayerport,Arizona,64050,jacqueline68@example.com

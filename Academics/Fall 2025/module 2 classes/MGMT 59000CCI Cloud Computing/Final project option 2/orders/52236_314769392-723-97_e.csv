@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+52236,2013-11-23T22:02:19Z,314769392-723-97,WOOL BLEND KNIT COAT,159.0,1,159.0,Sandoval,Michael,9768 Cabrera Causeway Apt. 829,North Christineport,West Virginia,52579,cuevaskristin@example.org

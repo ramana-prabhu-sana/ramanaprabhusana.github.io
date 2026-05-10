@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+37271,2019-08-08T05:20:51Z,320685304-800-2,CONTRASTING MIDI DRESS,47.9,1,47.9,You,Kimberly,9673 Emily Stravenue,West Deborah,Arkansas,69058,tylerrandall@example.com

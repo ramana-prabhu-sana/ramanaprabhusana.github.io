@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+40353,2017-07-01T20:25:23Z,323209720-808-2,METALLIC STRETCH KNIT MINI DRESS,35.9,1,35.9,Williams,Randall,131 Brandon Mount,Hollyburgh,Colorado,05403,marcus55@example.net

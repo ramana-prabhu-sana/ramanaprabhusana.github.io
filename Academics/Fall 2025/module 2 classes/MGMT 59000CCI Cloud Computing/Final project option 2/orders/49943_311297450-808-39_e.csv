@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+49943,2015-04-24T20:38:31Z,311297450-808-39,RUNNING SHOES,89.9,1,89.9,Wilkerson,Kimberly,787 Soto Knoll,East Amberbury,Nevada,47627,leecheryl@example.net

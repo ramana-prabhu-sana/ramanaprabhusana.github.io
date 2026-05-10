@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+41133,2022-06-24T18:59:35Z,336986779-800-2,RUCHED WRAP BODYSUIT,29.9,1,29.9,Miller,Jennifer,6113 Chad Ports Apt. 594,Lucasland,Arizona,60732,qbrown@example.org

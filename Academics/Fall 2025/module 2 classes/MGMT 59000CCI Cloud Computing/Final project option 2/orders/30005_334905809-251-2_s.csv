@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,store_id
+30005,2019-01-22T01:22:25Z,334905809-251-2,COWL NECK TOP,29.9,3,89.69999999999999,1272

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+40353,2017-07-01T20:25:23Z,280097861-803-3,3 PACK SPORT SOCKS,2.99,1,2.99,Williams,Randall,131 Brandon Mount,Hollyburgh,Colorado,05403,marcus55@example.net

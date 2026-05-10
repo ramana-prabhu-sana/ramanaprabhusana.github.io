@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+50812,2018-08-02T20:14:29Z,322247739-250-2,TEXT PRINT T-SHIRT,39.9,1,39.9,Thompson,Richard,55138 Taylor Ranch,North Cynthiaton,Texas,35746,xgutierrez@example.org

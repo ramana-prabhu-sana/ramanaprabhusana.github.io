@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+27766,2023-11-12T22:07:13Z,314149428-732-1,WASHED EFFECT QUILTED JACKET ZW COLLECTION,109.0,1,109.0,Johnson,Maria,63658 Higgins Union,Annachester,Colorado,42743,cooperanthony@example.org

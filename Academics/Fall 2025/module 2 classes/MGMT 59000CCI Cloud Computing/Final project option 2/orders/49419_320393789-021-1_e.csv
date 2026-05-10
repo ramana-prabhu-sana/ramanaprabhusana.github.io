@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+49419,2015-05-07T17:03:00Z,320393789-021-1,DISTRESSED EFFECT KNIT MOCK NECK TOP,7.99,1,7.99,Duncan,Karina,6486 Kyle Dam,Mejiatown,Georgia,57382,tmcguire@example.net

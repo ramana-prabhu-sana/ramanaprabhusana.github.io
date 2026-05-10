@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+55760,2017-07-30T18:05:08Z,320455013-400-97,DENIM PATCHWORK CAP,27.9,1,27.9,Washington,Theresa,22582 Waters Forest,South Taylor,Wyoming,90638,hunterdavid@example.net

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+41982,2014-05-17T09:20:27Z,328244979-064-48,WOOL BLEND TEXTURED JACKET,189.0,3,567.0,Jones,Ian,90965 Fernandez Views,Laneshire,Colorado,23675,olee@example.net

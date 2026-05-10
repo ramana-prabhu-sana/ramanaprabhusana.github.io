@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+55883,2022-09-17T04:07:01Z,343044485-401-1,SHOULDER PAD PINSTRIPE COAT,129.0,1,129.0,Wright,Brandon,178 Stephanie Lodge Apt. 232,South Michaelville,Rhode Island,54882,valdezdanielle@example.com

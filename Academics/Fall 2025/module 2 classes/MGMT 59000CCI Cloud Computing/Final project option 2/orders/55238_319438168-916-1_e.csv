@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+55238,2021-07-04T11:05:06Z,319438168-916-1,DOUBLE FACED FITTED BLAZER ZW COLLECTION,139.0,3,417.0,Harris,Robert,16468 Belinda Gateway,Davisberg,Colorado,24783,samanthajennings@example.org

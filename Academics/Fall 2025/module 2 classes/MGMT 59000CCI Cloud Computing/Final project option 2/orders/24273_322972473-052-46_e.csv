@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+24273,2016-01-02T10:27:20Z,322972473-052-46,SUIT JACKET IN 100% LINEN,159.0,5,795.0,Smith,Jacob,934 Michelle Islands,Wrightside,Vermont,00819,lopezpedro@example.org

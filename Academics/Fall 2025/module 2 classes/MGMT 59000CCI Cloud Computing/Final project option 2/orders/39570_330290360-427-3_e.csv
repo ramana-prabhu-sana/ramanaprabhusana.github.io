@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+39570,2021-04-01T18:38:31Z,330290360-427-3,POCKET DENIM JACKET,89.9,1,89.9,Hernandez,Mark,156 Shawn Union Apt. 971,Kennethmouth,Maine,64725,karen02@example.org

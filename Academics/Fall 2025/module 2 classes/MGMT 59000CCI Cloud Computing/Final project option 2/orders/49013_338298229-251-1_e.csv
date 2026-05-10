@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+49013,2019-01-19T02:37:08Z,338298229-251-1,RUFFLED SATIN EFFECT TOP,39.9,3,119.69999999999999,Wright,Amber,17520 Daniel Inlet,Torresborough,Iowa,82928,julie50@example.com

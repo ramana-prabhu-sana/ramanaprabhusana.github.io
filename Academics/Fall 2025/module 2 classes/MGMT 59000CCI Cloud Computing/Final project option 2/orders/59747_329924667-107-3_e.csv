@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+59747,2017-01-05T19:18:06Z,329924667-107-3,MINI LEATHER CROSSBODY BAG,99.9,3,299.70000000000005,Johnson,Michael,76886 Bradley Path,Lake Shawntown,Alabama,48644,chaneycarol@example.org

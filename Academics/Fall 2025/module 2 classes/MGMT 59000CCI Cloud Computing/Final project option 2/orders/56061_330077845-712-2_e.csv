@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+56061,2022-04-27T19:57:21Z,330077845-712-2,COTTON PANTS,69.9,1,69.9,Collier,Omar,2244 Humphrey Bypass Apt. 828,Jonathanton,New Mexico,92959,jonestroy@example.com

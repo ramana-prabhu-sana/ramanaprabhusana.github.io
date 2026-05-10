@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+54604,2014-12-20T14:46:48Z,311282460-800-3,TECHNICAL DUFFLE BAG,45.9,1,45.9,Newman,Jennifer,33952 Brady Village,Thomasmouth,Arizona,59324,davidbaker@example.org

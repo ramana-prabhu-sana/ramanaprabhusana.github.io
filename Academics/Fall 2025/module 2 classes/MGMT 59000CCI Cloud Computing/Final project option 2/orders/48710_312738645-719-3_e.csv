@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+48710,2013-05-23T23:50:43Z,312738645-719-3,DISTRESSED FABRIC CITY BAG,49.9,1,49.9,Davidson,Tyler,87047 Cheyenne Coves Suite 691,Lake Patrickshire,Idaho,14356,fnash@example.com

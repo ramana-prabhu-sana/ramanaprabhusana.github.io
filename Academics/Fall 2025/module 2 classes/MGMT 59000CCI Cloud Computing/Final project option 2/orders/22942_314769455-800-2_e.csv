@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+22942,2015-09-12T09:38:48Z,314769455-800-2,SATIN EFFECT SHIRT,49.9,1,49.9,Wilson,Nicole,122 Bishop Tunnel Apt. 572,West Gregorychester,California,47337,nicolewoods@example.net

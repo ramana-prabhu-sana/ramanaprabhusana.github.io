@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+28924,2016-11-06T09:44:00Z,324027510-427-32,Z1975 BOOTCUT JEANS WITH A HIGH WAIST,49.9,3,149.7,Johnson,Megan,5044 Mcdonald Village,Lake Brandonport,Michigan,66047,taylor04@example.org

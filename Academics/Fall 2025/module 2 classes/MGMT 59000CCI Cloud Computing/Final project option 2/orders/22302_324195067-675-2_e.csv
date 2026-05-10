@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+22302,2021-08-07T14:46:39Z,324195067-675-2,PLEATED ASYMMETRICAL SKIRT,49.9,1,49.9,Acevedo,Virginia,282 Martin Gateway,Matthewberg,Mississippi,46395,jeff46@example.org

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+35813,2017-08-14T01:09:45Z,311287096-800-39,BUCKLED STRAP SANDALS,45.9,3,137.7,Flowers,Sarah,307 Obrien Glen,Cantutown,Vermont,73021,zcohen@example.org

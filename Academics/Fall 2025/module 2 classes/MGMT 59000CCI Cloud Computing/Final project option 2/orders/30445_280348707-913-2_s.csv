@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,store_id
+30445,2017-03-12T02:46:55Z,280348707-913-2,HOODIE SWEATSHIRT,5.99,1,5.99,1085

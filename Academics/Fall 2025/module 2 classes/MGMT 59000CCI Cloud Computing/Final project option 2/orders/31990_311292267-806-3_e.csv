@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+31990,2022-07-06T16:32:01Z,311292267-806-3,BASIC SWIMMING TRUNKS,35.9,3,107.69999999999999,Taylor,Daniel,559 Snyder Path,North Dianabury,Connecticut,52198,stewartkim@example.net

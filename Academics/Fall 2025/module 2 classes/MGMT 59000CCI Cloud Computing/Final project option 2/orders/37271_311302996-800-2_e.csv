@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+37271,2019-08-08T05:20:51Z,311302996-800-2,CONTRASTING DOWN JACKET,119.0,1,119.0,You,Kimberly,9673 Emily Stravenue,West Deborah,Arkansas,69058,tylerrandall@example.com

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+45141,2017-12-14T03:29:21Z,334216362-800-1,BOX PLEAT MINI SKIRT,39.9,1,39.9,Reyes,Matthew,56309 Sharp Falls Suite 025,Jasonborough,Iowa,07978,amandacallahan@example.com

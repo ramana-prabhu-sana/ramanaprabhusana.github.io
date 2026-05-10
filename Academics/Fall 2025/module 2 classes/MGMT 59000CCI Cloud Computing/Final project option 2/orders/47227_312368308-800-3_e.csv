@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+47227,2012-05-14T18:44:49Z,312368308-800-3,TOTE BAG,35.9,1,35.9,Tyler,Jorge,78081 Booker Tunnel,Darrylfort,New Jersey,38161,danielyoung@example.net

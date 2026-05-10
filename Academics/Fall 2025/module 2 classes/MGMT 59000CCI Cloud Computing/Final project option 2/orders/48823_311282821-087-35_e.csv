@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+48823,2018-03-12T03:32:42Z,311282821-087-35,HIGH HEEL VINYL SANDALS,49.9,1,49.9,Campbell,Frank,59826 Natalie Meadows Suite 578,North Monica,Rhode Island,52497,brandonpatel@example.com

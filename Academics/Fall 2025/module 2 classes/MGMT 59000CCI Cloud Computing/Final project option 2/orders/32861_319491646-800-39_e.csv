@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+32861,2021-06-22T09:21:34Z,319491646-800-39,FISHERMAN CLOGS,59.9,1,59.9,Parker,Keith,222 Jennifer Oval Suite 337,Onealfort,New Mexico,81760,gmiller@example.org

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+59915,2013-10-10T03:51:40Z,312320617-091-36,LEATHER STRAPPY SANDALS,89.9,1,89.9,Scott,Willie,5824 Lewis Bypass,Brittanyburgh,Colorado,98527,kenneth36@example.com

@@ -21,3 +21,8 @@ pnpm-debug.log*
 .idea/
 .vscode/
 .claude/
+
+# Local working notes (not part of the deployed site)
+_HANDOFF.md
+Academics/
+Works/

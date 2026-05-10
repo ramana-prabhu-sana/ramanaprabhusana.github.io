@@ -1,0 +1,12 @@
+---
+description: HW2 hand-in artifacts must live under Assignment/HW2/final
+globs: Assignment/HW2/**
+alwaysApply: false
+---
+
+# HW2 submission location
+
+- **`Assignment/HW2/HW2.pdf`** (Brightspace HW2) is authoritative. Zip must include report (Word or PDF), modified **`Python_DPO_custom_demo.ipynb`**, and custom preferences **`.jsonl`** per the PDF.
+- Keep submission-ready files in `Assignment/HW2/final/` only: report, Part B notebook `Python_DPO_custom_demo.ipynb`, custom preferences `.jsonl`, optional `hw2_dpo_results.json`, and course zip(s) such as `HW2_SUBMISSION.zip`. Local workflow: `Assignment/HW2/HW2_README.txt`.
+- Do not leave duplicate submission copies in `Assignment/HW2/` root unless they are build intermediates; after building, copy or move into `final/`.
+- Do not edit `Python_DPO_custom_demo.ipynb` unless the user explicitly requests a notebook change (sync copies only when they provide an updated file).

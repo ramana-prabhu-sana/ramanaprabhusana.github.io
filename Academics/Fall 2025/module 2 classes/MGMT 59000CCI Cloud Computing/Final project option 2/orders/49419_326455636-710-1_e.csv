@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+49419,2015-05-07T17:03:00Z,326455636-710-1,COCOON RAISED TEXT PLUSH JOGGER PANTS,49.9,1,49.9,Duncan,Karina,6486 Kyle Dam,Mejiatown,Georgia,57382,tmcguire@example.net

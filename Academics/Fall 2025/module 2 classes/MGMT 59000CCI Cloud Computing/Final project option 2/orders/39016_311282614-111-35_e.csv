@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+39016,2014-12-05T18:13:17Z,311282614-111-35,FLAT FAUX SHEARLING ANKLE BOOTS,129.0,1,129.0,Jackson,Brenda,68335 Erin Centers,Wilsonmouth,South Carolina,40292,wardcarrie@example.com

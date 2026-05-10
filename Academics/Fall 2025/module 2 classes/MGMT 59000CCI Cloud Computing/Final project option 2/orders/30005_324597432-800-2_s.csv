@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,store_id
+30005,2019-01-22T01:22:25Z,324597432-800-2,MOCK NECK WOOL AND SILK BLEND KNIT TOP,49.9,1,49.9,1272

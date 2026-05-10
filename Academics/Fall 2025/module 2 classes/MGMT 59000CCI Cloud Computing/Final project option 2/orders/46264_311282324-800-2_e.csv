@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+46264,2016-10-11T07:45:56Z,311282324-800-2,RECCO® LOCATOR SKI JACKET SKI COLLECTION,159.0,1,159.0,Rodriguez,Christopher,561 Richard Turnpike Apt. 937,West Stevenside,Missouri,21653,tiffany23@example.net

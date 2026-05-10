@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+46863,2012-01-27T05:41:18Z,324682102-043-1,PRINTED SATIN EFFECT MIDI SKIRT,47.9,2,95.8,Bryant,Lisa,455 Stephanie Overpass Suite 340,West Pamelaville,Vermont,79742,jamesrichardson@example.net

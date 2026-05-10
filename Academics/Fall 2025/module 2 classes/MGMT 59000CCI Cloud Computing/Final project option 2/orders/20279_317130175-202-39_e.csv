@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+20279,2019-03-04T00:36:28Z,317130175-202-39,COMBINATION HIGH TOP SNEAKERS,59.9,1,59.9,Gonna,Edward,18579 Brittany Fords,South Carrieport,Nevada,32033,glopez@example.org

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+24493,2019-01-25T16:57:44Z,315846078-407-38,STRETCH SLIM FIT JEANS,59.9,1,59.9,Griffith,Kathryn,7214 Lee Spurs,Juliafurt,Georgia,05286,davismaria@example.net

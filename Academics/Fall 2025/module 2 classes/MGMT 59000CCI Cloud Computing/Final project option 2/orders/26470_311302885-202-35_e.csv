@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+26470,2017-03-17T07:00:34Z,311302885-202-35,MIXED LEATHER ATHLETIC SNEAKERS,69.9,2,139.8,Ray,Ryan,43574 Bryant View Suite 857,Thomasborough,Illinois,12579,pwalton@example.org

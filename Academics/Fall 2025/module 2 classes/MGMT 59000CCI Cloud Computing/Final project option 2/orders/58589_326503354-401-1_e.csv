@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+58589,2021-04-25T05:04:56Z,326503354-401-1,PINSTRIPE STRAIGHT LEG PANTS,59.9,1,59.9,Parker,Sandra,9136 Tracey Fork,Steventon,Nebraska,33090,lbarnes@example.org

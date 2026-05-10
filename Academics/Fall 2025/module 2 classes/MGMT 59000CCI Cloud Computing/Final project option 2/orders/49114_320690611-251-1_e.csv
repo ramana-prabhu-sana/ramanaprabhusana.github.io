@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+49114,2014-08-30T23:16:28Z,320690611-251-1,FAUX SUEDE JEWEL DRESS,39.9,1,39.9,Brown,Angela,24935 Lauren Place Apt. 447,Adamborough,Washington,80808,madison88@example.net

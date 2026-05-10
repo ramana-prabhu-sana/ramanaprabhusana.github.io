@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+50812,2018-08-02T20:14:29Z,326794986-800-2,LONG KNIT DRESS,49.9,1,49.9,Thompson,Richard,55138 Taylor Ranch,North Cynthiaton,Texas,35746,xgutierrez@example.org

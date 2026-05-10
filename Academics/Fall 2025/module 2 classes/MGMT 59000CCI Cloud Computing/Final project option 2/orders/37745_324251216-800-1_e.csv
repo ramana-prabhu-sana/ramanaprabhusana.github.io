@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+37745,2021-03-26T01:20:20Z,324251216-800-1,ZIPPERED JACKET ZW LEATHER COLLECTION,299.0,1,299.0,Hopkins,Michelle,362 Ruth Curve Suite 198,Sheilaborough,Delaware,33275,brownsharon@example.com

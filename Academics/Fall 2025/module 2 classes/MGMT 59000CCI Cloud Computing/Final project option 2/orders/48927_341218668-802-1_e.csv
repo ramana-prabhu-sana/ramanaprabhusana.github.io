@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+48927,2022-04-25T15:51:23Z,341218668-802-1,MANTECO WOOL TOGGLE JACKET ZW COLLECTION,89.99,1,89.99,Robertson,Lori,7731 Mccarthy Shoals,Lake Brentton,Vermont,44808,echang@example.com

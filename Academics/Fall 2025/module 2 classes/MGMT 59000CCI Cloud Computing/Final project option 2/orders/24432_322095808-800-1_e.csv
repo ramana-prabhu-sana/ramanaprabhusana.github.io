@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+24432,2020-06-08T08:51:26Z,322095808-800-1,WRAP FRONT SKORT,39.9,1,39.9,Camacho,Rita,8211 Stevens Plains Suite 205,Chaseport,Utah,30894,robinlevy@example.com

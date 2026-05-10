@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+48010,2018-05-05T11:34:53Z,290169280-700-80,LEATHER BELT,2.99,3,8.97,Weeks,Samuel,772 Coffey Parkway,Port Jasonmouth,Alabama,33563,michaelstewart@example.net

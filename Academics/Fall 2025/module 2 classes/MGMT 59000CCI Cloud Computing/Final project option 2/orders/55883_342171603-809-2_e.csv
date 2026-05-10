@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+55883,2022-09-17T04:07:01Z,342171603-809-2,SIDE BUTTON KNIT SWEATER,39.9,3,119.69999999999999,Wright,Brandon,178 Stephanie Lodge Apt. 232,South Michaelville,Rhode Island,54882,valdezdanielle@example.com

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+42728,2021-01-13T19:02:19Z,327110367-712-2,KNIT MACRAMÉ CARDIGAN,89.9,4,359.6,Vargas,Barbara,553 Michael Highway Apt. 013,South Daniel,New Jersey,23638,xhorton@example.com

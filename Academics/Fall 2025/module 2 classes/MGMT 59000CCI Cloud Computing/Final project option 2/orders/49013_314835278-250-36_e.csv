@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+49013,2019-01-19T02:37:08Z,314835278-250-36,LINEN - COTTON PANTS,59.9,1,59.9,Wright,Amber,17520 Daniel Inlet,Torresborough,Iowa,82928,julie50@example.com

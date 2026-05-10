@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+20665,2012-09-22T22:13:52Z,322654574-800-1,MID-RISE ANKLE PANTS,49.9,1,49.9,Guerrero,Richard,284 Ward Square Suite 410,North Tiffanyshire,Georgia,96124,allison96@example.com

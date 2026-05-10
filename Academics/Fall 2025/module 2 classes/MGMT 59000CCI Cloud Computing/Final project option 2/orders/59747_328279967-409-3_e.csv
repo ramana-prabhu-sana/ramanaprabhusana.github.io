@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+59747,2017-01-05T19:18:06Z,328279967-409-3,ACID WASH DENIM JACKET,89.9,1,89.9,Johnson,Michael,76886 Bradley Path,Lake Shawntown,Alabama,48644,chaneycarol@example.org

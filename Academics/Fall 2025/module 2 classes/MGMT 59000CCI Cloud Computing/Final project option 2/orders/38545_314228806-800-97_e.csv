@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+38545,2021-12-30T17:16:18Z,314228806-800-97,WOOL BLEND CARDIGAN,109.0,1,109.0,Ward,Tracy,73245 Shaw Ferry,Oneillchester,Arkansas,39701,ahart@example.org

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+46863,2012-01-27T05:41:18Z,336472220-002-35,SLINGBACK STRAPPY LEATHER KITTEN HEELS,49.9,1,49.9,Bryant,Lisa,455 Stephanie Overpass Suite 340,West Pamelaville,Vermont,79742,jamesrichardson@example.net

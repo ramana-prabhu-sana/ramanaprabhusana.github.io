@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+41314,2022-10-11T01:51:46Z,311287636-403-3,PAJAMA SET,69.9,3,209.70000000000002,West,Mark,1869 Green Unions Suite 720,North Tracy,Maryland,94524,hawkinsjeremy@example.org

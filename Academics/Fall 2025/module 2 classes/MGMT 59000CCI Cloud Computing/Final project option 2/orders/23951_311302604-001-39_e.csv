@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+23951,2017-08-03T18:10:30Z,311302604-001-39,MULTIPIECE RUNNING SNEAKERS,59.9,1,59.9,Mills,Jennifer,6437 Bates Estate Suite 694,New Ashley,Florida,72915,john62@example.net

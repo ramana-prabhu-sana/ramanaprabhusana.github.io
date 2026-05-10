@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+53346,2016-07-25T22:58:04Z,318814006-330-10,ZW COLLECTION PRINTED 100% SILK SHIRT,109.0,1,109.0,Davis,Gloria,0456 Arthur Motorway Apt. 322,North Charleschester,Mississippi,23576,carlos73@example.org

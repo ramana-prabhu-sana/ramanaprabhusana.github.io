@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+33909,2017-01-28T08:09:13Z,323200671-804-2,VINTAGE EFFECT RIB JACKET,49.9,1,49.9,Anthony,Jeremy,917 Melton Mews Apt. 711,Fernandezfurt,Montana,29456,cookmichael@example.net

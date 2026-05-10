@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+44504,2013-03-25T17:26:05Z,315841435-407-39,SUEDE ESPADRILLES,49.9,1,49.9,Diaz,Andre,681 Jessica Lock,West Vincent,Nebraska,06278,mossaustin@example.com

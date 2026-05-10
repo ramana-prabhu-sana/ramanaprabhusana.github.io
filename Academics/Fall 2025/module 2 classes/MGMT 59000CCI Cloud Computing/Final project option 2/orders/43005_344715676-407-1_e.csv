@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+43005,2014-05-26T01:17:12Z,344715676-407-1,TRF DENIM JACKET,59.9,1,59.9,Ayala,Douglas,4261 Denise Ridge,East Jessica,Mississippi,99195,ryan55@example.com

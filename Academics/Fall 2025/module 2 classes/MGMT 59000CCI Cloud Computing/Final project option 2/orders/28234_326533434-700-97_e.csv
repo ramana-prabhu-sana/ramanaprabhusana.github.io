@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+28234,2023-07-19T19:56:42Z,326533434-700-97,EMBROIDERED TEXT POLO,49.9,3,149.7,Hudson,John,379 Nolan Views,Pamelafurt,Maryland,16901,kathleensmith@example.net

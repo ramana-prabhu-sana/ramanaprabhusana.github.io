@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+46863,2012-01-27T05:41:18Z,321501805-803-2,LONG RIBBED SKIRT,29.9,4,119.6,Bryant,Lisa,455 Stephanie Overpass Suite 340,West Pamelaville,Vermont,79742,jamesrichardson@example.net

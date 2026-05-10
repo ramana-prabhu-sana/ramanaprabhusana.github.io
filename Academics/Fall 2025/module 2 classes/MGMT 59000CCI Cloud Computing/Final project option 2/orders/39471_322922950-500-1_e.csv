@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+39471,2019-01-29T16:34:26Z,322922950-500-1,BELTED WAXED DRESS,59.9,1,59.9,Gonzales,George,00051 Joe Views Suite 097,Daughertymouth,New Hampshire,58576,nelsonkurt@example.com

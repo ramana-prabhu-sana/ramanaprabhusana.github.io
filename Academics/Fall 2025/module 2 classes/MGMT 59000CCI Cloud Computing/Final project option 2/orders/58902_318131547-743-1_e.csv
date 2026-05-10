@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+58902,2019-03-13T14:14:03Z,318131547-743-1,FAUX SUEDE SHORT JACKET,49.9,2,99.8,Martinez,Jane,907 Morse Key,East Connie,Mississippi,96736,bmorrison@example.net

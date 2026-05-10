@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+41982,2014-05-17T09:20:27Z,321986870-800-32,TRF LOW WAIST CUFFED SLIM FIT JEANS,49.9,5,249.5,Jones,Ian,90965 Fernandez Views,Laneshire,Colorado,23675,olee@example.net

@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+20279,2019-03-04T00:36:28Z,322677499-743-1,BELTED SKORT,45.9,1,45.9,Gonna,Edward,18579 Brittany Fords,South Carrieport,Nevada,32033,glopez@example.org

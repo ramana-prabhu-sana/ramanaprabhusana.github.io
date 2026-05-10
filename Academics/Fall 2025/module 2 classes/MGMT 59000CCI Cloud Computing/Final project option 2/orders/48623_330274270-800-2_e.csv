@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+48623,2018-11-13T10:09:45Z,330274270-800-2,CROPPED BOMBER JACKET LIMITED EDITION,129.0,1,129.0,Erickson,Patricia,423 Miller Unions,Oliverland,North Dakota,19572,alexis46@example.net

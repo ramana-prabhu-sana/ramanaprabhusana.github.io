@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+38541,2017-03-01T16:02:59Z,315579814-832-2,MIXED FAUX SHEARLING TECHNICAL PARKA,169.0,1,169.0,Stephens,Lauren,355 Weber Camp,Katherineburgh,Rhode Island,05127,staffordbarbara@example.net

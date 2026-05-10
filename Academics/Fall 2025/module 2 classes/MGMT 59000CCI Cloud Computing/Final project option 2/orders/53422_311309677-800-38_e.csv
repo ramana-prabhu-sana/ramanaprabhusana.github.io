@@ -1,0 +1,2 @@
+transaction_id,transaction_date,sku,product_name,price,quantity,subtotal,family_name,given_name,street_address,city,state,zip_code,email
+53422,2012-03-26T02:25:34Z,311309677-800-38,STRAIGHT FIT PLEATED PANTS,109.0,1,109.0,Zuniga,Anthony,486 Taylor Island Suite 743,Davidhaven,Iowa,45613,james95@example.net

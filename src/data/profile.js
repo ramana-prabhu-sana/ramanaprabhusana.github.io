@@ -1,140 +1,77 @@
+// Source of truth for personal info, links, and hero copy.
 export const profile = {
   name: "Ramana Prabhu Sana",
-  headline: "MSBAIM (Purdue). Pharma forecasting, analytics, and automation.",
-  location: "West Lafayette, IN",
+  initials: "RPS",
+  location: "West Lafayette, Indiana",
   email: "rsana@purdue.edu",
-  phone: "",
+  phone: "(347) 269-9365",
+
   links: {
-    resumeUrl: "/Resume.pdf",
+    resume: "/Resume.pdf",
     linkedin: "https://www.linkedin.com/in/ramanaprabhusana/",
     github: "https://github.com/ramanaprabhusana",
+    email: "mailto:rsana@purdue.edu",
   },
+
+  photo: "brand/profile.jpg",
+
+  status: "Open to 2026 Opportunities",
+
+  fields: [
+    "Business Analytics",
+    "Decision Science",
+    "Data Analytics",
+    "Healthcare Analytics",
+    "Forecasting",
+    "Consulting",
+    "Business Intelligence",
+  ],
 
   hero: {
-    intro:
-      "I build decision-ready analytics products. Forecasting models, automation, and AI workflows that are clean, explainable, and practical.",
-    badges: ["Pharma forecasting", "Excel + VBA", "Python + SQL", "Automation mindset"],
-    ctas: [
-      { label: "Journey", href: "#journey", variant: "primary" },
-      { label: "Resume", href: "/Resume.pdf", variant: "secondary" },
-    ],
-  },
-
-  about: {
-    title: "About",
-    body: [
-      "I am a pharma forecasting and analytics professional with experience building scalable models, automating Excel workflows, and creating stakeholder-ready dashboards.",
-      "I am currently pursuing MSBAIM at Purdue and seeking internship and full-time opportunities in analytics and consulting.",
-    ],
-    highlights: [
-      "Forecast model build and review (marketed and pipeline)",
-      "Scenario planning, sensitivities, and model governance",
-      "Automation to reduce manual recurring work",
-    ],
-  },
-
-  experience: [
-    {
-      company: "Novartis",
-      role: "Senior Lead Analyst",
-      location: "",
-      dates: "Jul 2023 - Jul 2025",
-      bullets: [
-        "Led forecasting and decision support for strategic planning and portfolio discussions.",
-        "Built scalable models and improved reporting workflows for stakeholders.",
-      ],
-      tags: ["Forecasting", "Excel", "Stakeholder reporting"],
-    },
-    {
-      company: "Genpact",
-      role: "Lead Analyst",
-      location: "India",
-      dates: "Oct 2022 - Jul 2023",
-      bullets: [],
-      tags: ["Analytics", "Forecasting", "Automation"],
-    },
-    {
-      company: "Novartis",
-      role: "Business Analyst",
-      location: "",
-      dates: "Jan 2021 - Oct 2022",
-      bullets: [],
-      tags: ["Forecasting", "Analytics"],
-    },
-    {
-      company: "ZS Associates",
-      role: "Decision Analytics Associate",
-      location: "",
-      dates: "Jul 2019 - Dec 2020",
-      bullets: ["Built forecast models and dashboards for healthcare clients."],
-      tags: ["Analytics", "Forecasting"],
-    },
-    {
-      company: "STL",
-      role: "Engineer",
-      location: "Silvassa, India",
-      dates: "Aug 2017 - Jun 2019",
-      bullets: [],
-      tags: ["Engineering"],
-    },
-  ],
-
-  education: [
-    {
-      school: "Purdue University (Daniels School of Business)",
-      degree: "MS Business Analytics & Information Management (MSBAIM)",
-      location: "West Lafayette, IN",
-      dates: "2025 - 2026",
-      bullets: ["Track focus: Consulting and Data Science."],
-    },
-    {
-      school: "VIT University",
-      degree: "BS Mechanical Engineering",
-      location: "India",
-      dates: "2013 - 2017",
-      bullets: [],
-    },
-    {
-      school: "Ascent Classes",
-      degree: "High School",
-      location: "India",
-      dates: "Apr 2011 - Mar 2013",
-      bullets: [],
-    },
-    {
-      school: "Krishna Vikash Group of Institutions",
-      degree: "Secondary School",
-      location: "India",
-      dates: "Mar 2011",
-      bullets: [],
-    },
-  ],
-
-  skills: {
-    groups: [
+    eyebrow: "Purdue MSBAIM · West Lafayette, Indiana · Open to 2026 Opportunities",
+    headline: "Decision Analytics and Business Analytics Professional",
+    subheadline:
+      "I build decision-ready analytics solutions that connect forecasting, automation, dashboards, data science, and business storytelling to help teams understand performance, evaluate scenarios, and make clearer strategic decisions.",
+    credibility: [
       {
-        title: "Core",
-        items: ["Forecasting", "Scenario analysis", "Model governance", "Storytelling", "Decision support"],
+        label: "Industry experience",
+        value: "7 years",
+        sub: "Forecasting, dashboards, automation, decision support",
       },
-      { title: "Tools", items: ["Excel", "VBA", "Python", "SQL", "Power BI", "Tableau", "Git"] },
-      { title: "Cloud", items: ["AWS fundamentals", "IAM basics", "S3 basics"] },
+      {
+        label: "Toolkit",
+        value: "Excel · VBA · SQL · Python",
+        sub: "Power BI, Tableau, Recharts, modern BI",
+      },
+      {
+        label: "Domains",
+        value: "Healthcare · Commercial · Strategy",
+        sub: "Transferable across business analytics teams",
+      },
+      {
+        label: "Graduate training",
+        value: "Purdue MSBAIM",
+        sub: "Consulting and Data Science focus",
+      },
+    ],
+    panelLabel: "Decision-ready analytics",
+    toolStack: [
+      "Excel",
+      "VBA",
+      "SQL",
+      "Python",
+      "Pandas",
+      "scikit-learn",
+      "XGBoost",
+      "Power BI",
+      "Tableau",
+      "Streamlit",
     ],
   },
 
-  projects: [
-    {
-      title: "Forecasting Model and Reporting",
-      subtitle: "Standardized forecasting workflow and KPI reporting.",
-      description: "Standardized forecasting workflow and stakeholder-ready KPI reporting to improve clarity and repeatability.",
-      tags: ["Forecasting", "Excel", "Power BI"],
-      links: { github: "", live: "" },
-    },
-    {
-      title: "Excel VBA Automation",
-      subtitle: "Automation and validation checks for recurring submissions.",
-      description: "Improved recurring model submissions using VBA automation and validation checks to reduce manual effort.",
-      tags: ["VBA", "Automation", "Governance"],
-      links: { github: "", live: "" },
-    },
+  positioning: [
+    "Turning data, models, and assumptions into business decisions.",
+    "Decision Analytics, Forecasting, Business Intelligence, and Data Science.",
+    "Purdue MSBAIM Candidate · Analytics Strategy · Forecasting · Automation.",
   ],
 };
