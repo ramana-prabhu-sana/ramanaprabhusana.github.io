@@ -10,7 +10,7 @@ const accents = ["lime", "cyan", "violet", "amber", "rose", "sky"];
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="relative scroll-mt-24 py-20 sm:py-24">
+    <section id="certifications" className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Certifications"
@@ -19,7 +19,7 @@ export default function Certifications() {
           accent="violet"
         />
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {certifications.map((c, idx) => {
             const accent = accents[idx % accents.length];
             const inner = (
@@ -59,7 +59,7 @@ export default function Certifications() {
                 key={c.id}
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
+                viewport={{ once: true, amount: 0 }}
                 transition={{ duration: 0.4, delay: (idx % 6) * 0.03 }}
               >
                 {c.credentialUrl ? (

@@ -16,45 +16,38 @@ const accentGradient = {
   sky: "from-sky-400/30 via-blue-500/15 to-violet-500/10",
 };
 
-function MockupThumb({ accent }) {
+function MetricThumb({ accent, metric }) {
   const grad = accentGradient[accent] || accentGradient.lime;
+  if (!metric) {
+    return (
+      <div
+        className={[
+          "relative h-24 w-full overflow-hidden rounded-xl border border-white/8",
+          "bg-gradient-to-br",
+          grad,
+        ].join(" ")}
+        aria-hidden="true"
+      >
+        <div className="absolute inset-0 bg-grid-soft opacity-40" />
+      </div>
+    );
+  }
   return (
     <div
       className={[
-        "relative h-32 w-full overflow-hidden rounded-xl border border-white/8",
+        "relative h-24 w-full overflow-hidden rounded-xl border border-white/8",
         "bg-gradient-to-br",
         grad,
       ].join(" ")}
-      aria-hidden="true"
     >
-      {/* Grid pattern */}
-      <div className="absolute inset-0 bg-grid-soft opacity-50" />
-      {/* Mock chart */}
-      <svg
-        className="absolute inset-0 h-full w-full"
-        viewBox="0 0 200 80"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M0,60 L25,52 L50,55 L75,42 L100,38 L125,28 L150,30 L175,18 L200,12"
-          fill="none"
-          stroke="rgba(255,255,255,0.6)"
-          strokeWidth="1.5"
-        />
-        <path
-          d="M0,60 L25,52 L50,55 L75,42 L100,38 L125,28 L150,30 L175,18 L200,12 L200,80 L0,80 Z"
-          fill="rgba(255,255,255,0.08)"
-        />
-      </svg>
-      {/* KPI cards */}
-      <div className="absolute left-3 top-3 flex gap-1.5">
-        <div className="h-6 w-12 rounded bg-white/15" />
-        <div className="h-6 w-12 rounded bg-white/10" />
-        <div className="h-6 w-12 rounded bg-white/10" />
-      </div>
-      <div className="absolute bottom-3 right-3 flex items-center gap-1 text-[10px] font-mono text-white/60">
-        <span className="inline-block h-1.5 w-1.5 rounded-full bg-lime-400" />
-        live
+      <div className="absolute inset-0 bg-grid-soft opacity-30" />
+      <div className="relative flex h-full flex-col justify-center gap-1 px-4">
+        <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/65">
+          {metric.label}
+        </div>
+        <div className="text-lg font-semibold leading-tight text-white">
+          {metric.value}
+        </div>
       </div>
     </div>
   );
@@ -95,12 +88,12 @@ export default function CaseStudies() {
   return (
     <section
       id="case-studies"
-      className="relative scroll-mt-24 py-20 sm:py-24"
+      className="relative scroll-mt-24 py-16 sm:py-20"
     >
       <Container>
         <SectionHeading
           eyebrow="Featured case studies"
-          title="Decisions I have helped move forward"
+          title="Selected case studies"
           subtitle="Nine studies across forecasting, healthcare, BI, automation, multi-agent AI, sports analytics, and retail/pricing. Filter by tag to scan what's relevant."
           accent="lime"
         />
@@ -158,7 +151,7 @@ export default function CaseStudies() {
                 transition={{ duration: 0.3 }}
               >
                 <Card accent={c.accent} className="flex h-full flex-col">
-                  <MockupThumb accent={c.accent} />
+                  <MetricThumb accent={c.accent} metric={c.metric} />
 
                   <div className="mt-5 flex flex-wrap items-center gap-2">
                     {c.badge ? (
@@ -176,7 +169,7 @@ export default function CaseStudies() {
                   <h3 className="mt-3 text-lg font-semibold leading-snug text-white">
                     {c.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/70">
+                  <p className="mt-2 text-sm leading-relaxed text-white/80">
                     {c.valueProp}
                   </p>
 
@@ -199,7 +192,7 @@ export default function CaseStudies() {
                         target="_blank"
                         rel="noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-white/5 px-2 py-1 text-[11px] font-medium text-white/70 transition-colors hover:border-white/25 hover:text-white"
+                        className="inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-white/5 px-2 py-1 text-[11px] font-medium text-white/80 transition-colors hover:border-white/25 hover:text-white"
                         aria-label="Open repository"
                       >
                         <Github className="h-3 w-3" />
@@ -252,7 +245,7 @@ export default function CaseStudies() {
               </button>
 
               <div className="px-6 pb-8 sm:px-8">
-                <MockupThumb accent={open.accent} />
+                <MetricThumb accent={open.accent} metric={open.metric} />
 
                 <div className="mt-5 flex flex-wrap items-center gap-2">
                   {open.badge ? (
@@ -274,7 +267,7 @@ export default function CaseStudies() {
                   {open.title}
                 </h3>
                 <p className="mt-2 text-base text-white/75">{open.valueProp}</p>
-                <div className="mt-3 text-sm text-white/55">{open.context}</div>
+                <div className="mt-3 text-sm text-white/65">{open.context}</div>
 
                 <div className="mt-6 grid gap-5 sm:grid-cols-2">
                   <DetailBlock label="Business problem" body={open.problem} />

@@ -1,11 +1,10 @@
+import { MotionConfig } from "motion/react";
 import AnimatedGrid from "./components/AnimatedGrid";
+import ScrollProgress from "./components/ScrollProgress";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ProfileDifferentiator from "./components/ProfileDifferentiator";
-import ValueSnapshot from "./components/ValueSnapshot";
 import DecisionWorkflow from "./components/DecisionWorkflow";
-import DecisionFramework from "./components/DecisionFramework";
-import DecisionProblems from "./components/DecisionProblems";
 import CaseStudies from "./components/CaseStudies";
 import ExperienceTimeline from "./components/ExperienceTimeline";
 import SkillsIntelligenceMap from "./components/SkillsIntelligenceMap";
@@ -18,30 +17,34 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
+    // MotionConfig reducedMotion="user" makes every motion.* component
+    // automatically short-circuit animations when the visitor has
+    // prefers-reduced-motion: reduce set (accessibility + battery wins).
+    <MotionConfig reducedMotion="user">
     <div className="relative min-h-screen text-white antialiased">
+      {/* Skip-to-content link for keyboard + screen-reader users. */}
+      <a
+        href="#home"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:border focus:border-lime-400/50 focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-lime-300"
+      >
+        Skip to main content
+      </a>
+
       <AnimatedGrid />
+      <ScrollProgress />
       <Navbar />
 
       <main>
         {/* 1. Hero command center */}
         <Hero />
 
-        {/* 2. Why this profile stands out */}
+        {/* 2. Why this profile stands out (Strengths nav) */}
         <ProfileDifferentiator />
 
-        {/* 3. Employer value snapshot */}
-        <ValueSnapshot />
-
-        {/* 4. Decision analytics workflow (interactive) */}
+        {/* 3. Decision analytics workflow (Approach nav) */}
         <DecisionWorkflow />
 
-        {/* 5. How I turn data into decisions */}
-        <DecisionFramework />
-
-        {/* 6. Decision problems I can help solve */}
-        <DecisionProblems />
-
-        {/* 7. Featured case studies */}
+        {/* 5. Featured case studies */}
         <CaseStudies />
 
         {/* 8. Experience timeline */}
@@ -68,5 +71,6 @@ export default function App() {
 
       <Footer />
     </div>
+    </MotionConfig>
   );
 }

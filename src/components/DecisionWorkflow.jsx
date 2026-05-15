@@ -1,7 +1,18 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import * as Icons from "lucide-react";
+import {
+  Boxes,
+  Circle,
+  Database,
+  GitBranch,
+  HelpCircle,
+  LayoutDashboard,
+  Send,
+  Sliders,
+} from "lucide-react";
 import Container from "./Container";
+
+const ICONS = { Boxes, Circle, Database, GitBranch, HelpCircle, LayoutDashboard, Send, Sliders };
 import Card from "./Card";
 import SectionHeading from "./SectionHeading";
 import Badge from "./Badge";
@@ -32,10 +43,10 @@ export default function DecisionWorkflow() {
   }, [active]);
 
   const current = workflow[active];
-  const CurrentIcon = Icons[current.icon] || Icons.Circle;
+  const CurrentIcon = ICONS[current.icon] || Circle;
 
   return (
-    <section id="workflow" className="relative scroll-mt-24 py-20 sm:py-24">
+    <section id="workflow" className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Decision analytics workflow"
@@ -46,7 +57,7 @@ export default function DecisionWorkflow() {
 
         {/* Stepper */}
         <div
-          className="mt-12 overflow-x-auto pb-2 lg:overflow-visible"
+          className="mt-10 overflow-x-auto pb-2 lg:overflow-visible"
           role="tablist"
           aria-label="Decision analytics workflow steps"
         >
@@ -55,7 +66,7 @@ export default function DecisionWorkflow() {
             <div className="pointer-events-none absolute inset-x-0 top-6 hidden h-px bg-gradient-to-r from-white/5 via-white/15 to-white/5 lg:block" />
 
             {workflow.map((step, idx) => {
-              const StepIcon = Icons[step.icon] || Icons.Circle;
+              const StepIcon = ICONS[step.icon] || Circle;
               const isActive = idx === active;
               const isPast = idx < active;
               return (
@@ -76,7 +87,7 @@ export default function DecisionWorkflow() {
                     className={[
                       "grid h-12 w-12 place-items-center rounded-2xl border transition-all",
                       isActive
-                        ? "border-violet-400/60 bg-violet-400/15 text-violet-200 shadow-glow-violet"
+                        ? "border-lime-400/70 bg-lime-400/20 text-lime-200 ring-2 ring-lime-400/30 shadow-[0_0_18px_rgba(163,230,53,0.45)]"
                         : isPast
                         ? "border-lime-400/40 bg-lime-400/10 text-lime-300"
                         : "border-white/10 bg-white/5 text-white/60 group-hover:border-white/20 group-hover:text-white",
@@ -87,7 +98,7 @@ export default function DecisionWorkflow() {
                   <div
                     className={[
                       "text-[10px] font-mono uppercase tracking-widest",
-                      isActive ? "text-white/70" : "text-white/40",
+                      isActive ? "text-white/80" : "text-white/40",
                     ].join(" ")}
                   >
                     {String(idx + 1).padStart(2, "0")}
@@ -109,7 +120,7 @@ export default function DecisionWorkflow() {
         {/* Detail panel */}
         <Card
           accent="violet"
-          className="mt-8 min-h-[280px]"
+          className="mt-6 min-h-[220px]"
           padded={false}
           id="workflow-detail"
           role="tabpanel"
@@ -125,7 +136,7 @@ export default function DecisionWorkflow() {
               className="grid gap-6 p-6 sm:p-8 md:grid-cols-[auto_1fr]"
             >
               <div className="flex items-start gap-4">
-                <div className="grid h-14 w-14 place-items-center rounded-2xl border border-violet-400/40 bg-violet-400/15 text-violet-200">
+                <div className="grid h-14 w-14 place-items-center rounded-2xl border border-lime-400/50 bg-lime-400/15 text-lime-200 shadow-[0_0_18px_rgba(163,230,53,0.35)]">
                   <CurrentIcon className="h-7 w-7" />
                 </div>
                 <div className="md:hidden">

@@ -22,7 +22,7 @@ export const skills = [
       "ufc-visual-analytics",
       "krenicki-ai-finance",
     ],
-    relatedExperience: ["novartis-senior-lead", "zs-decision-analytics"],
+    relatedExperience: ["pharmaace-practicum", "novartis-senior-lead", "zs-decision-analytics"],
     businessValue:
       "Aligns analytics with the decision the business is trying to make, then frames the answer for leaders to act on.",
   },
@@ -50,6 +50,7 @@ export const skills = [
       "ma-dashboard",
     ],
     relatedExperience: [
+      "pharmaace-practicum",
       "novartis-senior-lead",
       "genpact-lead",
       "novartis-business-analyst",
@@ -77,7 +78,7 @@ export const skills = [
       "Automation workflows",
     ],
     relatedCases: ["automation", "model-hub"],
-    relatedExperience: ["novartis-business-analyst", "novartis-senior-lead"],
+    relatedExperience: ["pharmaace-practicum", "novartis-business-analyst", "novartis-senior-lead"],
     businessValue:
       "Frees analyst time to spend on insight rather than copy-paste; reduces error risk on recurring deliverables.",
   },
@@ -123,8 +124,9 @@ export const skills = [
       "Commercial KPI tracking",
       "Market research",
     ],
-    relatedCases: ["evidence-pipeline", "commercial-forecasting", "ma-dashboard"],
+    relatedCases: ["evidence-pipeline", "commercial-forecasting", "ma-dashboard", "model-hub"],
     relatedExperience: [
+      "pharmaace-practicum",
       "novartis-senior-lead",
       "novartis-business-analyst",
       "zs-decision-analytics",

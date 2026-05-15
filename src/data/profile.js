@@ -3,35 +3,40 @@ export const profile = {
   name: "Ramana Prabhu Sana",
   initials: "RPS",
   location: "West Lafayette, Indiana",
-  email: "rsana@purdue.edu",
+  email: "ramanaprabhu.sana@gmail.com",
   phone: "(347) 269-9365",
 
   links: {
     resume: "/Resume.pdf",
     linkedin: "https://www.linkedin.com/in/ramanaprabhusana/",
     github: "https://github.com/ramanaprabhusana",
-    email: "mailto:rsana@purdue.edu",
+    email: "mailto:ramanaprabhu.sana@gmail.com",
   },
 
   photo: "brand/profile.jpg",
 
   status: "Open to 2026 Opportunities",
 
-  fields: [
+  targeting: [
     "Business Analytics",
     "Decision Science",
     "Data Analytics",
-    "Healthcare Analytics",
-    "Forecasting",
     "Consulting",
+  ],
+
+  fields: [
+    "Decision Analytics",
+    "Forecasting",
     "Business Intelligence",
+    "Healthcare Analytics",
+    "Data Science",
   ],
 
   hero: {
     eyebrow: "Purdue MSBAIM · West Lafayette, Indiana · Open to 2026 Opportunities",
-    headline: "Decision Analytics and Business Analytics Professional",
+    headline: "Seven years of forecasts leaders bet on. Now business analytics at Purdue.",
     subheadline:
-      "I build decision-ready analytics solutions that connect forecasting, automation, dashboards, data science, and business storytelling to help teams understand performance, evaluate scenarios, and make clearer strategic decisions.",
+      "Forecasts, dashboards, and decision models - built so leaders can act on the numbers, not just read them.",
     credibility: [
       {
         label: "Industry experience",
@@ -60,8 +65,6 @@ export const profile = {
       "VBA",
       "SQL",
       "Python",
-      "Pandas",
-      "scikit-learn",
       "XGBoost",
       "Power BI",
       "Tableau",

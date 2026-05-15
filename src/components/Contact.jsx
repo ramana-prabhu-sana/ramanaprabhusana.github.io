@@ -86,7 +86,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative scroll-mt-24 py-20 sm:py-24">
+    <section id="contact" className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Get in touch"
@@ -95,7 +95,7 @@ export default function Contact() {
           accent="lime"
         />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_1.1fr]">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.1fr]">
           {/* Channels */}
           <div className="grid gap-3">
             <ChannelTile
@@ -154,7 +154,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="contact-name"
-                  className="block text-xs font-medium text-white/70"
+                  className="block text-xs font-medium text-white/80"
                 >
                   Name
                 </label>
@@ -174,7 +174,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="contact-email"
-                  className="block text-xs font-medium text-white/70"
+                  className="block text-xs font-medium text-white/80"
                 >
                   Email
                 </label>
@@ -194,7 +194,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="contact-message"
-                  className="block text-xs font-medium text-white/70"
+                  className="block text-xs font-medium text-white/80"
                 >
                   Message
                 </label>
@@ -210,10 +210,7 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="flex items-center justify-between gap-3">
-                <p className="text-[11px] text-white/45">
-                  No backend - submission opens your mail client.
-                </p>
+              <div className="flex items-center justify-end gap-3">
                 <Button
                   type="submit"
                   variant="primary"

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Briefcase, Calendar, MapPin } from "lucide-react";
+import { Calendar } from "lucide-react";
 import Container from "./Container";
 import Card from "./Card";
 import SectionHeading from "./SectionHeading";
@@ -9,7 +9,7 @@ import { experience } from "../data/experience";
 
 export default function ExperienceTimeline() {
   return (
-    <section id="experience" className="relative scroll-mt-24 py-20 sm:py-24">
+    <section id="experience" className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Experience timeline"
@@ -20,7 +20,7 @@ export default function ExperienceTimeline() {
 
         <div className="relative mt-12">
           {/* Vertical spine */}
-          <div className="pointer-events-none absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-rose-400/40 via-white/10 to-violet-400/40 sm:left-9" />
+          <div className="pointer-events-none absolute left-[35px] top-2 bottom-2 w-px bg-gradient-to-b from-rose-400/40 via-white/10 to-violet-400/40 sm:left-[44px]" />
 
           <div className="space-y-6">
             {experience.map((role, idx) => (
@@ -28,7 +28,7 @@ export default function ExperienceTimeline() {
                 key={role.id}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
+                viewport={{ once: true, amount: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.04 }}
                 className="relative grid grid-cols-[auto_1fr] gap-4 sm:gap-6"
               >
@@ -38,9 +38,11 @@ export default function ExperienceTimeline() {
                     src={role.logo}
                     alt={role.company}
                     fallback={role.company}
-                    size="md"
-                    className="rounded-2xl bg-white/90 p-2"
-                    imgClassName="object-contain"
+                    size="lg"
+                    className={role.logoBleed
+                      ? "rounded-2xl ring-1 ring-white/25 shadow-[0_2px_10px_rgba(0,0,0,0.45)]"
+                      : "rounded-2xl bg-white/95 p-1.5 shadow-sm"}
+                    imgClassName={role.logoBleed ? "object-cover" : "object-contain"}
                   />
                 </div>
 
@@ -50,7 +52,7 @@ export default function ExperienceTimeline() {
                       <h3 className="text-lg font-semibold leading-tight text-white">
                         {role.role}
                       </h3>
-                      <div className="mt-1 text-sm text-white/75">
+                      <div className="mt-1 text-sm text-white/85">
                         {role.company}
                       </div>
                     </div>
@@ -59,12 +61,6 @@ export default function ExperienceTimeline() {
                         <Calendar className="h-3 w-3" />
                         {role.dates}
                       </div>
-                      {role.location ? (
-                        <div className="mt-1 inline-flex items-center gap-1 text-[11px] text-white/45">
-                          <MapPin className="h-3 w-3" />
-                          {role.location}
-                        </div>
-                      ) : null}
                     </div>
                   </div>
 
@@ -76,7 +72,7 @@ export default function ExperienceTimeline() {
                   ) : null}
 
                   {role.bullets?.length ? (
-                    <ul className="mt-4 space-y-2.5 text-sm text-white/75">
+                    <ul className="mt-4 space-y-2.5 text-sm text-white/85">
                       {role.bullets.map((b, i) => (
                         <li key={i} className="flex gap-2.5">
                           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-400/70" />

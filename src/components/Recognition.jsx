@@ -12,7 +12,7 @@ export default function Recognition() {
   if (!recognition.length) return null;
 
   return (
-    <section id="recognition" className="relative scroll-mt-24 py-20 sm:py-24">
+    <section id="recognition" className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Proof of work"
@@ -21,7 +21,7 @@ export default function Recognition() {
           accent="amber"
         />
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {recognition.map((r, idx) => {
             const accent = accents[idx % accents.length];
             return (
@@ -29,7 +29,7 @@ export default function Recognition() {
                 key={r.id}
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
+                viewport={{ once: true, amount: 0 }}
                 transition={{ duration: 0.4, delay: (idx % 6) * 0.03 }}
               >
                 <Card accent={accent} className="h-full">
@@ -40,7 +40,7 @@ export default function Recognition() {
                   <h3 className="mt-4 text-base font-semibold leading-snug text-white">
                     {r.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/70">
+                  <p className="mt-2 text-sm leading-relaxed text-white/80">
                     {r.context}
                   </p>
 

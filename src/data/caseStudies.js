@@ -49,6 +49,7 @@ export const caseStudies = [
     tags: ["Forecasting", "Healthcare", "Consulting", "Strategy", "Business Analytics"],
     accent: "lime",
     badge: null,
+    metric: { label: "Architecture", value: "Hub-and-spoke model hub" },
     repoUrl: "https://github.com/ramanaprabhusana/epidemiology-data-tool",
   },
   {
@@ -78,6 +79,7 @@ export const caseStudies = [
     tags: ["Forecasting", "Healthcare", "Consulting"],
     accent: "rose",
     badge: null,
+    metric: { label: "Output", value: "Source-linked assumption set" },
     repoUrl: null,
   },
   {
@@ -107,6 +109,7 @@ export const caseStudies = [
     tags: ["Forecasting", "Healthcare", "Strategy", "Consulting"],
     accent: "cyan",
     badge: null,
+    metric: { label: "Asset", value: "$1.2Bn lung cancer launch" },
     repoUrl: null,
   },
   {
@@ -135,6 +138,7 @@ export const caseStudies = [
     tags: ["Forecasting", "BI", "Strategy", "Healthcare", "Consulting"],
     accent: "violet",
     badge: null,
+    metric: { label: "Deal size", value: "$3.5Bn M&A evaluation" },
     repoUrl: null,
   },
   {
@@ -158,13 +162,14 @@ export const caseStudies = [
     tags: ["Automation", "Forecasting", "Healthcare"],
     accent: "amber",
     badge: null,
+    metric: { label: "Result", value: "On-time global submissions" },
     repoUrl: null,
   },
   {
     id: "multimodal-retail",
     title: "Multimodal Retail Predictive ML",
     valueProp:
-      "Hybrid model combining vision-language attributes with classical ML to rank retail SKUs for promotion under fixed ad budget - outperformed LLM-only by ~3× on profit.",
+      "Hybrid model combining vision-language attributes with classical ML to rank retail SKUs for promotion under fixed ad budget - outperformed LLM-only by ~3x on profit.",
     context:
       "Purdue MSBAIM applied analytics project · Public repo with full methodology.",
     problem:
@@ -197,6 +202,7 @@ export const caseStudies = [
     tags: ["Data Science", "Retail", "Pricing", "Business Analytics", "Strategy"],
     accent: "violet",
     badge: "Purdue MSBAIM",
+    metric: { label: "Profit lift", value: "3x LLM baseline" },
     repoUrl: "https://github.com/ramanaprabhusana/multimodal-retail-predictive-ml",
   },
   {
@@ -237,6 +243,7 @@ export const caseStudies = [
     tags: ["Data Science", "Sports Analytics", "Strategy"],
     accent: "cyan",
     badge: "3rd of 83 - Kaggle 2026",
+    metric: { label: "Leaderboard", value: "3rd of 83 teams" },
     repoUrl: "https://github.com/ramanaprabhusana/ncaa-final-four-analytics-2026",
     competitionUrl: "https://www.kaggle.com/competitions/final-four-analytics-challenge-26",
   },
@@ -246,7 +253,7 @@ export const caseStudies = [
     valueProp:
       "Multi-agent AI framework inside SAP S/4HANA to automate receivables matching, dispute resolution, and behavioral risk insights - designed to reduce manual AR investigation effort by up to 90%.",
     context:
-      "Purdue Krenicki Center for Business Analytics & Machine Learning × Accenture · Boiler Strategy Group · Faculty advisor: Prof. Davi Moreira · Presented at the AI Showcase, March 2026.",
+      "Purdue Krenicki Center for Business Analytics & Machine Learning x Accenture · Boiler Strategy Group · Faculty advisor: Prof. Davi Moreira · Presented at the AI Showcase, March 2026.",
     problem:
       "Manual data entry and reactive dispute management create significant inefficiencies in traditional Accounts Receivable operations for large retail enterprises: high-volume manual matching, reactive dispute handling, and judgment-heavy risk segmentation delay cash collection and inflate operational cost.",
     role:
@@ -275,7 +282,8 @@ export const caseStudies = [
       "Engagement under Krenicki-Accenture NDA. Public details summarized only from the AI Showcase poster.",
     tags: ["Data Science", "Automation", "Consulting", "Strategy", "Business Analytics"],
     accent: "violet",
-    badge: "Krenicki × Accenture",
+    badge: "Krenicki x Accenture",
+    metric: { label: "Target", value: "Up to 90% manual AR effort cut" },
     repoUrl: null,
   },
   {
@@ -306,6 +314,7 @@ export const caseStudies = [
     tags: ["Sports Analytics", "BI", "Strategy", "Business Analytics"],
     accent: "amber",
     badge: "Purdue MGMT 59000",
+    metric: { label: "Scope", value: "5-city global tour + ROI" },
     repoUrl: "https://github.com/ramanaprabhusana/ufc-global-knockout-visual-analytics",
   },
 ];

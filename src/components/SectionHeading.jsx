@@ -33,7 +33,7 @@ export default function SectionHeading({
         </h2>
       ) : null}
       {subtitle ? (
-        <p className="mt-3 text-base leading-relaxed text-white/70 sm:text-lg">
+        <p className="mt-3 text-base leading-relaxed text-white/80 sm:text-lg">
           {subtitle}
         </p>
       ) : null}

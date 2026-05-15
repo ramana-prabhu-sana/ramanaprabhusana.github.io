@@ -1,5 +1,23 @@
 export const experience = [
   {
+    id: "pharmaace-practicum",
+    company: "PharmaACE",
+    role: "Analytics Consultant (MSBAIM Practicum)",
+    location: null,
+    start: "2026-01",
+    end: "2026-05",
+    dates: "January 2026 to May 2026",
+    logo: "brand/pharmaace.svg",
+    focus:
+      "Healthcare forecasting model hub, epidemiology evidence pipeline, dashboard-ready data design.",
+    bullets: [
+      "Co-built a transparent, audit-ready model hub connecting evidence, assumptions, BI data, and forecast outputs for client-ready use.",
+      "Designed a Streamlit-based Evidence Finder and Data Builder that exports tool-ready datasets and dashboard layers for Tableau and Power BI.",
+      "Improved assumption transparency, repeatability, and scalability for future healthcare forecasting questions.",
+    ],
+    tags: ["Healthcare", "Forecasting", "Consulting", "Decision Support"],
+  },
+  {
     id: "novartis-senior-lead",
     company: "Novartis Pharmaceuticals Corporation",
     role: "Senior Lead Analyst",
@@ -8,6 +26,7 @@ export const experience = [
     end: "2025-07",
     dates: "July 2023 to July 2025",
     logo: "brand/novartis.svg",
+    logoBleed: true,
     focus:
       "Strategic forecasting, oncology and pipeline valuation, Excel-based forecasting, market and portfolio decision support.",
     bullets: [
@@ -27,6 +46,7 @@ export const experience = [
     end: "2023-07",
     dates: "October 2022 to July 2023",
     logo: "brand/genpact.png",
+    logoBleed: true,
     focus:
       "Global forecasting model, Power BI dashboard, multi-country analytics, stakeholder reporting.",
     bullets: [
@@ -45,6 +65,7 @@ export const experience = [
     end: "2022-10",
     dates: "January 2021 to October 2022",
     logo: "brand/novartis.svg",
+    logoBleed: true,
     focus: "Forecast automation, dashboarding, KPI tracking, VBA workflow.",
     bullets: [
       "Reconfigured a VBA-based forecasting submission tool for the global oncology portfolio, enabling on-time forecast submissions and reducing subcontracting costs.",

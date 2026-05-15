@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
 
           <div className="text-xs text-white/40">
-            © {year} {profile.name}. Built with React, Vite, and Tailwind.
+            © {year} {profile.name}
           </div>
         </div>
       </Container>

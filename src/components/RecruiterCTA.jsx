@@ -6,12 +6,12 @@ import { profile } from "../data/profile";
 
 export default function RecruiterCTA() {
   return (
-    <section className="relative scroll-mt-24 py-20 sm:py-24">
+    <section className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.6 }}
           className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900 p-8 sm:p-12 lg:p-16"
         >
@@ -35,11 +35,30 @@ export default function RecruiterCTA() {
                 For recruiters and hiring leaders
               </div>
               <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
-                Looking for analytics talent who understands both business and data?
+                Ready when you are.
               </h2>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
-                I bring hands-on industry analytics experience, strong forecasting and automation skills, and growing data science depth from Purdue MSBAIM. I am especially interested in business analytics, healthcare analytics, commercial analytics, forecasting, consulting, decision science, and data-driven strategy roles.
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
+                Seven years of forecasts, dashboards, and decision models leaders actually used.
+                Now at Purdue MSBAIM with a Consulting and Data Science focus, graduating
+                December 2026. Email is the fastest path - I reply same-day.
               </p>
+
+              {/* Quick stats - what a recruiter wants to grab in 3 seconds. */}
+              <div className="mt-6 flex flex-wrap items-center gap-2">
+                {[
+                  "7 yrs industry",
+                  "6 roles",
+                  "9 case studies",
+                  "3rd of 83 - Kaggle FFAC",
+                ].map((stat) => (
+                  <span
+                    key={stat}
+                    className="inline-flex items-center rounded-full border border-white/15 bg-white/[0.06] px-3 py-1.5 font-mono text-[11px] text-white/80"
+                  >
+                    {stat}
+                  </span>
+                ))}
+              </div>
             </div>
 
             <div className="flex flex-col gap-3">

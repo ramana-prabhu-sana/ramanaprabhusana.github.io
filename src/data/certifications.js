@@ -12,7 +12,7 @@ export const certifications = [
     name: "Microsoft Azure AI Fundamentals",
     issuer: "Microsoft",
     skill: "AI & Cloud",
-    credentialUrl: "",
+    credentialUrl: "https://www.credly.com/badges/2b3cff49-e141-4a0c-beba-2e671c82688d",
   },
   {
     id: "informs-bpf",

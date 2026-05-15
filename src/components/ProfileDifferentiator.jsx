@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
-import * as Icons from "lucide-react";
+import { GitMerge, GraduationCap, Layers, Rocket, Sparkles } from "lucide-react";
 import Container from "./Container";
+
+const ICONS = { GitMerge, GraduationCap, Layers, Rocket, Sparkles };
 import Card from "./Card";
 import SectionHeading from "./SectionHeading";
 import { differentiators } from "../data/differentiators";
@@ -9,7 +11,7 @@ const accents = ["lime", "cyan", "violet", "amber"];
 
 export default function ProfileDifferentiator() {
   return (
-    <section id="why" className="relative scroll-mt-24 py-20 sm:py-24">
+    <section id="why" className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Why this profile stands out"
@@ -18,15 +20,15 @@ export default function ProfileDifferentiator() {
           accent="lime"
         />
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
           {differentiators.map((d, idx) => {
-            const Icon = Icons[d.icon] || Icons.Sparkles;
+            const Icon = ICONS[d.icon] || Sparkles;
             return (
               <motion.div
                 key={d.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true, amount: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
               >
                 <Card accent={accents[idx % accents.length]} className="h-full">
@@ -49,7 +51,7 @@ export default function ProfileDifferentiator() {
                       <h3 className="text-lg font-semibold tracking-tight text-white">
                         {d.title}
                       </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-white/70">
+                      <p className="mt-2 text-sm leading-relaxed text-white/80">
                         {d.body}
                       </p>
                     </div>

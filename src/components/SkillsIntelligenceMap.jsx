@@ -1,7 +1,20 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import * as Icons from "lucide-react";
+import {
+  Activity,
+  ArrowUpRight,
+  BarChart3,
+  Brain,
+  ChevronRight,
+  Cloud,
+  Compass,
+  LineChart,
+  Sparkles,
+  Workflow,
+} from "lucide-react";
 import Container from "./Container";
+
+const ICONS = { Activity, BarChart3, Brain, Cloud, Compass, LineChart, Sparkles, Workflow };
 import Card from "./Card";
 import SectionHeading from "./SectionHeading";
 import Badge from "./Badge";
@@ -35,7 +48,7 @@ export default function SkillsIntelligenceMap() {
     [activeId]
   );
 
-  const ActiveIcon = Icons[active.icon] || Icons.Sparkles;
+  const ActiveIcon = ICONS[active.icon] || Sparkles;
 
   const relatedCases = active.relatedCases
     .map((id) => caseStudies.find((c) => c.id === id))
@@ -46,7 +59,7 @@ export default function SkillsIntelligenceMap() {
     .filter(Boolean);
 
   return (
-    <section id="skills" className="relative scroll-mt-24 py-20 sm:py-24">
+    <section id="skills" className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Skills intelligence map"
@@ -55,11 +68,11 @@ export default function SkillsIntelligenceMap() {
           accent="cyan"
         />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[360px_1fr]">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[360px_1fr]">
           {/* Domain list */}
           <div className="grid gap-2">
             {skills.map((s) => {
-              const Icon = Icons[s.icon] || Icons.Sparkles;
+              const Icon = ICONS[s.icon] || Sparkles;
               const isActive = s.id === activeId;
               const related = s.relatedCases.length;
               return (
@@ -97,7 +110,7 @@ export default function SkillsIntelligenceMap() {
                       {related} related case{related === 1 ? "" : "s"}
                     </div>
                   </div>
-                  <Icons.ChevronRight
+                  <ChevronRight
                     className={[
                       "h-4 w-4 transition-transform",
                       isActive ? "text-white" : "text-white/30",
@@ -132,7 +145,7 @@ export default function SkillsIntelligenceMap() {
                     <h3 className="text-2xl font-semibold tracking-tight text-white">
                       {active.title}
                     </h3>
-                    <p className="mt-1 text-sm text-white/70">
+                    <p className="mt-1 text-sm text-white/80">
                       {active.summary}
                     </p>
                   </div>
@@ -176,7 +189,7 @@ export default function SkillsIntelligenceMap() {
                           className="flex items-center justify-between gap-3 rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2 transition-colors hover:border-white/20 hover:bg-white/8"
                         >
                           <span className="text-sm text-white/85">{c.title}</span>
-                          <Icons.ArrowUpRight className="h-3.5 w-3.5 text-white/45" />
+                          <ArrowUpRight className="h-3.5 w-3.5 text-white/45" />
                         </a>
                       ))}
                     </div>

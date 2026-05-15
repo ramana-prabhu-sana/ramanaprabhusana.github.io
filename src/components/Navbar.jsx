@@ -7,11 +7,13 @@ import { useActiveSection } from "../hooks/useActiveSection";
 
 const navLinks = [
   { id: "home", label: "Home" },
-  { id: "value", label: "Value" },
-  { id: "workflow", label: "Workflow" },
-  { id: "case-studies", label: "Case Studies" },
+  { id: "why", label: "Strengths" },
+  { id: "workflow", label: "Approach" },
+  { id: "case-studies", label: "Cases" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
+  { id: "education", label: "Education" },
+  { id: "certifications", label: "Certifications" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -81,6 +83,7 @@ export default function Navbar() {
                 <a
                   key={link.id}
                   href={`#${link.id}`}
+                  aria-current={isActive ? "page" : undefined}
                   className={[
                     "relative rounded-lg px-3 py-2 text-sm transition-colors",
                     isActive
@@ -99,11 +102,6 @@ export default function Navbar() {
 
           {/* Right cluster */}
           <div className="flex items-center gap-2">
-            <Badge tone="lime" size="sm" className="hidden md:inline-flex">
-              <span className="mr-1.5 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-lime-400" />
-              {profile.status}
-            </Badge>
-
             <a
               href={profile.links.linkedin}
               target="_blank"
@@ -166,6 +164,7 @@ export default function Navbar() {
                   key={link.id}
                   href={`#${link.id}`}
                   onClick={() => setOpen(false)}
+                  aria-current={active === link.id ? "page" : undefined}
                   className={[
                     "rounded-lg px-3 py-3 text-base font-medium",
                     active === link.id

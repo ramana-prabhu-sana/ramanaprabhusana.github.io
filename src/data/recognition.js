@@ -12,7 +12,7 @@ export const recognition = [
   },
   {
     id: "krenicki-accenture",
-    title: "Krenicki Center × Accenture - AI Showcase, March 2026",
+    title: "Krenicki Center x Accenture - AI Showcase, March 2026",
     context:
       "Boiler Strategy Group · Multi-agent AI framework inside SAP S/4HANA for receivables matching, dispute resolution, and behavioral risk insights. Presented at the Purdue AI Showcase. Engagement under NDA - full case study available on request.",
     skill: "Multi-agent AI · GenAI workflow design · Enterprise process redesign",

@@ -9,7 +9,7 @@ import { education } from "../data/education";
 
 export default function Education() {
   return (
-    <section id="education" className="relative scroll-mt-24 py-20 sm:py-24">
+    <section id="education" className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Education"
@@ -18,13 +18,13 @@ export default function Education() {
           accent="gold"
         />
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+        <div className="mt-10 grid items-start gap-5 lg:grid-cols-2">
           {education.map((ed, idx) => (
             <motion.div
               key={ed.id}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: true, amount: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
             >
               <Card accent={idx === 0 ? "gold" : "cyan"} className="h-full">

@@ -35,7 +35,7 @@ export default function ProfileSnapshot() {
         href: "#case-studies",
       },
       {
-        label: "Recent",
+        label: "Recognition",
         title: "FFAC 2026 - 3rd of 83 (Kaggle)",
         href: "#case-studies",
       },
@@ -56,7 +56,7 @@ export default function ProfileSnapshot() {
         count: s.relatedCases.filter((id) => caseIds.has(id)).length,
       }))
       .sort((a, b) => b.count - a.count)
-      .slice(0, 5);
+      .slice(0, 7);
     const max = Math.max(1, ...ranked.map((d) => d.count));
     return { rows: ranked, max };
   }, []);
@@ -135,7 +135,7 @@ export default function ProfileSnapshot() {
               <div className="flex items-center gap-3 px-2 py-1.5">
                 <span
                   className={[
-                    "w-[68px] shrink-0 text-[10px] font-mono uppercase tracking-widest",
+                    "w-[92px] shrink-0 text-[10px] font-mono uppercase tracking-widest",
                     row.label === "Currently"
                       ? "text-lime-300"
                       : row.label === "Available"
