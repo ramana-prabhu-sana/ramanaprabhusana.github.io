@@ -1,9 +1,8 @@
-import { useMemo, useState } from "react";
-import { motion } from "motion/react";
-import { Activity, Info, RotateCcw, Sparkles } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Activity, Info, RotateCcw, Sparkles, X } from "lucide-react";
 import Container from "./Container";
 import Card from "./Card";
-import SectionHeading from "./SectionHeading";
 
 // Default inputs picked to land near "neurology brand"-scale numbers so the
 // first paint looks like a real example rather than zeros. All values are
@@ -186,6 +185,140 @@ function ForecastChart({ data, height = 200 }) {
   );
 }
 
+// 'i' info trigger next to the section title. Mirrors the exact code that
+// runs in computeForecast() above so the popover stays a single source of
+// truth - update both if the math changes.
+function FormulaInfo() {
+  const [open, setOpen] = useState(false);
+  const wrapRef = useRef(null);
+
+  // Click-outside + Escape close so click-to-open also has obvious close UX.
+  useEffect(() => {
+    if (!open) return undefined;
+    const onDoc = (e) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target)) setOpen(false);
+    };
+    const onKey = (e) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onDoc);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDoc);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  return (
+    <div
+      ref={wrapRef}
+      className="relative inline-flex"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        type="button"
+        aria-label="Show forecast formula details"
+        aria-expanded={open}
+        aria-haspopup="dialog"
+        onClick={() => setOpen((v) => !v)}
+        onFocus={() => setOpen(true)}
+        className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-lime-400/30 bg-lime-400/[0.08] text-lime-300 transition-colors hover:border-lime-400/60 hover:bg-lime-400/[0.15] focus:outline-none focus:ring-2 focus:ring-lime-400/40"
+      >
+        <Info className="h-3.5 w-3.5" aria-hidden="true" />
+      </button>
+
+      <AnimatePresence>
+        {open ? (
+          <motion.div
+            role="dialog"
+            aria-label="Forecast formula details"
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.15 }}
+            className="absolute left-0 top-full z-30 mt-2 w-[min(520px,calc(100vw-2rem))] origin-top-left rounded-2xl border border-white/15 bg-ink-950/98 p-5 shadow-2xl backdrop-blur-xl"
+          >
+            <div className="flex items-center justify-between gap-3">
+              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-lime-300">
+                How it's calculated
+              </div>
+              <button
+                type="button"
+                aria-label="Close formula details"
+                onClick={() => setOpen(false)}
+                className="inline-flex h-6 w-6 items-center justify-center rounded-full text-white/55 hover:bg-white/[0.06] hover:text-white"
+              >
+                <X className="h-3.5 w-3.5" aria-hidden="true" />
+              </button>
+            </div>
+
+            <ol className="mt-3 space-y-3 text-[12px] leading-relaxed text-white/85">
+              <li>
+                <div className="text-white/55">1. Treatable patients</div>
+                <code className="mt-0.5 block font-mono text-white">
+                  T = M × (D / 100) × (Tx / 100)
+                </code>
+                <div className="mt-0.5 text-[11px] text-white/45">
+                  M = market size, D = diagnosis rate %, Tx = treatment rate %
+                </div>
+              </li>
+              <li>
+                <div className="text-white/55">2. Launch S-curve (fraction of peak by year)</div>
+                <code className="mt-0.5 block font-mono text-white">
+                  Launch[1..5] = [0.18, 0.55, 0.85, 0.95, 1.00]
+                </code>
+                <div className="mt-0.5 text-[11px] text-white/45">
+                  Standard slow-then-accelerating brand uptake shape.
+                </div>
+              </li>
+              <li>
+                <div className="text-white/55">3. Brand share (year y)</div>
+                <code className="mt-0.5 block font-mono text-white">
+                  share(y) = (S / 100) × Launch[y]
+                </code>
+                <div className="mt-0.5 text-[11px] text-white/45">
+                  S = peak brand share %
+                </div>
+              </li>
+              <li>
+                <div className="text-white/55">4. Persistence multiplier (year y, 1-indexed)</div>
+                <code className="mt-0.5 block font-mono text-white">
+                  m(y) = max(0.5, 1 − (1 − P / 100) × 0.3 × (y − 1))
+                </code>
+                <div className="mt-0.5 text-[11px] text-white/45">
+                  P = annual persistence %; bounded above 0.5 so the curve never collapses.
+                </div>
+              </li>
+              <li>
+                <div className="text-white/55">5. Patients on drug (year y)</div>
+                <code className="mt-0.5 block font-mono text-white">
+                  patients(y) = T × share(y) × m(y)
+                </code>
+              </li>
+              <li>
+                <div className="text-white/55">6. Revenue (year y)</div>
+                <code className="mt-0.5 block font-mono text-white">
+                  revenue(y) = patients(y) × Price
+                </code>
+                <div className="mt-0.5 text-[11px] text-white/45">
+                  Price = net price per patient per year ($)
+                </div>
+              </li>
+            </ol>
+
+            <div className="mt-4 border-t border-white/10 pt-3 text-[11px] leading-relaxed text-white/55">
+              Simplified for in-browser compute. Production forecasts layer in promotional
+              response, competitive entry timing, line-of-therapy splits, country-level
+              decomposition, and assumption governance.
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export default function LaunchForecastDemo() {
   const [inputs, setInputs] = useState(DEFAULTS);
 
@@ -210,13 +343,28 @@ export default function LaunchForecastDemo() {
       className="relative scroll-mt-24 py-16 sm:py-20"
     >
       <Container>
-        <SectionHeading
-          eyebrow="Live demo - patient-based forecast"
-          title="Try the forecasting methodology in real time"
-          subtitle="Move the sliders to see how each commercial lever changes a 5-year launch forecast. Same skeleton I use for real patient-based forecasts in pharma commercial analytics - simplified so it runs entirely in your browser, no signups."
-          accent="lime"
-          className="lg:max-w-5xl"
-        />
+        {/* Custom heading so the formula 'i' button sits inline with the
+            title - SectionHeading would render the h2 too eagerly to add
+            siblings. Eyebrow / subtitle styles match SectionHeading so
+            visual rhythm with other sections is preserved. */}
+        <div className="max-w-3xl lg:max-w-5xl">
+          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-lime-300">
+            Live demo - patient-based forecast
+          </div>
+          <div className="mt-3 flex flex-wrap items-start gap-x-3 gap-y-2">
+            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Try the forecasting methodology in real time
+            </h2>
+            <span className="mt-1.5 sm:mt-2.5">
+              <FormulaInfo />
+            </span>
+          </div>
+          <p className="mt-3 text-base leading-relaxed text-white/80 sm:text-lg">
+            Move the sliders to see how each commercial lever changes a 5-year launch forecast.
+            Same skeleton I use for real patient-based forecasts in pharma commercial analytics -
+            simplified so it runs entirely in your browser, no signups.
+          </p>
+        </div>
 
         <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] text-white/70">
           <Sparkles className="h-3.5 w-3.5 text-lime-300" />
