@@ -9,6 +9,26 @@
     <title>Page not found - Ramana Prabhu Sana</title>
     <!-- Redirect to home after a moment so accidental deep links still land on the portfolio. -->
     <meta http-equiv="refresh" content="3; url=/" />
+    <!-- SPA section-route handoff: if the user landed here from a deep link
+         like /education (which is a real section id, not a real path on the
+         static site), stash the id in sessionStorage and bounce to / so the
+         React app can scroll to it. Falls back to the meta-refresh + visible
+         404 page above for genuinely missing URLs. -->
+    <script>
+      (function () {
+        try {
+          var path = location.pathname.replace(/^\/+/, "").replace(/\/+$/, "");
+          // Only treat slug-shaped first segments as section ids - skip
+          // anything containing slashes, dots, or unexpected chars.
+          if (path && /^[a-z][a-z0-9-]*$/.test(path)) {
+            sessionStorage.setItem("scrollTo", path);
+            location.replace("/");
+          }
+        } catch (_) {
+          // sessionStorage blocked? Fall through to the visible 404.
+        }
+      })();
+    </script>
     <style>
       html, body { background: #0a0a0f; color: #f8fafc; margin: 0; min-height: 100%; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
       .wrap { min-height: 100vh; display: grid; place-items: center; padding: 2rem; }

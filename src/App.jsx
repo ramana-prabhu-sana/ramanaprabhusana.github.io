@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { MotionConfig } from "motion/react";
 import AnimatedGrid from "./components/AnimatedGrid";
 import ScrollProgress from "./components/ScrollProgress";
@@ -20,7 +21,86 @@ import RecruiterCTA from "./components/RecruiterCTA";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
+// Hash-free section navigation: convert all in-page anchor URLs from
+// '/#education' to '/education'. Three pieces working together:
+//   1. Global click interceptor: when any <a href="#section"> is clicked,
+//      preventDefault, smooth-scroll to the section, and replaceState the
+//      URL to '/section' (no hash).
+//   2. Initial mount: handle three entry paths - (a) sessionStorage value
+//      set by 404.html on a deep-link refresh, (b) location.pathname like
+//      '/education' that matches a section id, (c) legacy '#education'
+//      hash from old shared links.
+//   3. Native anchor behavior remains as a no-JS fallback (the href is
+//      still '#section', so a JS-disabled browser jumps to the right
+//      anchor and just keeps the hash in the URL).
+function useCleanSectionUrls() {
+  useEffect(() => {
+    const isInternalAnchor = (href) =>
+      typeof href === "string" && href.startsWith("#") && href.length > 1;
+
+    const scrollToId = (id, behavior = "smooth") => {
+      const el = document.getElementById(id);
+      if (!el) return false;
+      el.scrollIntoView({ behavior, block: "start" });
+      return true;
+    };
+
+    // (3) On first mount, resolve the entry path to a section id.
+    const stored = sessionStorage.getItem("scrollTo");
+    if (stored) {
+      sessionStorage.removeItem("scrollTo");
+      // Defer so the section DOM is mounted.
+      requestAnimationFrame(() => {
+        if (scrollToId(stored, "instant")) {
+          window.history.replaceState(null, "", `/${stored}`);
+        } else {
+          window.history.replaceState(null, "", "/");
+        }
+      });
+    } else {
+      const path = window.location.pathname.replace(/^\/+/, "").replace(/\/+$/, "");
+      const hash = window.location.hash.slice(1);
+      const target = path || hash;
+      if (target) {
+        requestAnimationFrame(() => {
+          if (scrollToId(target, "instant")) {
+            window.history.replaceState(null, "", `/${target}`);
+          }
+        });
+      }
+    }
+
+    // (1) Global click interceptor for in-page anchor links.
+    const onClick = (e) => {
+      // Respect modifier keys / non-primary clicks (open in new tab, etc.).
+      if (e.defaultPrevented) return;
+      if (e.button !== 0) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      const anchor = e.target.closest && e.target.closest("a[href]");
+      if (!anchor) return;
+      if (anchor.target && anchor.target !== "" && anchor.target !== "_self") return;
+
+      const href = anchor.getAttribute("href");
+      if (!isInternalAnchor(href)) return;
+
+      const id = href.slice(1);
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", `/${id}`);
+    };
+
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
+}
+
 export default function App() {
+  useCleanSectionUrls();
+
   return (
     // MotionConfig reducedMotion="user" makes every motion.* component
     // automatically short-circuit animations when the visitor has
