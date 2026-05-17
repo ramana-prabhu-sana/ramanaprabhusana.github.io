@@ -43,9 +43,13 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.02 }}
-                className="mt-2 text-[11px] normal-case tracking-normal text-white/55"
+                className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] normal-case tracking-normal text-white/55"
               >
-                {profile.availability}
+                <span>{profile.availability}</span>
+                <span className="text-white/25">·</span>
+                <span className="text-white/55">
+                  7 yrs across Novartis, ZS, Genpact
+                </span>
               </motion.div>
             ) : null}
 

@@ -10,6 +10,7 @@ const navLinks = [
   { id: "why", label: "Strengths" },
   { id: "workflow", label: "Approach" },
   { id: "industry-highlights", label: "Industry" },
+  { id: "forecast-demo", label: "Try Demo" },
   { id: "case-studies", label: "Cases" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
@@ -63,6 +64,7 @@ export default function Navbar() {
           <a
             href="#home"
             onClick={() => setOpen(false)}
+            aria-label={`${profile.name} - home`}
             className="group flex items-center gap-2 font-semibold tracking-tight"
           >
             <span

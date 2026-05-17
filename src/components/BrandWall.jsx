@@ -1,0 +1,57 @@
+import { motion } from "motion/react";
+import Container from "./Container";
+
+/**
+ * Trust strip - logos of the institutions Ramana has worked for or trained
+ * at. Renders just above ProfileDifferentiator so recruiters anchor on
+ * brand-name credibility before they read prose claims.
+ *
+ * Logo paths point at files already in /public/brand/. The wrapper card
+ * adds a subtle border + frosted background so logos sit comfortably on
+ * the dark ink-950 page color.
+ */
+const LOGOS = [
+  { src: "/brand/novartis.svg", alt: "Novartis", height: 22 },
+  { src: "/brand/zs.svg", alt: "ZS Associates", height: 22 },
+  { src: "/brand/genpact.png", alt: "Genpact", height: 22 },
+  { src: "/brand/pharmaace.svg", alt: "PharmaACE", height: 22 },
+  { src: "/brand/purdue.svg", alt: "Purdue Daniels School of Business", height: 30 },
+  { src: "/brand/vit.png", alt: "Vellore Institute of Technology", height: 26 },
+];
+
+export default function BrandWall() {
+  return (
+    <section
+      aria-label="Companies and institutions"
+      className="relative py-8"
+    >
+      <Container>
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0 }}
+          transition={{ duration: 0.5 }}
+          className="rounded-2xl border border-white/8 bg-white/[0.025] px-6 py-5 backdrop-blur"
+        >
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+            <div className="shrink-0 text-[10px] font-mono uppercase tracking-[0.2em] text-white/45 sm:max-w-[120px]">
+              Worked at · trained at
+            </div>
+            <div className="flex flex-1 flex-wrap items-center gap-x-7 gap-y-4 sm:justify-end">
+              {LOGOS.map((logo) => (
+                <img
+                  key={logo.alt}
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="lazy"
+                  style={{ height: `${logo.height}px` }}
+                  className="w-auto select-none object-contain opacity-75 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                />
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </Container>
+    </section>
+  );
+}

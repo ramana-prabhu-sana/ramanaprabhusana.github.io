@@ -29,6 +29,7 @@ export const industryHighlights = [
       "Supported go/no-go and pacing decisions for a 9-figure peak-year revenue asset; framework reused on subsequent oncology launches.",
     redactionNote: "Molecule, customer, and exact internal figures withheld. Methodology and scope shown.",
     accent: "lime",
+    flow: ["Epi evidence", "Patient flow", "Launch curve", "Scenarios", "Decision pack"],
   },
   {
     id: "ma-due-diligence",
@@ -52,6 +53,7 @@ export const industryHighlights = [
       "Findings fed into the buyer's investment-committee decision on a $3.5Bn-scale transaction.",
     redactionNote: "Buyer, target, and final transaction structure withheld under client NDA.",
     accent: "cyan",
+    flow: ["Asset list", "Market sizing", "rNPV valuation", "Synergy model", "Diligence pack"],
   },
   {
     id: "neurology-brand-forecast",
@@ -75,6 +77,7 @@ export const industryHighlights = [
       "Forecast scope covered a ~$800M-scale brand; methodology became the brand team's reference for assumption defensibility.",
     redactionNote: "Brand identity withheld. Migraine therapeutic area disclosed; molecule, specific competitors, and internal numbers withheld.",
     accent: "violet",
+    flow: ["Patient pool", "Dx & Tx rates", "Price-volume", "Scenarios", "Brand forecast"],
   },
   {
     id: "country-market-sizing",
@@ -98,5 +101,6 @@ export const industryHighlights = [
       "Used in launch sequencing and resource allocation conversations across the franchise; became the reference market sizing artifact for the brand.",
     redactionNote: "Franchise identity, country list, and internal figures withheld. Approach, methodology, and decision scope shown.",
     accent: "rose",
+    flow: ["Epi sources", "Country splits", "Patient flow", "Scenarios", "Sized market"],
   },
 ];

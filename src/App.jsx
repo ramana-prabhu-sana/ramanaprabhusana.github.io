@@ -3,9 +3,12 @@ import AnimatedGrid from "./components/AnimatedGrid";
 import ScrollProgress from "./components/ScrollProgress";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import BrandWall from "./components/BrandWall";
+import TestimonialMarquee from "./components/TestimonialMarquee";
 import ProfileDifferentiator from "./components/ProfileDifferentiator";
 import DecisionWorkflow from "./components/DecisionWorkflow";
 import IndustryHighlights from "./components/IndustryHighlights";
+import LaunchForecastDemo from "./components/LaunchForecastDemo";
 import CaseStudies from "./components/CaseStudies";
 import ExperienceTimeline from "./components/ExperienceTimeline";
 import SkillsIntelligenceMap from "./components/SkillsIntelligenceMap";
@@ -40,6 +43,12 @@ export default function App() {
         {/* 1. Hero command center */}
         <Hero />
 
+        {/* 1a. Trust strip - logos of employers + universities */}
+        <BrandWall />
+
+        {/* 1b. Rotating LinkedIn-recommendation pull quotes */}
+        <TestimonialMarquee />
+
         {/* 2. Why this profile stands out (Strengths nav) */}
         <ProfileDifferentiator />
 
@@ -48,6 +57,9 @@ export default function App() {
 
         {/* 4. Industry highlights - redacted real-world commercial work */}
         <IndustryHighlights />
+
+        {/* 4a. Interactive forecasting demo - the credibility centerpiece */}
+        <LaunchForecastDemo />
 
         {/* 5. Featured case studies */}
         <CaseStudies />

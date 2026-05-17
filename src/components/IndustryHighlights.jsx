@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ShieldCheck, Target, Workflow, TrendingUp, Lock } from "lucide-react";
+import { ChevronRight, ShieldCheck, Target, Workflow, TrendingUp, Lock } from "lucide-react";
 import Container from "./Container";
 import Card from "./Card";
 import SectionHeading from "./SectionHeading";
@@ -23,6 +23,47 @@ const accentDot = {
   amber: "bg-amber-300/70",
   sky: "bg-sky-400/70",
 };
+
+const accentChipBorder = {
+  lime: "border-lime-400/30 bg-lime-400/[0.06] text-lime-200",
+  cyan: "border-cyan-400/30 bg-cyan-400/[0.06] text-cyan-200",
+  violet: "border-violet-400/30 bg-violet-400/[0.06] text-violet-200",
+  rose: "border-rose-400/30 bg-rose-400/[0.06] text-rose-200",
+  amber: "border-amber-300/30 bg-amber-300/[0.06] text-amber-200",
+  sky: "border-sky-400/30 bg-sky-400/[0.06] text-sky-200",
+};
+
+/**
+ * Compact methodology flow strip - chip > chevron > chip > ... visually
+ * shows the upstream-to-downstream pipeline used in the engagement.
+ * Wraps gracefully on narrow viewports.
+ */
+function ProcessFlow({ steps, accent }) {
+  if (!steps?.length) return null;
+  const chipCls = accentChipBorder[accent] || accentChipBorder.lime;
+  return (
+    <div className="mt-4">
+      <div className="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wider text-white/45">
+        <Workflow className="h-3 w-3" />
+        Methodology flow
+      </div>
+      <div className="mt-2 flex flex-wrap items-center gap-1.5">
+        {steps.map((step, i) => (
+          <span key={i} className="inline-flex items-center gap-1.5">
+            <span
+              className={`inline-flex items-center rounded-md border px-2 py-1 text-[10px] font-medium ${chipCls}`}
+            >
+              {step}
+            </span>
+            {i < steps.length - 1 ? (
+              <ChevronRight className="h-3 w-3 text-white/30" aria-hidden="true" />
+            ) : null}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function IndustryHighlights() {
   return (
@@ -97,6 +138,9 @@ export default function IndustryHighlights() {
                     {h.challenge}
                   </div>
                 </div>
+
+                {/* Process flow - visual pipeline preview */}
+                <ProcessFlow steps={h.flow} accent={h.accent} />
 
                 {/* Approach */}
                 <div className="mt-4">
