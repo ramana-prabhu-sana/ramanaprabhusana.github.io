@@ -49,7 +49,7 @@ export default function RecruiterCTA() {
                   "7 yrs pharma commercial analytics",
                   "7 roles",
                   "6 featured projects",
-                  "3rd of 83 - Kaggle FFAC",
+                  "Cross-industry portfolio",
                 ].map((stat) => (
                   <span
                     key={stat}
