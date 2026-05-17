@@ -10,13 +10,13 @@ const navLinks = [
   { id: "why", label: "Strengths" },
   { id: "workflow", label: "Approach" },
   { id: "industry-highlights", label: "Industry" },
-  { id: "forecast-demo", label: "Try Demo" },
+  { id: "forecast-demo", label: "Demo" },
   { id: "case-studies", label: "Cases" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
   { id: "education", label: "Education" },
-  { id: "certifications", label: "Certifications" },
-  { id: "testimonials", label: "Recommendations" },
+  { id: "certifications", label: "Certs" },
+  { id: "testimonials", label: "Recs" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -80,7 +80,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+          <nav className="hidden items-center gap-0.5 lg:flex xl:gap-1" aria-label="Primary">
             {navLinks.map((link) => {
               const isActive = active === link.id;
               return (
@@ -89,7 +89,7 @@ export default function Navbar() {
                   href={`#${link.id}`}
                   aria-current={isActive ? "page" : undefined}
                   className={[
-                    "relative rounded-lg px-3 py-2 text-sm transition-colors",
+                    "relative whitespace-nowrap rounded-lg px-2 py-2 text-sm transition-colors xl:px-3",
                     isActive
                       ? "text-white"
                       : "text-white/60 hover:text-white",
@@ -97,7 +97,7 @@ export default function Navbar() {
                 >
                   {link.label}
                   {isActive ? (
-                    <span className="absolute inset-x-3 bottom-1 h-px bg-gradient-to-r from-lime-400 via-cyan-300 to-violet-400" />
+                    <span className="absolute inset-x-2 bottom-1 h-px bg-gradient-to-r from-lime-400 via-cyan-300 to-violet-400 xl:inset-x-3" />
                   ) : null}
                 </a>
               );
