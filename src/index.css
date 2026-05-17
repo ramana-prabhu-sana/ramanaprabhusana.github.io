@@ -2,14 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
-html { scroll-behavior: smooth; }
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  background-color: #07070d;
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #07070d;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
+  text-rendering: optimizeLegibility;
+}
 
 :root {
   --spot-x: 50%;
   --spot-y: 25%;
+  --accent-lime: #a3e635;
+  --accent-cyan: #67e8f9;
+  --accent-violet: #a78bfa;
+  --accent-gold: #cfb991;
 }
 
-/* Ambient background */
+/* Strong, accessible focus ring everywhere */
+*:focus-visible {
+  outline: 2px solid var(--accent-lime);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(163, 230, 53, 0.32);
+  color: #fff;
+}
+
+/* ==========================================================================
+   Command-center surface helpers
+   ========================================================================== */
+
+.surface {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.surface-strong {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glow-edge {
+  position: relative;
+}
+.glow-edge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+      400px 200px at 0% 0%,
+      rgba(163, 230, 53, 0.10),
+      transparent 60%
+    ),
+    radial-gradient(
+      400px 200px at 100% 100%,
+      rgba(167, 139, 250, 0.10),
+      transparent 60%
+    );
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   Background grid + ambient
+   ========================================================================== */
+
+.bg-grid-soft {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: -1px -1px;
+}
+
 .bg-ambient {
   position: relative;
   isolation: isolate;
@@ -20,11 +115,10 @@ html { scroll-behavior: smooth; }
   position: absolute;
   inset: 0;
   z-index: -2;
-  background:
-    radial-gradient(800px 500px at 15% 15%, rgba(99, 102, 241, 0.20), transparent 60%),
-    radial-gradient(900px 600px at 85% 25%, rgba(16, 185, 129, 0.16), transparent 60%),
-    radial-gradient(900px 700px at 50% 90%, rgba(244, 63, 94, 0.14), transparent 60%);
-  filter: blur(6px);
+  background: radial-gradient(900px 560px at 12% 14%, rgba(99, 102, 241, 0.18), transparent 60%),
+    radial-gradient(960px 660px at 88% 22%, rgba(34, 211, 238, 0.14), transparent 60%),
+    radial-gradient(900px 700px at 50% 96%, rgba(163, 230, 53, 0.12), transparent 60%);
+  filter: blur(8px);
 }
 
 /* Mouse spotlight */
@@ -35,24 +129,19 @@ html { scroll-behavior: smooth; }
   z-index: -1;
   pointer-events: none;
   background: radial-gradient(
-    420px 420px at var(--spot-x) var(--spot-y),
-    rgba(255, 255, 255, 0.10),
-    transparent 65%
-  );
-}
-
-.dark .bg-ambient::after {
-  background: radial-gradient(
-    520px 520px at var(--spot-x) var(--spot-y),
+    480px 480px at var(--spot-x) var(--spot-y),
     rgba(255, 255, 255, 0.08),
     transparent 65%
   );
 }
-html { scroll-behavior: smooth; }
+
+/* ==========================================================================
+   Reveal-on-scroll
+   ========================================================================== */
 
 .reveal-init {
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(12px);
 }
 
 .reveal-in {
@@ -61,14 +150,87 @@ html { scroll-behavior: smooth; }
   transition: opacity 600ms ease, transform 600ms ease;
 }
 
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+/* ==========================================================================
+   Decorative animations
+   ========================================================================== */
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    scroll-behavior: auto !important;
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
+@keyframes data-pulse-line {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(210%);
+  }
+}
+
+.data-pulse-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(163, 230, 53, 0.65),
+    transparent
+  );
+  animation: data-pulse-line 3.2s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   Custom scrollbar (subtle)
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+  background-clip: padding-box;
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-init,
+  .reveal-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .data-pulse-line::after {
+    animation: none;
+    opacity: 0;
+  }
+}
