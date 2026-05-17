@@ -74,7 +74,7 @@ export default function Navbar() {
               RPS
               <span className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-br from-lime-400/0 via-cyan-400/0 to-violet-400/0 opacity-0 transition-opacity group-hover:opacity-100" />
             </span>
-            <span className="hidden whitespace-nowrap text-sm text-white/80 xl:inline">
+            <span className="hidden whitespace-nowrap text-sm text-white/80 2xl:inline">
               {profile.name}
             </span>
           </a>
@@ -129,10 +129,11 @@ export default function Navbar() {
               href={profile.links.resume}
               target="_blank"
               rel="noreferrer"
-              className="hidden h-9 items-center gap-2 rounded-lg bg-lime-400 px-3 text-sm font-medium text-ink-950 transition-colors hover:bg-lime-300 md:inline-flex"
+              aria-label="Download resume"
+              className="hidden h-9 items-center gap-2 rounded-lg bg-lime-400 px-2.5 text-sm font-medium text-ink-950 transition-colors hover:bg-lime-300 md:inline-flex xl:px-3"
             >
               <Download className="h-4 w-4" />
-              Resume
+              <span className="hidden xl:inline">Resume</span>
             </a>
 
             <button
