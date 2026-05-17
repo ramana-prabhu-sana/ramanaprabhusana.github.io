@@ -2,10 +2,10 @@ import { motion } from "motion/react";
 import { Gauge } from "lucide-react";
 
 // Scores measured against the live ramanaprabhusana.com build via the
-// Lighthouse CLI (Chrome headless). Re-audit after material changes -
-// numbers here are claims, not aspirations.
+// Lighthouse CLI (Chrome headless, mobile profile). Re-audit after
+// material changes - numbers here are claims, not aspirations.
 const SCORES = [
-  { label: "Performance", value: 100, accent: "lime" },
+  { label: "Performance", value: 99, accent: "lime" },
   { label: "Accessibility", value: 100, accent: "cyan" },
   { label: "Best practices", value: 100, accent: "violet" },
   { label: "SEO", value: 100, accent: "amber" },
