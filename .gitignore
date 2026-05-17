@@ -21,3 +21,12 @@ pnpm-debug.log*
 .idea/
 .vscode/
 .claude/
+
+# Local working notes (not part of the deployed site)
+_HANDOFF.md
+Academics/
+Works/
+
+# Personal planning notes - not for the public repo
+PROJECT_IDEAS.md
+Competitions/

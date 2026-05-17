@@ -1,140 +1,54 @@
+// Source of truth for personal info, links, and hero copy.
 export const profile = {
   name: "Ramana Prabhu Sana",
-  headline: "MSBAIM (Purdue). Pharma forecasting, analytics, and automation.",
-  location: "West Lafayette, IN",
-  email: "rsana@purdue.edu",
-  phone: "",
+  initials: "RPS",
+  location: "West Lafayette, Indiana",
+  email: "ramanaprabhu.sana@gmail.com",
+  phone: "(347) 269-9365",
+
   links: {
-    resumeUrl: "/Resume.pdf",
+    resume: "/Resume.pdf",
     linkedin: "https://www.linkedin.com/in/ramanaprabhusana/",
     github: "https://github.com/ramanaprabhusana",
+    email: "mailto:ramanaprabhu.sana@gmail.com",
+    calendly: "https://calendly.com/ramana_prabhu_sana/30min",
   },
+
+  photo: "brand/profile.jpg",
+
+  status: "Open to 2026 Opportunities",
+
+  targeting: [
+    "Brand & Launch Analytics",
+    "Decision Science",
+    "Resource Optimization",
+    "Consulting",
+  ],
+
+  fields: [
+    "Brand Performance",
+    "Launch Analytics",
+    "Pipeline Valuation",
+    "Resource Optimization",
+    "Decision Science",
+    "Advanced Analytics",
+  ],
 
   hero: {
-    intro:
-      "I build decision-ready analytics products. Forecasting models, automation, and AI workflows that are clean, explainable, and practical.",
-    badges: ["Pharma forecasting", "Excel + VBA", "Python + SQL", "Automation mindset"],
-    ctas: [
-      { label: "Journey", href: "#journey", variant: "primary" },
-      { label: "Resume", href: "/Resume.pdf", variant: "secondary" },
+    eyebrow: "Purdue MSBAIM · West Lafayette, Indiana · Open to 2026 Opportunities",
+    headline: "Seven years of pharma commercial analytics. Now decision science at Purdue.",
+    subheadline:
+      "Pipeline valuation, launch analytics, brand performance, and resource optimization - built so leaders can act on the numbers, not just read them.",
+    panelLabel: "Decision-ready analytics",
+    toolStack: [
+      "Excel",
+      "VBA",
+      "SQL",
+      "Python",
+      "XGBoost",
+      "Power BI",
+      "Tableau",
+      "Streamlit",
     ],
   },
-
-  about: {
-    title: "About",
-    body: [
-      "I am a pharma forecasting and analytics professional with experience building scalable models, automating Excel workflows, and creating stakeholder-ready dashboards.",
-      "I am currently pursuing MSBAIM at Purdue and seeking internship and full-time opportunities in analytics and consulting.",
-    ],
-    highlights: [
-      "Forecast model build and review (marketed and pipeline)",
-      "Scenario planning, sensitivities, and model governance",
-      "Automation to reduce manual recurring work",
-    ],
-  },
-
-  experience: [
-    {
-      company: "Novartis",
-      role: "Senior Lead Analyst",
-      location: "",
-      dates: "Jul 2023 - Jul 2025",
-      bullets: [
-        "Led forecasting and decision support for strategic planning and portfolio discussions.",
-        "Built scalable models and improved reporting workflows for stakeholders.",
-      ],
-      tags: ["Forecasting", "Excel", "Stakeholder reporting"],
-    },
-    {
-      company: "Genpact",
-      role: "Lead Analyst",
-      location: "India",
-      dates: "Oct 2022 - Jul 2023",
-      bullets: [],
-      tags: ["Analytics", "Forecasting", "Automation"],
-    },
-    {
-      company: "Novartis",
-      role: "Business Analyst",
-      location: "",
-      dates: "Jan 2021 - Oct 2022",
-      bullets: [],
-      tags: ["Forecasting", "Analytics"],
-    },
-    {
-      company: "ZS Associates",
-      role: "Decision Analytics Associate",
-      location: "",
-      dates: "Jul 2019 - Dec 2020",
-      bullets: ["Built forecast models and dashboards for healthcare clients."],
-      tags: ["Analytics", "Forecasting"],
-    },
-    {
-      company: "STL",
-      role: "Engineer",
-      location: "Silvassa, India",
-      dates: "Aug 2017 - Jun 2019",
-      bullets: [],
-      tags: ["Engineering"],
-    },
-  ],
-
-  education: [
-    {
-      school: "Purdue University (Daniels School of Business)",
-      degree: "MS Business Analytics & Information Management (MSBAIM)",
-      location: "West Lafayette, IN",
-      dates: "2025 - 2026",
-      bullets: ["Track focus: Consulting and Data Science."],
-    },
-    {
-      school: "VIT University",
-      degree: "BS Mechanical Engineering",
-      location: "India",
-      dates: "2013 - 2017",
-      bullets: [],
-    },
-    {
-      school: "Ascent Classes",
-      degree: "High School",
-      location: "India",
-      dates: "Apr 2011 - Mar 2013",
-      bullets: [],
-    },
-    {
-      school: "Krishna Vikash Group of Institutions",
-      degree: "Secondary School",
-      location: "India",
-      dates: "Mar 2011",
-      bullets: [],
-    },
-  ],
-
-  skills: {
-    groups: [
-      {
-        title: "Core",
-        items: ["Forecasting", "Scenario analysis", "Model governance", "Storytelling", "Decision support"],
-      },
-      { title: "Tools", items: ["Excel", "VBA", "Python", "SQL", "Power BI", "Tableau", "Git"] },
-      { title: "Cloud", items: ["AWS fundamentals", "IAM basics", "S3 basics"] },
-    ],
-  },
-
-  projects: [
-    {
-      title: "Forecasting Model and Reporting",
-      subtitle: "Standardized forecasting workflow and KPI reporting.",
-      description: "Standardized forecasting workflow and stakeholder-ready KPI reporting to improve clarity and repeatability.",
-      tags: ["Forecasting", "Excel", "Power BI"],
-      links: { github: "", live: "" },
-    },
-    {
-      title: "Excel VBA Automation",
-      subtitle: "Automation and validation checks for recurring submissions.",
-      description: "Improved recurring model submissions using VBA automation and validation checks to reduce manual effort.",
-      tags: ["VBA", "Automation", "Governance"],
-      links: { github: "", live: "" },
-    },
-  ],
 };

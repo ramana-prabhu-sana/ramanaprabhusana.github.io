@@ -1,112 +1,150 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+import { ArrowRight, Calendar, Download, Mail } from "lucide-react";
 import Container from "./Container";
-import { Github, Linkedin, Mail, MapPin } from "lucide-react";
+import Button from "./Button";
+import Badge from "./Badge";
+import CommandPanel from "./CommandPanel";
+import { profile } from "../data/profile";
 
-export default function Hero({ profile }) {
-  const { name, headline, hero, links, email, location } = profile;
+export default function Hero() {
+  const _headlineParts = profile.hero.headline.split(". ");
+  const headlineTop = _headlineParts[0] + ".";
+  const headlineBottom = _headlineParts.slice(1).join(". ");
 
   return (
-    <section id="home" className="pt-10">
+    <section
+      id="home"
+      className="relative scroll-mt-24 overflow-hidden pt-28 pb-20 sm:pt-32 lg:pt-36"
+    >
       <Container>
-        <div className="grid gap-10 md:grid-cols-2 md:items-center">
+        <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+          {/* Left: copy */}
           <div>
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35 }}
-              className="text-sm text-zinc-600 dark:text-zinc-300"
+              transition={{ duration: 0.5 }}
+              className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/65"
             >
-              <span className="inline-flex items-center gap-2">
-                <MapPin size={14} />
-                {location}
-              </span>
-            </motion.p>
+              <Badge tone="lime" size="sm">
+                <span className="mr-1.5 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-lime-400" />
+                {profile.status}
+              </Badge>
+              <span className="hidden sm:inline text-white/30">·</span>
+              <span className="text-white/65">Purdue MSBAIM · {profile.location}</span>
+            </motion.div>
+
+            {profile.targeting?.length ? (
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.03 }}
+                className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] uppercase tracking-[0.2em] text-white/65"
+              >
+                <span className="font-semibold text-lime-300">Targeting roles</span>
+                <span className="text-white/30">·</span>
+                <span className="text-white/75">
+                  {profile.targeting.join(" · ")}
+                </span>
+              </motion.div>
+            ) : null}
 
             <motion.h1
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.05 }}
-              className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl"
+              transition={{ duration: 0.6, delay: 0.05 }}
+              className="mt-5 text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl"
             >
-              {name}
+              <span className="block">{headlineTop}</span>
+              <span className="block bg-gradient-to-r from-lime-300 via-cyan-300 to-violet-300 bg-clip-text text-transparent">
+                {headlineBottom}
+              </span>
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 14 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.12 }}
-              className="mt-3 text-lg text-zinc-700 dark:text-zinc-200"
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg"
             >
-              {headline}
+              {profile.hero.subheadline}
             </motion.p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
+            {/* CTAs - lifted above field pills so Download Resume lands above the fold */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.18 }}
-              className="mt-5 text-zinc-700 dark:text-zinc-200"
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="mt-7 flex flex-wrap items-center gap-3"
             >
-              {hero.intro}
-            </motion.p>
+              <Button
+                as="a"
+                href={profile.links.resume}
+                target="_blank"
+                rel="noreferrer"
+                variant="primary"
+                size="lg"
+                icon={Download}
+              >
+                Download Resume
+              </Button>
+              <Button
+                as="a"
+                href="#case-studies"
+                variant="outline"
+                size="lg"
+                icon={ArrowRight}
+                iconPosition="right"
+              >
+                View Case Studies
+              </Button>
+              <Button
+                as="a"
+                href={profile.links.calendly}
+                target="_blank"
+                rel="noreferrer"
+                variant="outline"
+                size="lg"
+                icon={Calendar}
+              >
+                Schedule a call
+              </Button>
+              <Button
+                as="a"
+                href="#contact"
+                variant="ghost"
+                size="lg"
+                icon={Mail}
+              >
+                Contact Me
+              </Button>
+            </motion.div>
 
-            <div className="mt-6 flex flex-wrap gap-2">
-              {hero.badges.map((b) => (
+            {/* Field tags */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-6 flex flex-wrap gap-2"
+            >
+              {profile.fields.map((f) => (
                 <span
-                  key={b}
-                  className="rounded-full border border-zinc-200 bg-white/60 px-3 py-1 text-xs text-zinc-700 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/40 dark:text-zinc-200"
+                  key={f}
+                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
                 >
-                  {b}
+                  {f}
                 </span>
               ))}
-            </div>
+            </motion.div>
 
-            <div className="mt-7 flex flex-wrap gap-3">
-              {hero.ctas.map((c) => (
-                <a
-                  key={c.label}
-                  href={c.href}
-                  className={
-                    c.variant === "primary"
-                      ? "rounded-lg bg-zinc-900 px-4 py-2 text-sm text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
-                      : "rounded-lg border border-zinc-200 px-4 py-2 text-sm hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-900"
-                  }
-                >
-                  {c.label}
-                </a>
-              ))}
-            </div>
-
-            <div className="mt-6 flex flex-wrap items-center gap-4">
-              <a className="inline-flex items-center gap-2 text-sm text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" href={links.linkedin} target="_blank" rel="noreferrer">
-                <Linkedin size={16} /> LinkedIn
-              </a>
-              <a className="inline-flex items-center gap-2 text-sm text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" href={links.github} target="_blank" rel="noreferrer">
-                <Github size={16} /> GitHub
-              </a>
-              <a className="inline-flex items-center gap-2 text-sm text-zinc-700 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white" href={`mailto:${email}`}>
-                <Mail size={16} /> Email
-              </a>
-            </div>
+            {/* Credibility cards removed - right ProfileSnapshot panel already
+                surfaces years, toolkit, education, and domain coverage. */}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.45, delay: 0.1 }}
-            className="flex justify-center md:justify-end"
-          >
-            <div className="group relative">
-              <div className="absolute -inset-3 rounded-3xl bg-zinc-200/60 blur-xl dark:bg-zinc-800/60" />
-              <img
-                src="/profile.jpg"
-                alt={`${name} profile`}
-                className="relative h-72 w-72 rounded-3xl object-cover shadow-lg transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-              <p className="mt-3 text-center text-xs text-zinc-500 dark:text-zinc-400">
-                Put your photo at public/profile.jpg
-              </p>
-            </div>
-          </motion.div>
+          {/* Right: command panel */}
+          <div className="lg:pl-2">
+            <CommandPanel />
+          </div>
         </div>
       </Container>
     </section>
