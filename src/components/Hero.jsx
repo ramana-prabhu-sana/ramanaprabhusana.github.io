@@ -1,12 +1,16 @@
+import { Suspense, lazy, useState } from "react";
 import { motion } from "motion/react";
-import { ArrowRight, Calendar, Download, Mail } from "lucide-react";
+import { ArrowRight, Calendar, Download, Eye, Mail } from "lucide-react";
 import Container from "./Container";
 import Button from "./Button";
 import Badge from "./Badge";
 import CommandPanel from "./CommandPanel";
 import { profile } from "../data/profile";
 
+const ResumePreviewModal = lazy(() => import("./ResumePreviewModal"));
+
 export default function Hero() {
+  const [resumeOpen, setResumeOpen] = useState(false);
   const _headlineParts = profile.hero.headline.split(". ");
   const headlineTop = _headlineParts[0] + ".";
   const headlineBottom = _headlineParts.slice(1).join(". ");
@@ -33,6 +37,17 @@ export default function Hero() {
               <span className="hidden sm:inline text-white/30">·</span>
               <span className="text-white/65">Purdue MSBAIM · {profile.location}</span>
             </motion.div>
+
+            {profile.availability ? (
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.02 }}
+                className="mt-2 text-[11px] normal-case tracking-normal text-white/55"
+              >
+                {profile.availability}
+              </motion.div>
+            ) : null}
 
             {profile.targeting?.length ? (
               <motion.div
@@ -78,25 +93,33 @@ export default function Hero() {
               className="mt-7 flex flex-wrap items-center gap-3"
             >
               <Button
-                as="a"
-                href={profile.links.resume}
-                target="_blank"
-                rel="noreferrer"
+                type="button"
+                onClick={() => setResumeOpen(true)}
                 variant="primary"
                 size="lg"
-                icon={Download}
+                icon={Eye}
               >
-                Download Resume
+                Preview Resume
               </Button>
               <Button
                 as="a"
-                href="#case-studies"
+                href={profile.links.resume}
+                download
+                variant="outline"
+                size="lg"
+                icon={Download}
+              >
+                Download
+              </Button>
+              <Button
+                as="a"
+                href="#industry-highlights"
                 variant="outline"
                 size="lg"
                 icon={ArrowRight}
                 iconPosition="right"
               >
-                View Case Studies
+                See Industry Work
               </Button>
               <Button
                 as="a"
@@ -147,6 +170,14 @@ export default function Hero() {
           </div>
         </div>
       </Container>
+
+      {/* Resume preview - lazy-loaded only when opened (conditional render
+          keeps the PDF + iframe component out of the initial bundle). */}
+      {resumeOpen ? (
+        <Suspense fallback={null}>
+          <ResumePreviewModal open={resumeOpen} onClose={() => setResumeOpen(false)} />
+        </Suspense>
+      ) : null}
     </section>
   );
 }

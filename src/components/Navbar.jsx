@@ -9,6 +9,7 @@ const navLinks = [
   { id: "home", label: "Home" },
   { id: "why", label: "Strengths" },
   { id: "workflow", label: "Approach" },
+  { id: "industry-highlights", label: "Industry" },
   { id: "case-studies", label: "Cases" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },

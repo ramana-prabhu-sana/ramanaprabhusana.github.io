@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ProfileDifferentiator from "./components/ProfileDifferentiator";
 import DecisionWorkflow from "./components/DecisionWorkflow";
+import IndustryHighlights from "./components/IndustryHighlights";
 import CaseStudies from "./components/CaseStudies";
 import ExperienceTimeline from "./components/ExperienceTimeline";
 import SkillsIntelligenceMap from "./components/SkillsIntelligenceMap";
@@ -44,6 +45,9 @@ export default function App() {
 
         {/* 3. Decision analytics workflow (Approach nav) */}
         <DecisionWorkflow />
+
+        {/* 4. Industry highlights - redacted real-world commercial work */}
+        <IndustryHighlights />
 
         {/* 5. Featured case studies */}
         <CaseStudies />

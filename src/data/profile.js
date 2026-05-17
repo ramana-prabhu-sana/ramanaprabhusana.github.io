@@ -18,6 +18,14 @@ export const profile = {
 
   status: "Open to 2026 Opportunities",
 
+  // Surfaced in the hero subline and the RecruiterCTA section. Kept here
+  // so updates flow to both places from one source of truth.
+  availability: "Full-time roles starting Jan 2027 · US-based · open to relocate",
+
+  // Breakdown that backs the 'Cross-domain ML portfolio' pill - rendered
+  // as a small evidence line beneath the stat pills in the RecruiterCTA.
+  domainBreakdown: ["Pharma", "Finance", "Retail", "Sports analytics"],
+
   targeting: [
     "Brand & Launch Analytics",
     "Decision Science",

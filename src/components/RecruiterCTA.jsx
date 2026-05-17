@@ -1,10 +1,14 @@
+import { Suspense, lazy, useState } from "react";
 import { motion } from "motion/react";
-import { Calendar, Download, Github, Linkedin, Mail } from "lucide-react";
+import { Calendar, Download, Eye, Github, Linkedin, Mail } from "lucide-react";
 import Container from "./Container";
 import Button from "./Button";
 import { profile } from "../data/profile";
 
+const ResumePreviewModal = lazy(() => import("./ResumePreviewModal"));
+
 export default function RecruiterCTA() {
+  const [resumeOpen, setResumeOpen] = useState(false);
   return (
     <section className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
@@ -43,8 +47,15 @@ export default function RecruiterCTA() {
                 December 2026. Email is the fastest path - I reply same-day.
               </p>
 
+              {profile.availability ? (
+                <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-lime-400/30 bg-lime-400/[0.08] px-3 py-1.5 text-[12px] text-lime-100">
+                  <Calendar className="h-3.5 w-3.5 text-lime-300" />
+                  {profile.availability}
+                </div>
+              ) : null}
+
               {/* Quick stats - what a recruiter wants to grab in 3 seconds. */}
-              <div className="mt-6 flex flex-wrap items-center gap-2">
+              <div className="mt-5 flex flex-wrap items-center gap-2">
                 {[
                   "7 yrs pharma commercial analytics",
                   "7 roles",
@@ -59,15 +70,32 @@ export default function RecruiterCTA() {
                   </span>
                 ))}
               </div>
+
+              {profile.domainBreakdown?.length ? (
+                <div className="mt-2.5 text-[11px] text-white/55">
+                  ML portfolio spans{" "}
+                  <span className="font-medium text-white/85">
+                    {profile.domainBreakdown.join(" · ")}
+                  </span>
+                </div>
+              ) : null}
             </div>
 
             <div className="flex flex-col gap-3">
               <Button
+                type="button"
+                onClick={() => setResumeOpen(true)}
+                variant="primary"
+                size="lg"
+                icon={Eye}
+              >
+                Preview Resume
+              </Button>
+              <Button
                 as="a"
                 href={profile.links.resume}
-                target="_blank"
-                rel="noreferrer"
-                variant="primary"
+                download
+                variant="outline"
                 size="lg"
                 icon={Download}
               >
@@ -119,6 +147,12 @@ export default function RecruiterCTA() {
           </div>
         </motion.div>
       </Container>
+
+      {resumeOpen ? (
+        <Suspense fallback={null}>
+          <ResumePreviewModal open={resumeOpen} onClose={() => setResumeOpen(false)} />
+        </Suspense>
+      ) : null}
     </section>
   );
 }
