@@ -100,6 +100,46 @@ function useCleanSectionUrls() {
 export default function App() {
   useCleanSectionUrls();
 
+  // iOS WebKit defers painting the content (rendered via Framer Motion)
+  // until a global style/layout flush happens - without it the page is
+  // washed-out on iPhone even though every computed style is correct
+  // (proven on-device: a getComputedStyle sweep made it crisp instantly).
+  // Force that flush ourselves - invisibly, a few times after mount and
+  // on scroll/resize/load - so the content actually paints.
+  useEffect(() => {
+    let raf = 0;
+    const flush = () => {
+      const els = document.querySelectorAll("section, main");
+      for (const el of els) {
+        void el.getBoundingClientRect();
+        void window.getComputedStyle(el).opacity;
+      }
+      void document.body.offsetHeight;
+    };
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        flush();
+      });
+    };
+    const timers = [
+      setTimeout(flush, 80),
+      setTimeout(flush, 500),
+      setTimeout(flush, 1500),
+    ];
+    window.addEventListener("load", flush);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      timers.forEach(clearTimeout);
+      window.removeEventListener("load", flush);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
     // reducedMotion="always": snap every motion.* opacity/transform
     // animation straight to its final visible state for ALL visitors.
