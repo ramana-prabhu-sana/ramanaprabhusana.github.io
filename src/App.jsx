@@ -4,7 +4,6 @@ import AnimatedGrid from "./components/AnimatedGrid";
 import ScrollProgress from "./components/ScrollProgress";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import BrandWall from "./components/BrandWall";
 import TestimonialMarquee from "./components/TestimonialMarquee";
 import ProfileDifferentiator from "./components/ProfileDifferentiator";
 import DecisionWorkflow from "./components/DecisionWorkflow";
@@ -123,10 +122,7 @@ export default function App() {
         {/* 1. Hero command center */}
         <Hero />
 
-        {/* 1a. Trust strip - logos of employers + universities */}
-        <BrandWall />
-
-        {/* 1b. Rotating LinkedIn-recommendation pull quotes */}
+        {/* 1a. Rotating LinkedIn-recommendation pull quotes */}
         <TestimonialMarquee />
 
         {/* 2. Why this profile stands out (Strengths nav) */}
