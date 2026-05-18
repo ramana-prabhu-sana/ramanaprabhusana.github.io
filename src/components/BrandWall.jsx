@@ -6,17 +6,20 @@ import Container from "./Container";
  * at. Renders just above ProfileDifferentiator so recruiters anchor on
  * brand-name credibility before they read prose claims.
  *
- * Logo paths point at files already in /public/brand/. The wrapper card
- * adds a subtle border + frosted background so logos sit comfortably on
- * the dark ink-950 page color.
+ * Wordmark vs. avatar choice:
+ * - Novartis + Genpact use the wordmark SVGs here (clean grayscale).
+ *   The square 'avatar' versions live at novartis.svg / genpact.png
+ *   for the circular Experience timeline avatars - intentional dual files.
+ * - VIT seal is dense, so it gets +8px height vs the wordmarks so the
+ *   internal detail stays readable when greyscaled.
  */
 const LOGOS = [
-  { src: "/brand/novartis.svg", alt: "Novartis", height: 22 },
+  { src: "/brand/novartis-wordmark.svg", alt: "Novartis", height: 22 },
   { src: "/brand/zs.svg", alt: "ZS Associates", height: 22 },
-  { src: "/brand/genpact.png", alt: "Genpact", height: 22 },
+  { src: "/brand/genpact-wordmark.svg", alt: "Genpact", height: 20 },
   { src: "/brand/pharmaace.svg", alt: "PharmaACE", height: 22 },
   { src: "/brand/purdue.svg", alt: "Purdue University, Daniels School of Business", height: 30 },
-  { src: "/brand/vit.png", alt: "Vellore Institute of Technology", height: 26 },
+  { src: "/brand/vit.png", alt: "Vellore Institute of Technology", height: 34 },
 ];
 
 export default function BrandWall() {
