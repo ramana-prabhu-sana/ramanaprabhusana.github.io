@@ -34,10 +34,10 @@ export default function BrandWall() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.5 }}
-          className="rounded-2xl border border-white/8 bg-white/[0.025] px-6 py-5 backdrop-blur"
+          className="rounded-2xl border border-white/10 bg-white/[0.05] px-6 py-5 backdrop-blur"
         >
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
-            <div className="shrink-0 text-[10px] font-mono uppercase tracking-[0.2em] text-white/45 sm:max-w-[120px]">
+            <div className="shrink-0 text-[10px] font-mono uppercase tracking-[0.2em] text-white/55 sm:max-w-[120px]">
               Worked at · trained at
             </div>
             <div className="flex flex-1 flex-wrap items-center gap-x-7 gap-y-4 sm:justify-end">
@@ -48,7 +48,7 @@ export default function BrandWall() {
                   alt={logo.alt}
                   loading="lazy"
                   style={{ height: `${logo.height}px` }}
-                  className="w-auto select-none object-contain opacity-75 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                  className="w-auto select-none object-contain opacity-95 brightness-110 transition-all duration-300 hover:opacity-100 hover:brightness-125"
                 />
               ))}
             </div>
