@@ -19,6 +19,7 @@ import Testimonials from "./components/Testimonials";
 import RecruiterCTA from "./components/RecruiterCTA";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Diagnostics from "./components/Diagnostics";
 
 // Hash-free section navigation: convert all in-page anchor URLs from
 // '/#education' to '/education'. Three pieces working together:
@@ -110,6 +111,7 @@ export default function App() {
     // iOS-safe reveal approach is validated.
     <MotionConfig reducedMotion="always">
     <div className="relative min-h-screen text-white antialiased">
+      <Diagnostics />
       {/* Skip-to-content link for keyboard + screen-reader users. */}
       <a
         href="#main"
