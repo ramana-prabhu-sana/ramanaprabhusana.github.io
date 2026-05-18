@@ -1,6 +1,6 @@
 import { Suspense, lazy, useState } from "react";
 import { motion } from "motion/react";
-import { ArrowRight, Calendar, Download, Eye, Mail } from "lucide-react";
+import { ArrowDown, ArrowRight, Calendar, Download, Eye, Mail, Sparkles } from "lucide-react";
 import Container from "./Container";
 import Button from "./Button";
 import Badge from "./Badge";
@@ -88,6 +88,21 @@ export default function Hero() {
             >
               {profile.hero.subheadline}
             </motion.p>
+
+            {/* Discoverability hook for the interactive forecast demo. Sits
+                under the subhead so a recruiter scanning the hero learns the
+                site is interactive before they decide whether to scroll. */}
+            <motion.a
+              href="#forecast-demo"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.12 }}
+              className="group mt-4 inline-flex items-center gap-2 rounded-full border border-lime-400/30 bg-lime-400/[0.06] px-3 py-1.5 text-[12px] text-lime-200 transition-colors hover:border-lime-400/60 hover:bg-lime-400/[0.12] hover:text-lime-100"
+            >
+              <Sparkles className="h-3.5 w-3.5 text-lime-300" aria-hidden="true" />
+              Try the live forecast demo
+              <ArrowDown className="h-3 w-3 transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
+            </motion.a>
 
             {/* CTAs - lifted above field pills so Download Resume lands above the fold */}
             <motion.div
