@@ -18,7 +18,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative scroll-mt-24 overflow-hidden pt-28 pb-20 sm:pt-32 lg:pt-36"
+      className="relative scroll-mt-24 overflow-hidden pt-24 pb-20 sm:pt-32 lg:pt-36"
     >
       <Container>
         <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
