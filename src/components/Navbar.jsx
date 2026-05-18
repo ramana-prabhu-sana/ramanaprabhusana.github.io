@@ -7,15 +7,15 @@ import { useActiveSection } from "../hooks/useActiveSection";
 
 const navLinks = [
   { id: "home", label: "Home" },
-  { id: "why", label: "Strengths" },
-  { id: "workflow", label: "Approach" },
-  { id: "industry-highlights", label: "Industry" },
-  { id: "case-studies", label: "Projects" },
+  { id: "strengths", label: "Strengths" },
+  { id: "approach", label: "Approach" },
+  { id: "industry", label: "Industry" },
+  { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
   { id: "education", label: "Education" },
   { id: "certifications", label: "Certifications" },
-  { id: "testimonials", label: "Recommendations" },
+  { id: "recommendations", label: "Recommendations" },
   { id: "contact", label: "Contact" },
 ];
 

@@ -185,7 +185,7 @@ export default function SkillsIntelligenceMap() {
                       {relatedCases.map((c) => (
                         <a
                           key={c.id}
-                          href="#case-studies"
+                          href="#projects"
                           className="flex items-center justify-between gap-3 rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2 transition-colors hover:border-white/20 hover:bg-white/8"
                         >
                           <span className="text-sm text-white/85">{c.title}</span>

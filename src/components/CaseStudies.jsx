@@ -103,7 +103,7 @@ export default function CaseStudies() {
 
   return (
     <section
-      id="case-studies"
+      id="projects"
       className="relative scroll-mt-24 py-16 sm:py-20"
     >
       <Container>

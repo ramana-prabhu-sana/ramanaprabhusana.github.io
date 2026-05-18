@@ -132,7 +132,7 @@ export default function Hero() {
               </Button>
               <Button
                 as="a"
-                href="#industry-highlights"
+                href="#industry"
                 variant="outline"
                 size="lg"
                 icon={ArrowRight}

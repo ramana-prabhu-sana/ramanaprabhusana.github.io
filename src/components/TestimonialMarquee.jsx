@@ -105,7 +105,7 @@ export default function TestimonialMarquee() {
 
           <div className="relative mt-2 text-right">
             <a
-              href="#testimonials"
+              href="#recommendations"
               className="text-[10px] font-mono uppercase tracking-wider text-white/40 hover:text-white/70"
             >
               See all recommendations &rarr;

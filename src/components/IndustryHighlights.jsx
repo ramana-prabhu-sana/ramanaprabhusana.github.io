@@ -68,7 +68,7 @@ function ProcessFlow({ steps, accent }) {
 export default function IndustryHighlights() {
   return (
     <section
-      id="industry-highlights"
+      id="industry"
       className="relative scroll-mt-24 py-16 sm:py-20"
     >
       <Container>

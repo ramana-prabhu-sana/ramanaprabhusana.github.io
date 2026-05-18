@@ -26,7 +26,7 @@ const avatarTint = {
 export default function Testimonials() {
   return (
     <section
-      id="testimonials"
+      id="recommendations"
       className="relative scroll-mt-24 py-16 sm:py-20"
     >
       <Container>

@@ -37,12 +37,12 @@ export default function ProfileSnapshot() {
       {
         label: "Recent",
         title: "Krenicki x Accenture",
-        href: "#case-studies",
+        href: "#projects",
       },
       {
         label: "Recognition",
         title: "FFAC 2026 - 3rd of 83 (Kaggle)",
-        href: "#case-studies",
+        href: "#projects",
       },
       {
         label: "Available",
