@@ -7,11 +7,11 @@ import Container from "./Container";
  * brand-name credibility before they read prose claims.
  *
  * Wordmark vs. avatar choice:
- * - Novartis + Genpact use the wordmark SVGs here (clean grayscale).
- *   The square 'avatar' versions live at novartis.svg / genpact.png
- *   for the circular Experience timeline avatars - intentional dual files.
- * - VIT seal is dense, so it gets +8px height vs the wordmarks so the
- *   internal detail stays readable when greyscaled.
+ * - Every logo here is a clean wordmark SVG, flattened to a white
+ *   silhouette so six different brand styles read as one consistent set.
+ * - Square 'avatar' versions live at genpact.png / vit.png for the
+ *   circular Experience and Education timeline avatars - intentional
+ *   dual files; do not repoint the timelines at the wordmarks.
  */
 const LOGOS = [
   { src: "/brand/novartis-wordmark.svg", alt: "Novartis", height: 22 },
@@ -19,7 +19,7 @@ const LOGOS = [
   { src: "/brand/genpact-wordmark.svg", alt: "Genpact", height: 20 },
   { src: "/brand/pharmaace.svg", alt: "PharmaACE", height: 22 },
   { src: "/brand/purdue.svg", alt: "Purdue University, Daniels School of Business", height: 16 },
-  { src: "/brand/vit.png", alt: "Vellore Institute of Technology", height: 34 },
+  { src: "/brand/vit-wordmark.svg", alt: "Vellore Institute of Technology", height: 16 },
 ];
 
 export default function BrandWall() {
