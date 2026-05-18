@@ -28,8 +28,7 @@ export default function ExperienceTimeline() {
               <motion.article
                 key={role.id}
                 initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.04 }}
                 className="relative grid grid-cols-[auto_1fr] gap-4 sm:gap-6"
               >

@@ -27,8 +27,7 @@ export default function ProfileDifferentiator() {
               <motion.div
                 key={d.id}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
               >
                 <Card accent={accents[idx % accents.length]} className="h-full">

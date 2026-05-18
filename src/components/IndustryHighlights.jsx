@@ -88,8 +88,7 @@ export default function IndustryHighlights() {
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mt-10 grid gap-5 md:grid-cols-2"
         >
@@ -97,8 +96,7 @@ export default function IndustryHighlights() {
             <motion.article
               key={h.id}
               initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
             >
               <Card accent={h.accent} className="flex h-full flex-col">

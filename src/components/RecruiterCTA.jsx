@@ -15,8 +15,7 @@ export default function RecruiterCTA() {
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900 p-8 sm:p-12 lg:p-16"
         >

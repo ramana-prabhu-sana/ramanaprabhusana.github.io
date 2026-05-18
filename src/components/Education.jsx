@@ -23,8 +23,7 @@ export default function Education() {
             <motion.div
               key={ed.id}
               initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
             >
               <Card accent={idx === 0 ? "gold" : "cyan"} className="h-full">

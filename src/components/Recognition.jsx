@@ -28,8 +28,7 @@ export default function Recognition() {
               <motion.div
                 key={r.id}
                 initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: (idx % 6) * 0.03 }}
               >
                 <Card accent={accent} className="h-full">
