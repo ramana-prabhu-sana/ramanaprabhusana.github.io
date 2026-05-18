@@ -25,7 +25,7 @@ export default function Hero() {
           {/* Left: copy */}
           <div>
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/65"
@@ -40,7 +40,7 @@ export default function Hero() {
 
             {profile.availability ? (
               <motion.div
-                initial={{ opacity: 0, y: 8 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.02 }}
                 className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] normal-case tracking-normal text-white/55"
@@ -55,7 +55,7 @@ export default function Hero() {
 
             {profile.targeting?.length ? (
               <motion.div
-                initial={{ opacity: 0, y: 8 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.03 }}
                 className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] uppercase tracking-[0.2em] text-white/65"
@@ -69,7 +69,7 @@ export default function Hero() {
             ) : null}
 
             <motion.h1
-              initial={{ opacity: 0, y: 16 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05 }}
               className="mt-5 text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl"
@@ -81,7 +81,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg"
@@ -94,7 +94,7 @@ export default function Hero() {
                 site is interactive before they decide whether to scroll. */}
             <motion.a
               href="#forecast-demo"
-              initial={{ opacity: 0, y: 8 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.12 }}
               className="group mt-4 inline-flex items-center gap-2 rounded-full border border-lime-400/30 bg-lime-400/[0.06] px-3 py-1.5 text-[12px] text-lime-200 transition-colors hover:border-lime-400/60 hover:bg-lime-400/[0.12] hover:text-lime-100"
@@ -106,7 +106,7 @@ export default function Hero() {
 
             {/* CTAs - lifted above field pills so Download Resume lands above the fold */}
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
               className="mt-7 flex flex-wrap items-center gap-3"
@@ -164,7 +164,7 @@ export default function Hero() {
 
             {/* Field tags */}
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-6 flex flex-wrap gap-2"

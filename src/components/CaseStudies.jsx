@@ -161,7 +161,7 @@ export default function CaseStudies() {
               <motion.div
                 key={c.id}
                 layout
-                initial={{ opacity: 0, scale: 0.96 }}
+                initial={false}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.3 }}

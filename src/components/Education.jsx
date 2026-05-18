@@ -22,7 +22,7 @@ export default function Education() {
           {education.map((ed, idx) => (
             <motion.div
               key={ed.id}
-              initial={{ opacity: 0, y: 16 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
             >

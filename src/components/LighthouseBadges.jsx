@@ -35,7 +35,7 @@ export default function LighthouseBadges({ className = "" }) {
       {SCORES.map((s, idx) => (
         <motion.div
           key={s.label}
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={false}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3, delay: idx * 0.05 }}
           className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1"

@@ -81,7 +81,7 @@ export default function Certifications() {
             return (
               <motion.div
                 key={c.id}
-                initial={{ opacity: 0, y: 14 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: (idx % 6) * 0.03 }}
               >

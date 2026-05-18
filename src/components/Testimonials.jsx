@@ -39,7 +39,7 @@ export default function Testimonials() {
         />
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mt-10 grid gap-5 md:grid-cols-2"
@@ -47,7 +47,7 @@ export default function Testimonials() {
           {testimonials.map((t, idx) => (
             <motion.div
               key={t.id}
-              initial={{ opacity: 0, y: 16 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
             >
