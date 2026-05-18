@@ -75,6 +75,21 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 
+/* iOS Safari (and iOS Chrome - same WebKit) renders stacked/large
+   backdrop-filter layers as BLACK while scrolling, making every section
+   below the hero unreadable on iPhone. On this near-flat dark theme the
+   blur adds almost no visible benefit, so disable backdrop-filter
+   globally - panels keep their translucent fill, border, and shadow, so
+   the look is essentially unchanged on desktop while the iOS scroll bug
+   is gone. Universal + !important so it also neutralizes Tailwind
+   backdrop-blur utilities (Card, Avatar, Navbar, modals, etc.). */
+*,
+*::before,
+*::after {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
 .glow-edge {
   position: relative;
 }
