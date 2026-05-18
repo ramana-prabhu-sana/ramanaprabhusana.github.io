@@ -12,12 +12,6 @@ export default function CommandPanel() {
       transition={{ duration: 0.7, delay: 0.15 }}
       className="relative"
     >
-      {/* Outer glow */}
-      <div
-        aria-hidden="true"
-        className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-lime-400/10 via-cyan-400/10 to-violet-500/10 blur-2xl"
-      />
-
       <div className="surface-strong glow-edge overflow-hidden rounded-3xl">
         {/* Header bar - larger photo + name + meta */}
         <div className="flex items-center gap-4 border-b border-white/8 px-5 py-5">

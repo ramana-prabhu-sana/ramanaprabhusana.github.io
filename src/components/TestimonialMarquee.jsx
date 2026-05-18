@@ -55,8 +55,6 @@ export default function TestimonialMarquee() {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <div className="pointer-events-none absolute -left-12 top-1/2 h-32 w-32 -translate-y-1/2 rounded-full bg-lime-400/8 blur-2xl" />
-          <div className="pointer-events-none absolute -right-12 top-1/2 h-32 w-32 -translate-y-1/2 rounded-full bg-violet-500/8 blur-2xl" />
 
           <div className="relative flex items-start gap-3 sm:items-center">
             <Quote

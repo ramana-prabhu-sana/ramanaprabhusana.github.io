@@ -19,15 +19,6 @@ export default function RecruiterCTA() {
           transition={{ duration: 0.6 }}
           className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900 p-8 sm:p-12 lg:p-16"
         >
-          {/* Decorative glows */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-lime-400/15 blur-3xl"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-violet-500/15 blur-3xl"
-          />
           <div
             aria-hidden="true"
             className="absolute inset-0 bg-grid-soft opacity-30 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,black_30%,transparent_75%)]"
