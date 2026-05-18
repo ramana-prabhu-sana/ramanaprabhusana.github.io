@@ -349,20 +349,21 @@ export default function LaunchForecastDemo() {
             visual rhythm with other sections is preserved. */}
         <div className="max-w-3xl lg:max-w-5xl">
           <div className="text-xs font-semibold uppercase tracking-[0.18em] text-lime-300">
-            Live demo - patient-based forecast
+            Live demo - launch analytics
           </div>
           <div className="mt-3 flex flex-wrap items-start gap-x-3 gap-y-2">
             <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Try the forecasting methodology in real time
+              Try the launch analytics methodology in real time
             </h2>
             <span className="mt-1.5 sm:mt-2.5">
               <FormulaInfo />
             </span>
           </div>
           <p className="mt-3 text-base leading-relaxed text-white/80 sm:text-lg">
-            Move the sliders to see how each commercial lever changes a 5-year launch forecast.
-            Same skeleton I use for real patient-based forecasts in pharma commercial analytics -
-            simplified so it runs entirely in your browser, no signups.
+            Move the sliders to see how each commercial lever changes a 5-year launch curve. The
+            same patient-based skeleton I use across launch analytics, brand forecasting, and
+            pipeline valuation work in pharma commercial analytics - simplified so it runs entirely
+            in your browser, no signups.
           </p>
         </div>
 

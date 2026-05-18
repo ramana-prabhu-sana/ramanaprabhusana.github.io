@@ -100,7 +100,7 @@ export default function Hero() {
               className="group mt-4 inline-flex items-center gap-2 rounded-full border border-lime-400/30 bg-lime-400/[0.06] px-3 py-1.5 text-[12px] text-lime-200 transition-colors hover:border-lime-400/60 hover:bg-lime-400/[0.12] hover:text-lime-100"
             >
               <Sparkles className="h-3.5 w-3.5 text-lime-300" aria-hidden="true" />
-              Try the live forecast demo
+              Try the live launch model
               <ArrowDown className="h-3 w-3 transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
             </motion.a>
 
