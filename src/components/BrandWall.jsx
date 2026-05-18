@@ -18,7 +18,7 @@ const LOGOS = [
   { src: "/brand/zs.svg", alt: "ZS Associates", height: 22 },
   { src: "/brand/genpact-wordmark.svg", alt: "Genpact", height: 20 },
   { src: "/brand/pharmaace.svg", alt: "PharmaACE", height: 22 },
-  { src: "/brand/purdue.svg", alt: "Purdue University, Daniels School of Business", height: 30 },
+  { src: "/brand/purdue.svg", alt: "Purdue University, Daniels School of Business", height: 18 },
   { src: "/brand/vit.png", alt: "Vellore Institute of Technology", height: 34 },
 ];
 
