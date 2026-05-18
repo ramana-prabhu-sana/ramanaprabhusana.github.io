@@ -48,7 +48,12 @@ export default function BrandWall() {
                   alt={logo.alt}
                   loading="lazy"
                   style={{ height: `${logo.height}px` }}
-                  className="w-auto select-none object-contain opacity-95 brightness-110 transition-all duration-300 hover:opacity-100 hover:brightness-125"
+                  // brightness-0 + invert collapses every logo to a clean
+                  // white silhouette on the dark page (works because all
+                  // six sources have transparent backgrounds). opacity-80
+                  // -> 100 on hover gives a subtle lift without changing
+                  // the visual rhythm.
+                  className="w-auto select-none object-contain opacity-80 brightness-0 invert transition-opacity duration-300 hover:opacity-100"
                 />
               ))}
             </div>
