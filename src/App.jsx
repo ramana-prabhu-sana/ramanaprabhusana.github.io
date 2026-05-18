@@ -101,10 +101,14 @@ export default function App() {
   useCleanSectionUrls();
 
   return (
-    // MotionConfig reducedMotion="user" makes every motion.* component
-    // automatically short-circuit animations when the visitor has
-    // prefers-reduced-motion: reduce set (accessibility + battery wins).
-    <MotionConfig reducedMotion="user">
+    // reducedMotion="always": snap every motion.* opacity/transform
+    // animation straight to its final visible state for ALL visitors.
+    // iOS WebKit was unreliable at running the entrance fades, leaving
+    // below-the-fold sections stuck faint/invisible on iPhone. Snapping
+    // to the end state makes content unconditionally visible on every
+    // browser with zero animation dependency. Reversible once an
+    // iOS-safe reveal approach is validated.
+    <MotionConfig reducedMotion="always">
     <div className="relative min-h-screen text-white antialiased">
       {/* Skip-to-content link for keyboard + screen-reader users. */}
       <a
