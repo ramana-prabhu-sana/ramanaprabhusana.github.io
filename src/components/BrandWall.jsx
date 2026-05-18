@@ -9,16 +9,16 @@ import Container from "./Container";
  * Wordmark vs. avatar choice:
  * - Every logo here is a clean wordmark SVG, flattened to a white
  *   silhouette so six different brand styles read as one consistent set.
- * - Square 'avatar' versions live at genpact.png / vit.png for the
- *   circular Experience and Education timeline avatars - intentional
- *   dual files; do not repoint the timelines at the wordmarks.
+ * - Square 'avatar' versions live at genpact.png / vit.png / purdue.svg
+ *   for the circular ProfileSnapshot, Experience, and Education avatars -
+ *   intentional dual files; do not repoint those at the wordmarks.
  */
 const LOGOS = [
   { src: "/brand/novartis-wordmark.svg", alt: "Novartis", height: 22 },
   { src: "/brand/zs.svg", alt: "ZS Associates", height: 22 },
   { src: "/brand/genpact-wordmark.svg", alt: "Genpact", height: 20 },
   { src: "/brand/pharmaace.svg", alt: "PharmaACE", height: 22 },
-  { src: "/brand/purdue.svg", alt: "Purdue University, Daniels School of Business", height: 16 },
+  { src: "/brand/purdue-wordmark.svg", alt: "Purdue University, Daniels School of Business", height: 16 },
   { src: "/brand/vit-wordmark.svg", alt: "Vellore Institute of Technology", height: 16 },
 ];
 
