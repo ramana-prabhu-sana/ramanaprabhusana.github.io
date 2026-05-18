@@ -108,7 +108,7 @@ export default function ProfileSnapshot() {
               )}
             </div>
             <div className="mt-0.5 truncate text-[11px] text-white/55">
-              Purdue Daniels School of Business
+              Purdue University, Daniels School of Business
             </div>
             <div className="mt-1 flex items-center justify-between gap-2 text-[11px]">
               <span className="text-cyan-300">

@@ -10,13 +10,12 @@ const navLinks = [
   { id: "why", label: "Strengths" },
   { id: "workflow", label: "Approach" },
   { id: "industry-highlights", label: "Industry" },
-  { id: "forecast-demo", label: "Demo" },
-  { id: "case-studies", label: "Cases" },
+  { id: "case-studies", label: "Projects" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
   { id: "education", label: "Education" },
   { id: "certifications", label: "Certs" },
-  { id: "testimonials", label: "Recs" },
+  { id: "testimonials", label: "Recommendations" },
   { id: "contact", label: "Contact" },
 ];
 
