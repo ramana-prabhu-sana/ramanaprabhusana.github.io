@@ -118,11 +118,10 @@ body {
    Background grid + ambient
    ========================================================================== */
 
+/* Gridlines removed everywhere by request. Class kept as a no-op so the
+   decorative divs that still reference it don't need touching. */
 .bg-grid-soft {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
-  background-position: -1px -1px;
+  background-image: none;
 }
 
 .bg-ambient {
