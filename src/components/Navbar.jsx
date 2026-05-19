@@ -72,10 +72,19 @@ export default function Navbar({ compact = false, currentPath = "/" }) {
   return (
     <header
       className={[
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled
-          ? "border-b border-white/10 bg-ink-950/90 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent",
+        // position:fixed forces mobile browsers to composite the whole
+        // scrolling page into one layer they fail to re-rasterize on
+        // scroll (faint/black content on iOS AND Android). On compact
+        // devices the header is a normal static element that scrolls
+        // with the page - the page then paints as a plain document.
+        compact
+          ? "relative z-50 border-b border-white/10 bg-ink-950"
+          : [
+              "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+              scrolled
+                ? "border-b border-white/10 bg-ink-950/90 backdrop-blur-xl"
+                : "border-b border-transparent bg-transparent",
+            ].join(" "),
       ].join(" ")}
     >
       <Container>

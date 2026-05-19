@@ -228,7 +228,9 @@ export default function App() {
         </a>
 
         <AnimatedGrid />
-        <ScrollProgress />
+        {/* ScrollProgress is position:fixed - a mobile compositing
+            trigger. Desktop only. */}
+        {!compact && <ScrollProgress />}
         <Navbar compact={compact} currentPath={path} />
 
         {compact ? (
