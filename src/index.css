@@ -26,6 +26,24 @@ body {
   background-color: #07070d;
 }
 
+/* The site is one ~31,000px page. Mobile WebKit (iOS Safari) cannot
+   reliably paint a page that tall in one go - off-screen content renders
+   washed-out/black on scroll on iPhone (desktop is unaffected, which is
+   why it slipped through). content-visibility:auto makes the browser
+   skip rendering off-screen sections entirely and render each fresh as
+   it scrolls into view, so it only ever paints ~1 screen at a time.
+   Scoped to small screens so the working desktop render is untouched.
+   contain-intrinsic-size keeps scrollbar/anchor math sane; the `auto`
+   keyword stores each section's real height after first render so
+   in-page nav stays accurate. */
+@media (max-width: 860px) {
+  main > section,
+  section[id] {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 700px;
+  }
+}
+
 :root {
   --spot-x: 50%;
   --spot-y: 25%;
