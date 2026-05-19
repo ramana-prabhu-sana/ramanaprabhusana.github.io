@@ -21,171 +21,146 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 /*
- * Routed pages (no router dependency).
+ * Hybrid shell.
  *
- * The site used to be ONE ~31,000px page. Mobile iOS WebKit cannot
- * reliably paint a page that tall - below-the-fold content rendered
- * black/washed-out on scroll on iPhone while desktop was fine. The fix
- * is structural: split the single scroll into short routed pages so the
- * browser only ever renders ~one screen worth of DOM at a time.
+ * Desktop / laptop (wide + fine pointer): the original ONE long-scroll
+ * page with in-page anchor nav - renders perfectly there.
+ *
+ * Phone / tablet / any touch device: the same sections split across
+ * short ROUTED pages (~2-6k px each). Mobile iOS WebKit cannot paint the
+ * ~31,000px single page (content goes black/washed-out on scroll), so
+ * compact/touch devices get the routed shell, which paints reliably.
+ *
+ * Same section components feed both - only composition + nav differ.
  */
 
 const PAGES = {
-  "/": {
-    label: "Home",
-    render: () => (
-      <>
-        <Hero />
-        <ProfileDifferentiator />
-        <TestimonialMarquee />
-      </>
-    ),
-  },
-  "/approach": {
-    label: "Approach",
-    render: () => (
-      <>
-        <DecisionWorkflow />
-        <LaunchForecastDemo />
-      </>
-    ),
-  },
-  "/industry": {
-    label: "Industry",
-    render: () => <IndustryHighlights />,
-  },
-  "/projects": {
-    label: "Projects",
-    render: () => <CaseStudies />,
-  },
-  "/experience": {
-    label: "Experience",
-    render: () => (
-      <>
-        <ExperienceTimeline />
-        <Recognition />
-      </>
-    ),
-  },
-  "/skills": {
-    label: "Skills",
-    render: () => (
-      <>
-        <SkillsIntelligenceMap />
-        <Education />
-        <Certifications />
-      </>
-    ),
-  },
-  "/contact": {
-    label: "Contact",
-    render: () => (
-      <>
-        <Testimonials />
-        <RecruiterCTA />
-        <Contact />
-      </>
-    ),
-  },
+  "/": { label: "Home", render: () => (<><Hero /><ProfileDifferentiator /><TestimonialMarquee /></>) },
+  "/approach": { label: "Approach", render: () => (<><DecisionWorkflow /><LaunchForecastDemo /></>) },
+  "/industry": { label: "Industry", render: () => <IndustryHighlights /> },
+  "/projects": { label: "Projects", render: () => <CaseStudies /> },
+  "/experience": { label: "Experience", render: () => (<><ExperienceTimeline /><Recognition /></>) },
+  "/skills": { label: "Skills", render: () => (<><SkillsIntelligenceMap /><Education /><Certifications /></>) },
+  "/contact": { label: "Contact", render: () => (<><Testimonials /><RecruiterCTA /><Contact /></>) },
 };
 
-// Nav order shown in the navbar.
-export const NAV = [
-  "/",
-  "/approach",
-  "/industry",
-  "/projects",
-  "/experience",
-  "/skills",
-  "/contact",
-].map((path) => ({ path, label: PAGES[path].label }));
+export const ROUTE_NAV = [
+  "/", "/approach", "/industry", "/projects", "/experience", "/skills", "/contact",
+].map((p) => ({ path: p, label: PAGES[p].label }));
 
-// Any in-page section id / old deep-link slug -> the route that now
-// contains it. Keeps every existing `href="#section"` link working
-// without touching dozens of components.
+// section id / old slug -> route that now contains it (compact mode)
 const SECTION_ROUTE = {
-  home: "/",
-  strengths: "/",
-  why: "/",
-  testimonials: "/contact",
-  recommendations: "/contact",
-  contact: "/contact",
-  approach: "/approach",
-  workflow: "/approach",
-  "forecast-demo": "/approach",
-  industry: "/industry",
-  "industry-highlights": "/industry",
-  projects: "/projects",
-  "case-studies": "/projects",
-  experience: "/experience",
-  recognition: "/experience",
-  "proof-of-work": "/experience",
-  skills: "/skills",
-  education: "/skills",
-  certifications: "/skills",
+  home: "/", strengths: "/", why: "/",
+  testimonials: "/contact", recommendations: "/contact", contact: "/contact",
+  approach: "/approach", workflow: "/approach", "forecast-demo": "/approach",
+  industry: "/industry", "industry-highlights": "/industry",
+  projects: "/projects", "case-studies": "/projects",
+  experience: "/experience", recognition: "/experience", "proof-of-work": "/experience",
+  skills: "/skills", education: "/skills", certifications: "/skills",
 };
 
-function normalizePath(p) {
+function routeFor(p) {
   const clean = (p || "/").split(/[?#]/)[0].replace(/\/+$/, "");
   const path = clean === "" ? "/" : clean;
   if (PAGES[path]) return path;
-  // old deep links like /strengths or /case-studies -> mapped route
-  const seg = path.replace(/^\/+/, "");
-  if (SECTION_ROUTE[seg]) return SECTION_ROUTE[seg];
-  return "/";
+  return SECTION_ROUTE[path.replace(/^\/+/, "")] || "/";
+}
+
+// phones / tablets / any touch device -> routed shell
+function useIsCompact() {
+  const Q = "(max-width: 1024px), (pointer: coarse)";
+  const [c, setC] = useState(() =>
+    typeof window !== "undefined" && window.matchMedia
+      ? window.matchMedia(Q).matches
+      : false
+  );
+  useEffect(() => {
+    const m = window.matchMedia(Q);
+    const on = () => setC(m.matches);
+    m.addEventListener ? m.addEventListener("change", on) : m.addListener(on);
+    return () =>
+      m.removeEventListener
+        ? m.removeEventListener("change", on)
+        : m.removeListener(on);
+  }, []);
+  return c;
 }
 
 export default function App() {
+  const compact = useIsCompact();
+
   const [path, setPath] = useState(() => {
-    // 404.html stashes the requested path here then bounces to "/".
     let entry = window.location.pathname;
     try {
-      const stored = sessionStorage.getItem("scrollTo");
-      if (stored) {
+      const s = sessionStorage.getItem("scrollTo");
+      if (s) {
         sessionStorage.removeItem("scrollTo");
-        entry = "/" + stored;
+        entry = "/" + s;
+        // stash so single-page mode can still scroll to the section
+        window.__entrySection = s;
       }
     } catch {
-      /* sessionStorage blocked - fall back to location */
+      /* ignore */
     }
-    return normalizePath(entry);
+    return routeFor(entry);
   });
 
-  const navigate = useCallback(
-    (to, { replace = false } = {}) => {
-      const next = normalizePath(to);
-      const url = next;
-      if (replace) window.history.replaceState(null, "", url);
-      else window.history.pushState(null, "", url);
-      setPath(next);
-      window.scrollTo(0, 0);
-    },
-    []
-  );
-
-  // Keep the URL canonical on first paint (e.g. "/strengths" -> "/").
-  useEffect(() => {
-    const current = window.location.pathname.replace(/\/+$/, "") || "/";
-    if (current !== path) {
-      window.history.replaceState(null, "", path);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  const navigate = useCallback((to) => {
+    const next = routeFor(to);
+    window.history.pushState(null, "", next);
+    setPath(next);
+    window.scrollTo(0, 0);
   }, []);
 
-  // Back/forward.
+  // popstate (both modes; harmless in single-page)
   useEffect(() => {
     const onPop = () => {
-      setPath(normalizePath(window.location.pathname));
+      setPath(routeFor(window.location.pathname));
       window.scrollTo(0, 0);
     };
     window.addEventListener("popstate", onPop);
     return () => window.removeEventListener("popstate", onPop);
   }, []);
 
-  // Global internal-link interceptor. Any <a href="#x"> or <a href="/x">
-  // becomes client-side route navigation (same-page anchors still smooth
-  // scroll). Lets every existing component link work unchanged.
+  // Mode-specific link handling + initial deep-link resolution.
   useEffect(() => {
+    const scrollToId = (id, behavior) => {
+      const el = document.getElementById(id);
+      if (!el) return false;
+      el.scrollIntoView({ behavior, block: "start" });
+      return true;
+    };
+
+    // initial entry: scroll (single-page) or canonicalize (routed)
+    let entry = window.__entrySection || null;
+    if (!entry) {
+      const seg = window.location.pathname.replace(/^\/+|\/+$/g, "");
+      entry = seg || window.location.hash.slice(1) || null;
+    }
+    if (!compact) {
+      if (entry) {
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => {
+            if (scrollToId(entry, "instant"))
+              window.history.replaceState(null, "", "/" + entry);
+            else window.history.replaceState(null, "", "/");
+          })
+        );
+      }
+    } else {
+      const current = window.location.pathname.replace(/\/+$/, "") || "/";
+      if (current !== path) window.history.replaceState(null, "", path);
+      if (entry) {
+        const id = entry;
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ block: "start" });
+          })
+        );
+      }
+    }
+
     const onClick = (e) => {
       if (e.defaultPrevented || e.button !== 0) return;
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -194,31 +169,35 @@ export default function App() {
       if (a.target && a.target !== "" && a.target !== "_self") return;
       const href = a.getAttribute("href");
       if (!href) return;
-
       let id = null;
       if (href.startsWith("#")) id = href.slice(1);
       else if (href.startsWith("/") && !href.startsWith("//"))
         id = href.slice(1).split(/[/?#]/)[0];
       else return; // external / mailto / tel
+      if (id === "main") return;
 
-      if (id === "" ) {
-        // bare "/" -> Home
+      if (!compact) {
+        // single-page: smooth scroll to the section, clean URL
+        if (!id) return;
+        const el = document.getElementById(id);
+        if (!el) return;
         e.preventDefault();
-        if (path !== "/") navigate("/");
-        else window.scrollTo(0, 0);
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.history.replaceState(null, "", "/" + id);
         return;
       }
-      if (id === "main") return; // skip-to-content, same page
 
-      const route = PAGES["/" + id]
-        ? "/" + id
-        : SECTION_ROUTE[id] || null;
-      if (!route) return; // unknown - let the browser handle it
-
+      // routed: navigate between pages
+      if (id === "") {
+        e.preventDefault();
+        path !== "/" ? navigate("/") : window.scrollTo(0, 0);
+        return;
+      }
+      const route = PAGES["/" + id] ? "/" + id : SECTION_ROUTE[id] || null;
+      if (!route) return;
       e.preventDefault();
       if (route !== path) {
         navigate(route);
-        // after the new page mounts, try to land on the specific section
         const elId = id;
         requestAnimationFrame(() =>
           requestAnimationFrame(() => {
@@ -234,7 +213,7 @@ export default function App() {
     };
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);
-  }, [path, navigate]);
+  }, [compact, path, navigate]);
 
   const page = PAGES[path] || PAGES["/"];
 
@@ -250,9 +229,29 @@ export default function App() {
 
         <AnimatedGrid />
         <ScrollProgress />
-        <Navbar currentPath={path} onNavigate={navigate} />
+        <Navbar compact={compact} currentPath={path} />
 
-        <main id="main">{page.render()}</main>
+        {compact ? (
+          <main id="main">{page.render()}</main>
+        ) : (
+          <main id="main">
+            <Hero />
+            <TestimonialMarquee />
+            <ProfileDifferentiator />
+            <DecisionWorkflow />
+            <IndustryHighlights />
+            <LaunchForecastDemo />
+            <CaseStudies />
+            <ExperienceTimeline />
+            <SkillsIntelligenceMap />
+            <Education />
+            <Certifications />
+            <Recognition />
+            <Testimonials />
+            <RecruiterCTA />
+            <Contact />
+          </main>
+        )}
 
         <Footer />
       </div>

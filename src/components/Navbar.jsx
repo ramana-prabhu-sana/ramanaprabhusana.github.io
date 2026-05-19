@@ -3,24 +3,44 @@ import { Download, Github, Linkedin, Menu, X } from "lucide-react";
 import Container from "./Container";
 import Badge from "./Badge";
 import { profile } from "../data/profile";
+import { useActiveSection } from "../hooks/useActiveSection";
 
-// Route-based nav. The site is now short routed pages (App.jsx) instead
-// of one giant scroll - clicks are handled by the global link
-// interceptor in App; here we just style the active route + close the
-// mobile drawer.
-const navLinks = [
-  { path: "/", label: "Home" },
-  { path: "/approach", label: "Approach" },
-  { path: "/industry", label: "Industry" },
-  { path: "/projects", label: "Projects" },
-  { path: "/experience", label: "Experience" },
-  { path: "/skills", label: "Skills" },
-  { path: "/contact", label: "Contact" },
+// Desktop single-page: in-page anchor links + scroll-spy active state.
+const SECTION_LINKS = [
+  { id: "home", label: "Home" },
+  { id: "strengths", label: "Strengths" },
+  { id: "approach", label: "Approach" },
+  { id: "industry", label: "Industry" },
+  { id: "projects", label: "Projects" },
+  { id: "experience", label: "Experience" },
+  { id: "skills", label: "Skills" },
+  { id: "education", label: "Education" },
+  { id: "certifications", label: "Certifications" },
+  { id: "recommendations", label: "Recommendations" },
+  { id: "contact", label: "Contact" },
+];
+const SECTION_IDS = SECTION_LINKS.map((l) => l.id);
+
+// Mobile/touch routed: page links + current-route active state.
+const ROUTE_LINKS = [
+  { id: "/", label: "Home" },
+  { id: "/approach", label: "Approach" },
+  { id: "/industry", label: "Industry" },
+  { id: "/projects", label: "Projects" },
+  { id: "/experience", label: "Experience" },
+  { id: "/skills", label: "Skills" },
+  { id: "/contact", label: "Contact" },
 ];
 
-export default function Navbar({ currentPath = "/" }) {
+export default function Navbar({ compact = false, currentPath = "/" }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const activeSection = useActiveSection(SECTION_IDS); // desktop only
+
+  const links = compact ? ROUTE_LINKS : SECTION_LINKS;
+  const hrefFor = (l) => (compact ? l.id : `#${l.id}`);
+  const isActive = (l) =>
+    compact ? currentPath === l.id : activeSection === l.id;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -29,7 +49,7 @@ export default function Navbar({ currentPath = "/" }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close the drawer whenever the route changes.
+  // Close drawer on route change (compact mode).
   useEffect(() => {
     setOpen(false);
   }, [currentPath]);
@@ -60,9 +80,8 @@ export default function Navbar({ currentPath = "/" }) {
     >
       <Container>
         <div className="flex h-16 items-center justify-between gap-4">
-          {/* Logo */}
           <a
-            href="/"
+            href={compact ? "/" : "#home"}
             onClick={() => setOpen(false)}
             aria-label={`${profile.name} - home`}
             className="group flex items-center gap-2 font-semibold tracking-tight"
@@ -79,23 +98,22 @@ export default function Navbar({ currentPath = "/" }) {
             </span>
           </a>
 
-          {/* Desktop nav */}
           <nav className="hidden items-center gap-0.5 lg:flex xl:gap-1" aria-label="Primary">
-            {navLinks.map((link) => {
-              const isActive = currentPath === link.path;
+            {links.map((link) => {
+              const act = isActive(link);
               return (
                 <a
-                  key={link.path}
-                  href={link.path}
+                  key={link.id}
+                  href={hrefFor(link)}
                   onClick={() => setOpen(false)}
-                  aria-current={isActive ? "page" : undefined}
+                  aria-current={act ? "page" : undefined}
                   className={[
                     "relative whitespace-nowrap rounded-lg px-2 py-2 text-sm transition-colors xl:px-3",
-                    isActive ? "text-white" : "text-white/60 hover:text-white",
+                    act ? "text-white" : "text-white/60 hover:text-white",
                   ].join(" ")}
                 >
                   {link.label}
-                  {isActive ? (
+                  {act ? (
                     <span className="absolute inset-x-2 bottom-1 h-px bg-gradient-to-r from-lime-400 via-cyan-300 to-violet-400 xl:inset-x-3" />
                   ) : null}
                 </a>
@@ -103,7 +121,6 @@ export default function Navbar({ currentPath = "/" }) {
             })}
           </nav>
 
-          {/* Right cluster */}
           <div className="flex items-center gap-2">
             <a
               href={profile.links.linkedin}
@@ -123,7 +140,6 @@ export default function Navbar({ currentPath = "/" }) {
             >
               <Github className="h-4 w-4" />
             </a>
-
             <a
               href={profile.links.resume}
               target="_blank"
@@ -134,7 +150,6 @@ export default function Navbar({ currentPath = "/" }) {
               <Download className="h-4 w-4" />
               <span className="hidden xl:inline">Resume</span>
             </a>
-
             <button
               type="button"
               aria-label={open ? "Close menu" : "Open menu"}
@@ -149,7 +164,6 @@ export default function Navbar({ currentPath = "/" }) {
         </div>
       </Container>
 
-      {/* Mobile drawer */}
       <div
         id="mobile-nav"
         className={[
@@ -163,15 +177,15 @@ export default function Navbar({ currentPath = "/" }) {
         <div className="border-t border-white/10 bg-ink-950/95 backdrop-blur-xl">
           <Container>
             <nav className="flex flex-col gap-1 py-4" aria-label="Mobile">
-              {navLinks.map((link) => (
+              {links.map((link) => (
                 <a
-                  key={link.path}
-                  href={link.path}
+                  key={link.id}
+                  href={hrefFor(link)}
                   onClick={() => setOpen(false)}
-                  aria-current={currentPath === link.path ? "page" : undefined}
+                  aria-current={isActive(link) ? "page" : undefined}
                   className={[
                     "rounded-lg px-3 py-3 text-base font-medium",
-                    currentPath === link.path
+                    isActive(link)
                       ? "bg-white/8 text-white"
                       : "text-white/70 hover:bg-white/5 hover:text-white",
                   ].join(" ")}
@@ -192,7 +206,7 @@ export default function Navbar({ currentPath = "/" }) {
                   Resume
                 </a>
                 <a
-                  href="/contact"
+                  href={compact ? "/contact" : "#contact"}
                   onClick={() => setOpen(false)}
                   className="flex h-11 items-center justify-center rounded-lg border border-white/15 bg-white/5 text-sm font-medium text-white"
                 >
