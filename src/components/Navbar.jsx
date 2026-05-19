@@ -3,28 +3,24 @@ import { Download, Github, Linkedin, Menu, X } from "lucide-react";
 import Container from "./Container";
 import Badge from "./Badge";
 import { profile } from "../data/profile";
-import { useActiveSection } from "../hooks/useActiveSection";
 
+// Route-based nav. The site is now short routed pages (App.jsx) instead
+// of one giant scroll - clicks are handled by the global link
+// interceptor in App; here we just style the active route + close the
+// mobile drawer.
 const navLinks = [
-  { id: "home", label: "Home" },
-  { id: "strengths", label: "Strengths" },
-  { id: "approach", label: "Approach" },
-  { id: "industry", label: "Industry" },
-  { id: "projects", label: "Projects" },
-  { id: "experience", label: "Experience" },
-  { id: "skills", label: "Skills" },
-  { id: "education", label: "Education" },
-  { id: "certifications", label: "Certifications" },
-  { id: "recommendations", label: "Recommendations" },
-  { id: "contact", label: "Contact" },
+  { path: "/", label: "Home" },
+  { path: "/approach", label: "Approach" },
+  { path: "/industry", label: "Industry" },
+  { path: "/projects", label: "Projects" },
+  { path: "/experience", label: "Experience" },
+  { path: "/skills", label: "Skills" },
+  { path: "/contact", label: "Contact" },
 ];
 
-const sectionIds = navLinks.map((n) => n.id);
-
-export default function Navbar() {
+export default function Navbar({ currentPath = "/" }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const active = useActiveSection(sectionIds);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -32,6 +28,11 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close the drawer whenever the route changes.
+  useEffect(() => {
+    setOpen(false);
+  }, [currentPath]);
 
   // Lock body scroll while mobile drawer is open + escape-to-close
   useEffect(() => {
@@ -61,7 +62,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo */}
           <a
-            href="#home"
+            href="/"
             onClick={() => setOpen(false)}
             aria-label={`${profile.name} - home`}
             className="group flex items-center gap-2 font-semibold tracking-tight"
@@ -81,17 +82,16 @@ export default function Navbar() {
           {/* Desktop nav */}
           <nav className="hidden items-center gap-0.5 lg:flex xl:gap-1" aria-label="Primary">
             {navLinks.map((link) => {
-              const isActive = active === link.id;
+              const isActive = currentPath === link.path;
               return (
                 <a
-                  key={link.id}
-                  href={`#${link.id}`}
+                  key={link.path}
+                  href={link.path}
+                  onClick={() => setOpen(false)}
                   aria-current={isActive ? "page" : undefined}
                   className={[
                     "relative whitespace-nowrap rounded-lg px-2 py-2 text-sm transition-colors xl:px-3",
-                    isActive
-                      ? "text-white"
-                      : "text-white/60 hover:text-white",
+                    isActive ? "text-white" : "text-white/60 hover:text-white",
                   ].join(" ")}
                 >
                   {link.label}
@@ -165,13 +165,13 @@ export default function Navbar() {
             <nav className="flex flex-col gap-1 py-4" aria-label="Mobile">
               {navLinks.map((link) => (
                 <a
-                  key={link.id}
-                  href={`#${link.id}`}
+                  key={link.path}
+                  href={link.path}
                   onClick={() => setOpen(false)}
-                  aria-current={active === link.id ? "page" : undefined}
+                  aria-current={currentPath === link.path ? "page" : undefined}
                   className={[
                     "rounded-lg px-3 py-3 text-base font-medium",
-                    active === link.id
+                    currentPath === link.path
                       ? "bg-white/8 text-white"
                       : "text-white/70 hover:bg-white/5 hover:text-white",
                   ].join(" ")}
@@ -192,7 +192,7 @@ export default function Navbar() {
                   Resume
                 </a>
                 <a
-                  href="#contact"
+                  href="/contact"
                   onClick={() => setOpen(false)}
                   className="flex h-11 items-center justify-center rounded-lg border border-white/15 bg-white/5 text-sm font-medium text-white"
                 >
