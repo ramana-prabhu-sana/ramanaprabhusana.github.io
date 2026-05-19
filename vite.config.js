@@ -1,9 +1,22 @@
+import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
   base: "/",
+  resolve: {
+    alias: {
+      // Replace Framer Motion's runtime with a plain-DOM shim. Its
+      // managed nodes are computed correctly but left unpainted by iOS
+      // 18 WebKit (page renders black/washed-out on scroll on iPhone).
+      // All entrance animations are already disabled, so the runtime is
+      // pure liability - the shim renders plain elements site-wide.
+      "motion/react": fileURLToPath(
+        new URL("./src/lib/motionShim.js", import.meta.url)
+      ),
+    },
+  },
   build: {
     // Vite 7 defaults build.target to "baseline-widely-available" (Safari
     // >=16 / iOS 16+). iPhones on iOS 15 or older then get a bundle they
@@ -21,7 +34,6 @@ export default defineConfig({
         // touching anything other than React/motion/icons get instant loads.
         manualChunks: {
           react: ["react", "react-dom"],
-          motion: ["motion"],
           icons: ["lucide-react"],
         },
       },

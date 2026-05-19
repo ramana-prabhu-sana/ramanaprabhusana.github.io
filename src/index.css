@@ -22,18 +22,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "ss01", "cv11";
   text-rendering: optimizeLegibility;
-  /* Subtle grid painted into the document canvas (NOT a position:fixed
-     element). iOS WebKit renders transparent content scrolling over a
-     fixed full-screen layer washed-out; a plain body background-image
-     has no compositing layer, so it cannot trigger that bug. */
+  /* Solid dark only - no grid, no layers. */
   background-color: #07070d;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.035) 1px,
-      transparent 1px
-    ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 40px 40px;
-  background-position: -1px -1px;
 }
 
 :root {
