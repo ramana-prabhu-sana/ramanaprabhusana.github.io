@@ -22,8 +22,13 @@ export default function Hero() {
     >
       <Container>
         <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+          {/* min-w-0 on grid children prevents min-content (long button labels,
+              command-panel chips) from blowing the track wider than the
+              viewport, which on mobile was getting clipped by overflow-hidden
+              on the section and visually cutting off the right side of the
+              command panel + headline. */}
           {/* Left: copy */}
-          <div>
+          <div className="min-w-0">
             <motion.div
               initial={false}
               animate={{ opacity: 1, y: 0 }}
@@ -165,7 +170,7 @@ export default function Hero() {
           </div>
 
           {/* Right: command panel */}
-          <div className="lg:pl-2">
+          <div className="min-w-0 lg:pl-2">
             <CommandPanel />
           </div>
         </div>
