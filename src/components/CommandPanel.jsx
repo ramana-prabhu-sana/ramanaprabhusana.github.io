@@ -36,7 +36,7 @@ export default function CommandPanel() {
           </div>
         </div>
 
-        <div className="grid gap-4 p-5">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-4 p-5">
           {/* Profile snapshot - Education + Now + Domain coverage hybrid */}
           <ProfileSnapshot />
 
