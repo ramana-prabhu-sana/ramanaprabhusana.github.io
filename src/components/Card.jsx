@@ -24,6 +24,7 @@ export default function Card({
   accent, // eslint-disable-line no-unused-vars
   hover = true,
   padded = true,
+  glow = false,
   ...rest
 }) {
   return (
@@ -31,7 +32,10 @@ export default function Card({
       className={[
         "relative rounded-2xl border border-white/10 bg-ink-900/80",
         "shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset]",
-        hover ? "transition-colors duration-200 hover:border-white/20" : "",
+        hover
+          ? "transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:shadow-lg hover:shadow-black/40"
+          : "",
+        glow ? "glow-edge" : "",
         padded ? "p-5 sm:p-6" : "",
         className,
       ].join(" ")}

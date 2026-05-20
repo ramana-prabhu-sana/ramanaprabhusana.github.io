@@ -9,7 +9,7 @@ import { education } from "../data/education";
 
 export default function Education() {
   return (
-    <section id="education" className="relative scroll-mt-24 py-16 sm:py-20">
+    <section id="education" data-reveal className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Education"

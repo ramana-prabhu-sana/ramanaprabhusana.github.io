@@ -9,7 +9,7 @@ import { experience } from "../data/experience";
 
 export default function ExperienceTimeline() {
   return (
-    <section id="experience" className="relative scroll-mt-24 py-16 sm:py-20">
+    <section id="experience" data-reveal className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Experience timeline"

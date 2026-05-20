@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { MotionConfig } from "motion/react";
+import { useReveal } from "./hooks/useReveal";
 import AnimatedGrid from "./components/AnimatedGrid";
 import ScrollProgress from "./components/ScrollProgress";
 import Navbar from "./components/Navbar";
@@ -88,6 +89,50 @@ function useIsCompact() {
 
 export default function App() {
   const compact = useIsCompact();
+  // Scroll-triggered fade-in on any element with data-reveal. Idempotent;
+  // hook scans the DOM once on mount and toggles `reveal-in` via IO.
+  useReveal();
+
+  // Mouse-follow spotlight on Hero via --spot-x / --spot-y CSS vars. Vars
+  // are written Hero-relative (not viewport) so the radial gradient under
+  // bg-ambient::after tracks the cursor inside the Hero element. Touch
+  // devices skip the listener entirely and inherit the static default
+  // (50% 25%). Throttled to one paint per frame via rAF.
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+    if (!window.matchMedia("(pointer: fine)").matches) return undefined;
+    let raf = 0;
+    let pendingX = 50;
+    let pendingY = 25;
+    const apply = () => {
+      raf = 0;
+      const root = document.documentElement;
+      root.style.setProperty("--spot-x", pendingX + "%");
+      root.style.setProperty("--spot-y", pendingY + "%");
+    };
+    const onMove = (e) => {
+      const hero = document.getElementById("home");
+      if (hero) {
+        const r = hero.getBoundingClientRect();
+        // Only update when the cursor is roughly over the Hero band - past
+        // that the spotlight is offscreen anyway, no reason to repaint.
+        if (e.clientY < r.bottom + 40 && e.clientY > r.top - 40) {
+          pendingX = Math.round((e.clientX / window.innerWidth) * 100);
+          pendingY = Math.round(((e.clientY - r.top) / r.height) * 100);
+          if (!raf) raf = requestAnimationFrame(apply);
+        }
+      } else {
+        pendingX = Math.round((e.clientX / window.innerWidth) * 100);
+        pendingY = Math.round((e.clientY / window.innerHeight) * 100);
+        if (!raf) raf = requestAnimationFrame(apply);
+      }
+    };
+    window.addEventListener("pointermove", onMove, { passive: true });
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
 
   const [path, setPath] = useState(() => {
     let entry = window.location.pathname;

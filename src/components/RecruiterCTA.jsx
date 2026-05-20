@@ -10,7 +10,7 @@ const ResumePreviewModal = lazy(() => import("./ResumePreviewModal"));
 export default function RecruiterCTA() {
   const [resumeOpen, setResumeOpen] = useState(false);
   return (
-    <section className="relative scroll-mt-24 py-16 sm:py-20">
+    <section data-reveal className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <motion.div
           initial={false}

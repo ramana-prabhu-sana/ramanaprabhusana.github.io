@@ -86,7 +86,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative scroll-mt-24 py-16 sm:py-20">
+    <section id="contact" data-reveal className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Get in touch"

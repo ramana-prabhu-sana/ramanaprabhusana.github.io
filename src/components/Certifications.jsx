@@ -10,7 +10,7 @@ const accents = ["lime", "cyan", "violet", "amber", "rose", "sky"];
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="relative scroll-mt-24 py-16 sm:py-20">
+    <section id="certifications" data-reveal className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Certifications"

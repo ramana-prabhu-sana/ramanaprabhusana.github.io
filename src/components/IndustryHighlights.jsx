@@ -69,6 +69,7 @@ export default function IndustryHighlights() {
   return (
     <section
       id="industry"
+      data-reveal
       className="relative scroll-mt-24 py-16 sm:py-20"
     >
       <Container>
@@ -99,7 +100,7 @@ export default function IndustryHighlights() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
             >
-              <Card accent={h.accent} className="flex h-full flex-col">
+              <Card accent={h.accent} glow className="flex h-full flex-col">
                 {/* Top: tier + focus + period */}
                 <div className="flex flex-wrap items-center gap-2">
                   <Badge tone="lime" size="xs">

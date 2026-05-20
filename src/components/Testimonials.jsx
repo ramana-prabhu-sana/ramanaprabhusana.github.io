@@ -27,6 +27,7 @@ export default function Testimonials() {
   return (
     <section
       id="recommendations"
+      data-reveal
       className="relative scroll-mt-24 py-16 sm:py-20"
     >
       <Container>

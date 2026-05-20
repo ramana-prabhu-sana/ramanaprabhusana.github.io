@@ -341,6 +341,7 @@ export default function LaunchForecastDemo() {
   return (
     <section
       id="forecast-demo"
+      data-reveal
       className="relative scroll-mt-24 py-16 sm:py-20"
     >
       <Container>

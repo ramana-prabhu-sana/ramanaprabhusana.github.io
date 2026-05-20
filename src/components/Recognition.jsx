@@ -12,7 +12,7 @@ export default function Recognition() {
   if (!recognition.length) return null;
 
   return (
-    <section id="recognition" className="relative scroll-mt-24 py-16 sm:py-20">
+    <section id="recognition" data-reveal className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Additional project work"

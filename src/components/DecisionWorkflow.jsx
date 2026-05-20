@@ -46,7 +46,7 @@ export default function DecisionWorkflow() {
   const CurrentIcon = ICONS[current.icon] || Circle;
 
   return (
-    <section id="approach" className="relative scroll-mt-24 py-16 sm:py-20">
+    <section id="approach" data-reveal className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Commercial analytics decision workflow"

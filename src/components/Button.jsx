@@ -33,7 +33,8 @@ export default function Button({
     <Tag
       className={[
         "inline-flex items-center justify-center gap-2 rounded-xl font-medium",
-        "transition-colors duration-150",
+        "transition-[transform,background-color,border-color,color] duration-150",
+        "active:scale-[0.98]",
         variants[variant] || variants.secondary,
         sizes[size] || sizes.md,
         className,

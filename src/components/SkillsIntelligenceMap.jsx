@@ -59,7 +59,7 @@ export default function SkillsIntelligenceMap() {
     .filter(Boolean);
 
   return (
-    <section id="skills" className="relative scroll-mt-24 py-16 sm:py-20">
+    <section id="skills" data-reveal className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Skills intelligence map"

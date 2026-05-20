@@ -11,7 +11,7 @@ const accents = ["lime", "cyan", "violet", "amber"];
 
 export default function ProfileDifferentiator() {
   return (
-    <section id="strengths" className="relative scroll-mt-24 py-16 sm:py-20">
+    <section id="strengths" data-reveal className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
           eyebrow="Why this profile stands out"
