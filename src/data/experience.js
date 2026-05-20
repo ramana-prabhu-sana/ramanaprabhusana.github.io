@@ -7,7 +7,7 @@ export const experience = [
     start: "2026-06",
     end: "2026-08",
     dates: "June 2026 to August 2026",
-    logo: "brand/novartis.svg",
+    logo: "brand/novartis-li.jpg",
     logoBleed: true,
     focus:
       "Resource Optimization analytics for US Commercial - ROI of investments across brand, therapeutic area, and portfolio strategy.",
@@ -44,7 +44,7 @@ export const experience = [
     start: "2023-07",
     end: "2025-07",
     dates: "July 2023 to July 2025",
-    logo: "brand/novartis.svg",
+    logo: "brand/novartis-li.jpg",
     logoBleed: true,
     focus:
       "Strategic forecasting, oncology and pipeline valuation, Excel-based forecasting, market and portfolio decision support.",
@@ -64,8 +64,7 @@ export const experience = [
     start: "2022-10",
     end: "2023-07",
     dates: "October 2022 to July 2023",
-    logo: "brand/genpact.png",
-    logoBleed: true,
+    logo: "brand/genpact-wordmark.svg",
     focus:
       "Global forecasting model, Power BI dashboard, multi-country analytics, stakeholder reporting.",
     bullets: [
@@ -83,7 +82,7 @@ export const experience = [
     start: "2021-01",
     end: "2022-10",
     dates: "January 2021 to October 2022",
-    logo: "brand/novartis.svg",
+    logo: "brand/novartis-li.jpg",
     logoBleed: true,
     focus: "Forecast automation, dashboarding, KPI tracking, VBA workflow.",
     bullets: [
