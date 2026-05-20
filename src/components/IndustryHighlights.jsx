@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ChevronRight, ShieldCheck, Target, Workflow, TrendingUp, Lock } from "lucide-react";
+import { ChevronRight, ShieldCheck, Target, Workflow, TrendingUp } from "lucide-react";
 import Container from "./Container";
 import Card from "./Card";
 import SectionHeading from "./SectionHeading";
@@ -179,11 +179,6 @@ export default function IndustryHighlights() {
                   </div>
                 </div>
 
-                {/* Redaction note */}
-                <div className="mt-auto flex items-start gap-1.5 pt-5 text-[11px] leading-relaxed text-white/45">
-                  <Lock className="mt-0.5 h-3 w-3 shrink-0" />
-                  <span>{h.redactionNote}</span>
-                </div>
               </Card>
             </motion.article>
           ))}

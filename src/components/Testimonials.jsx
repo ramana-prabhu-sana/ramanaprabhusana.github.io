@@ -78,7 +78,7 @@ export default function Testimonials() {
                       {t.title} · {t.company}
                     </div>
                     <div className="mt-0.5 text-[10px] font-mono uppercase tracking-wide text-white/40">
-                      {t.relationship} · {t.date}
+                      {t.relationship}
                     </div>
                   </div>
                 </div>

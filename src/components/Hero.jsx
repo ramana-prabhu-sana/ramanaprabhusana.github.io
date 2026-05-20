@@ -43,28 +43,9 @@ export default function Hero() {
                 initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.02 }}
-                className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] normal-case tracking-normal text-white/55"
+                className="mt-2 text-[11px] normal-case tracking-normal text-white/55"
               >
-                <span>{profile.availability}</span>
-                <span className="text-white/25">·</span>
-                <span className="text-white/55">
-                  7 yrs across Novartis, ZS, Genpact
-                </span>
-              </motion.div>
-            ) : null}
-
-            {profile.targeting?.length ? (
-              <motion.div
-                initial={false}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.03 }}
-                className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] uppercase tracking-[0.2em] text-white/65"
-              >
-                <span className="font-semibold text-lime-300">Targeting roles</span>
-                <span className="text-white/30">·</span>
-                <span className="text-white/75">
-                  {profile.targeting.join(" · ")}
-                </span>
+                {profile.availability}
               </motion.div>
             ) : null}
 

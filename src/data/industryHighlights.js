@@ -13,7 +13,7 @@ export const industryHighlights = [
     tagline: "Top-10 pharma · Lung cancer asset · 9-figure peak-year revenue scope",
     company: "Novartis - Insights & Decision Sciences",
     role: "Senior Lead Analyst",
-    period: "2022 - 2025",
+    period: "2024 - 2025",
     focus: "Launch analytics",
     challenge:
       "Inform launch sequencing, country prioritization, and resource allocation for a high-priority oncology asset across multiple country markets, with limited historical analog data.",
@@ -37,7 +37,7 @@ export const industryHighlights = [
     tagline: "Top-tier consulting · $3.5Bn-scale deal · Multi-asset target",
     company: "ZS Associates",
     role: "Decision Analytics Associate",
-    period: "2018 - 2019",
+    period: "2019 - 2020",
     focus: "M&A commercial diligence",
     challenge:
       "Validate the commercial thesis behind a 10-figure pharma M&A target across multiple in-market and pipeline assets within a compressed deal timeline.",
@@ -56,15 +56,15 @@ export const industryHighlights = [
     flow: ["Asset list", "Market sizing", "rNPV valuation", "Synergy model", "Diligence pack"],
   },
   {
-    id: "neurology-brand-forecast",
-    title: "Neurology brand-level commercial forecast",
-    tagline: "Top-15 pharma · Migraine franchise · Patient-based methodology",
+    id: "neuroscience-brand-forecast",
+    title: "Neuroscience brand-level commercial forecast",
+    tagline: "Top-15 pharma · Neuroscience franchise · Patient-based methodology",
     company: "Novartis - Commercial Forecasting",
     role: "Business Analyst (Commercial)",
-    period: "2019 - 2021",
+    period: "2021 - 2022",
     focus: "Brand-level forecasting",
     challenge:
-      "Build a defensible, auditable commercial forecast for an established neurology brand in a therapeutic area with competitive pressure and shifting reimbursement.",
+      "Build a defensible, auditable commercial forecast for an established neuroscience brand in a therapeutic area with competitive pressure and shifting reimbursement.",
     approach: [
       "Patient-based forecasting tied to epidemiology, diagnosis, and treatment-flow data",
       "Scenario and sensitivity layers (base / upside / downside) with assumption tags",
@@ -75,7 +75,7 @@ export const industryHighlights = [
       "Rolling brand commercial forecast model used for budget, S&OP, and brand-strategy discussions.",
     impact:
       "Forecast scope covered a ~$800M-scale brand; methodology became the brand team's reference for assumption defensibility.",
-    redactionNote: "Brand identity withheld. Migraine therapeutic area disclosed; molecule, specific competitors, and internal numbers withheld.",
+    redactionNote: "Brand identity withheld. Neuroscience therapeutic area disclosed; molecule, specific competitors, and internal numbers withheld.",
     accent: "violet",
     flow: ["Patient pool", "Dx & Tx rates", "Price-volume", "Scenarios", "Brand forecast"],
   },
@@ -85,7 +85,7 @@ export const industryHighlights = [
     tagline: "Top-10 pharma · Multi-country epidemiology model · Scenario-ready",
     company: "Novartis - Insights & Decision Sciences",
     role: "Senior Lead Analyst",
-    period: "2022 - 2025",
+    period: "2023 - 2024",
     focus: "Market sizing and epidemiology",
     challenge:
       "Provide a defensible market size across multiple country markets to inform launch sequencing, brand resourcing, and lifecycle planning for a global franchise.",

@@ -3,7 +3,6 @@ import { motion } from "motion/react";
 import { Calendar, Download, Eye, Github, Linkedin, Mail } from "lucide-react";
 import Container from "./Container";
 import Button from "./Button";
-import LighthouseBadges from "./LighthouseBadges";
 import { profile } from "../data/profile";
 
 const ResumePreviewModal = lazy(() => import("./ResumePreviewModal"));
@@ -70,8 +69,6 @@ export default function RecruiterCTA() {
                   </span>
                 </div>
               ) : null}
-
-              <LighthouseBadges className="mt-6 border-t border-white/8 pt-5" />
             </div>
 
             <div className="flex flex-col gap-3">
