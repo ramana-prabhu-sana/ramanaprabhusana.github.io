@@ -110,7 +110,7 @@ export default function ProfileSnapshot() {
             <div className="mt-0.5 truncate text-[11px] text-white/55">
               Purdue University, Daniels School of Business
             </div>
-            <div className="mt-1 flex items-center justify-between gap-2 text-[11px]">
+            <div className="mt-1 flex flex-col gap-0.5 text-[11px] sm:flex-row sm:items-center sm:justify-between sm:gap-2">
               <span className="text-cyan-300">
                 {purdue.focus || "Consulting + Data Science"}
               </span>
@@ -137,10 +137,10 @@ export default function ProfileSnapshot() {
         <ul className="space-y-1">
           {nowEntries.map((row, i) => {
             const inner = (
-              <div className="flex items-center gap-3 px-2 py-1.5">
+              <div className="flex flex-col gap-0.5 px-2 py-1.5 sm:flex-row sm:items-center sm:gap-3">
                 <span
                   className={[
-                    "w-[80px] sm:w-[92px] shrink-0 text-[10px] font-mono uppercase tracking-widest",
+                    "shrink-0 text-[10px] font-mono uppercase tracking-widest sm:w-[92px]",
                     row.label === "Currently"
                       ? "text-lime-300"
                       : row.label === "Available"
@@ -150,12 +150,12 @@ export default function ProfileSnapshot() {
                 >
                   {row.label}
                 </span>
-                <span className="min-w-0 flex-1 truncate text-sm text-white/85">
-                  {row.title}
+                <span className="flex min-w-0 flex-1 items-center gap-2 text-sm text-white/85">
+                  <span className="min-w-0 flex-1 truncate">{row.title}</span>
+                  {row.href ? (
+                    <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-white/45 transition-colors group-hover:text-white/70" />
+                  ) : null}
                 </span>
-                {row.href ? (
-                  <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-white/45 transition-colors group-hover:text-white/70" />
-                ) : null}
               </div>
             );
             return (
@@ -187,8 +187,8 @@ export default function ProfileSnapshot() {
             <Map className="h-3 w-3" />
             Case studies by domain
           </a>
-          <span className="text-white/40">
-            {caseStudies.length} cases / {skills.length} domains
+          <span className="shrink-0 text-white/40">
+            {caseStudies.length} / {skills.length}
           </span>
         </div>
 
@@ -203,7 +203,7 @@ export default function ProfileSnapshot() {
             <li key={id}>
               <a
                 href="#skills"
-                className="group grid grid-cols-[140px_1fr_auto] items-center gap-2 rounded-lg px-2 py-1.5 text-[11px] transition-colors hover:bg-white/[0.05]"
+                className="group grid grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-2 rounded-lg px-2 py-1.5 text-[11px] transition-colors hover:bg-white/[0.05]"
                 title={`${title} - ${count} of ${caseStudies.length} case studies`}
               >
                 <span className="truncate text-white/70">
@@ -219,7 +219,7 @@ export default function ProfileSnapshot() {
                 </span>
                 <span className="inline-flex items-center gap-1 text-right">
                   <span className="font-mono text-[10px] text-white/70">
-                    {count} {count === 1 ? "case" : "cases"}
+                    {count}
                   </span>
                   <ArrowUpRight className="h-3 w-3 text-white/45 transition-colors group-hover:text-white/70" />
                 </span>
