@@ -173,14 +173,19 @@ export default function Navbar({ compact = false, currentPath = "/" }) {
         </div>
       </Container>
 
+      {/* When the header is `relative` on mobile (current compositing fix),
+          a closed drawer kept at opacity-0 still occupies its full ~560px
+          of layout space and pushes the Hero offscreen. Collapse it with
+          max-h-0 + overflow-hidden so the drawer takes zero height when
+          closed; preserve the open-slide animation. */}
       <div
         id="mobile-nav"
         className={[
-          "lg:hidden",
-          "transition-[transform,opacity] duration-300",
+          "lg:hidden overflow-hidden",
+          "transition-[max-height,transform,opacity] duration-300",
           open
-            ? "pointer-events-auto translate-y-0 opacity-100"
-            : "pointer-events-none -translate-y-2 opacity-0",
+            ? "pointer-events-auto max-h-[80vh] translate-y-0 opacity-100"
+            : "pointer-events-none max-h-0 -translate-y-2 opacity-0",
         ].join(" ")}
       >
         <div className="border-t border-white/10 bg-ink-950/95 backdrop-blur-xl">
