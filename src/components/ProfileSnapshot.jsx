@@ -151,7 +151,7 @@ export default function ProfileSnapshot() {
                   {row.label}
                 </span>
                 <span className="flex min-w-0 flex-1 items-center gap-2 text-sm text-white/85">
-                  <span className="min-w-0 flex-1 truncate">{row.title}</span>
+                  <span className="min-w-0 flex-1 lg:truncate">{row.title}</span>
                   {row.href ? (
                     <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-white/45 transition-colors group-hover:text-white/70" />
                   ) : null}
