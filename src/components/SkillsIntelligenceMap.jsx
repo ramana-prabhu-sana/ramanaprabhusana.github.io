@@ -81,10 +81,10 @@ export default function SkillsIntelligenceMap() {
                   type="button"
                   onClick={() => setActiveId(s.id)}
                   className={[
-                    "group relative flex items-center gap-3 rounded-2xl border p-3 text-left transition-all",
+                    "group relative flex items-center gap-3 rounded-2xl border p-3 text-left transition-colors",
                     isActive
-                      ? "border-white/20 bg-white/8 shadow-glow"
-                      : "border-white/8 bg-white/[0.03] hover:border-white/15 hover:bg-white/5",
+                      ? "border-white/70 bg-white/[0.06]"
+                      : "border-white/10 bg-white/[0.03] hover:border-white/25 hover:bg-white/5",
                   ].join(" ")}
                   aria-pressed={isActive}
                 >
