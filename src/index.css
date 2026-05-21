@@ -140,18 +140,26 @@ body {
   filter: blur(8px);
 }
 
-/* Mouse spotlight */
-.bg-ambient::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(
-    480px 480px at var(--spot-x) var(--spot-y),
-    rgba(255, 255, 255, 0.08),
-    transparent 65%
-  );
+/* Mouse-follow spotlight - global fixed layer that tracks the cursor
+   viewport-wide (not just Hero). Gated to (pointer: fine) so touch
+   devices, especially iOS WebKit, never composite the layer. */
+.global-spotlight {
+  display: none;
+}
+
+@media (pointer: fine) {
+  .global-spotlight {
+    display: block;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background: radial-gradient(
+      480px 480px at var(--spot-x) var(--spot-y),
+      rgba(255, 255, 255, 0.08),
+      transparent 65%
+    );
+  }
 }
 
 /* ==========================================================================

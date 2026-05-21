@@ -93,11 +93,12 @@ export default function App() {
   // hook scans the DOM once on mount and toggles `reveal-in` via IO.
   useReveal();
 
-  // Mouse-follow spotlight on Hero via --spot-x / --spot-y CSS vars. Vars
-  // are written Hero-relative (not viewport) so the radial gradient under
-  // bg-ambient::after tracks the cursor inside the Hero element. Touch
-  // devices skip the listener entirely and inherit the static default
-  // (50% 25%). Throttled to one paint per frame via rAF.
+  // Mouse-follow spotlight via --spot-x / --spot-y CSS vars, viewport-
+  // relative so the global .global-spotlight fixed layer tracks the
+  // cursor across the entire page (not just the Hero band). Touch
+  // devices skip the listener entirely and the CSS layer is gated to
+  // (pointer: fine) so iOS WebKit never composites it. Throttled to
+  // one paint per frame via rAF.
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
     if (!window.matchMedia("(pointer: fine)").matches) return undefined;
@@ -111,21 +112,9 @@ export default function App() {
       root.style.setProperty("--spot-y", pendingY + "%");
     };
     const onMove = (e) => {
-      const hero = document.getElementById("home");
-      if (hero) {
-        const r = hero.getBoundingClientRect();
-        // Only update when the cursor is roughly over the Hero band - past
-        // that the spotlight is offscreen anyway, no reason to repaint.
-        if (e.clientY < r.bottom + 40 && e.clientY > r.top - 40) {
-          pendingX = Math.round((e.clientX / window.innerWidth) * 100);
-          pendingY = Math.round(((e.clientY - r.top) / r.height) * 100);
-          if (!raf) raf = requestAnimationFrame(apply);
-        }
-      } else {
-        pendingX = Math.round((e.clientX / window.innerWidth) * 100);
-        pendingY = Math.round((e.clientY / window.innerHeight) * 100);
-        if (!raf) raf = requestAnimationFrame(apply);
-      }
+      pendingX = Math.round((e.clientX / window.innerWidth) * 100);
+      pendingY = Math.round((e.clientY / window.innerHeight) * 100);
+      if (!raf) raf = requestAnimationFrame(apply);
     };
     window.addEventListener("pointermove", onMove, { passive: true });
     return () => {
@@ -273,6 +262,10 @@ export default function App() {
         </a>
 
         <AnimatedGrid />
+        {/* Global mouse-follow spotlight. Fixed viewport layer that
+            tracks --spot-x/--spot-y. CSS-gated to (pointer:fine) so
+            touch devices never composite it. */}
+        <div aria-hidden="true" className="global-spotlight" />
         {/* ScrollProgress is position:fixed - a mobile compositing
             trigger. Desktop only. */}
         {!compact && <ScrollProgress />}
