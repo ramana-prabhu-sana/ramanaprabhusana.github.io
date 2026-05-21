@@ -4,6 +4,14 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      // Extend opacity so /8 and /12 shorthand work as intended. Without
+      // these, classes like border-white/8 silently fall through to the
+      // Tailwind preflight default (rgb(229,231,235) at full opacity)
+      // instead of the intended 8% white. 27 callsites used /8.
+      opacity: {
+        8: "0.08",
+        12: "0.12",
+      },
       colors: {
         // Brand: Purdue gold used as a subtle accent only
         gold: {
