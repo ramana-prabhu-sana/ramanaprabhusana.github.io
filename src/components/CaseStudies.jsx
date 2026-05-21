@@ -122,8 +122,8 @@ export default function CaseStudies() {
             className={[
               "rounded-full border px-3 py-1.5 text-xs font-medium transition-colors",
               activeFilters.length === 0
-                ? "border-lime-400/50 bg-lime-400/15 text-lime-200"
-                : "border-white/10 bg-white/5 text-white/60 hover:border-white/20 hover:text-white",
+                ? "border-white/70 bg-white/[0.06] text-white"
+                : "border-white/10 bg-white/5 text-white/60 hover:border-white/25 hover:text-white",
             ].join(" ")}
           >
             All
@@ -141,8 +141,8 @@ export default function CaseStudies() {
                 className={[
                   "rounded-full border px-3 py-1.5 text-xs font-medium transition-colors",
                   isActive
-                    ? "border-cyan-400/50 bg-cyan-400/15 text-cyan-200"
-                    : "border-white/10 bg-white/5 text-white/60 hover:border-white/20 hover:text-white",
+                    ? "border-white/70 bg-white/[0.06] text-white"
+                    : "border-white/10 bg-white/5 text-white/60 hover:border-white/25 hover:text-white",
                 ].join(" ")}
               >
                 {t}
@@ -242,8 +242,15 @@ export default function CaseStudies() {
         </motion.div>
 
         {filtered.length === 0 ? (
-          <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-8 text-center text-sm text-white/60">
-            No case studies match all those filters. Try removing one.
+          <div className="mt-10 flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-8 text-center text-sm text-white/60">
+            <span>No case studies match all those filters.</span>
+            <button
+              type="button"
+              onClick={() => setActiveFilters([])}
+              className="rounded-full border border-white/30 bg-white/[0.06] px-3 py-1.5 text-xs font-medium text-white transition-colors hover:border-white/60"
+            >
+              Clear filters
+            </button>
           </div>
         ) : null}
       </Container>
