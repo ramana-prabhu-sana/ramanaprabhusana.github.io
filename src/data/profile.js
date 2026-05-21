@@ -16,11 +16,12 @@ export const profile = {
 
   photo: "brand/profile.jpg",
 
-  status: "Open to 2026 Opportunities",
+  status: "Open to Full-Time Opportunities Starting January 2027",
 
   // Surfaced in the hero subline and the RecruiterCTA section. Kept here
-  // so updates flow to both places from one source of truth.
-  availability: "Full-time roles starting Jan 2027 · US-based · open to relocate",
+  // so updates flow to both places from one source of truth. Start date
+  // already lives in the status pill so this line trims to location signal.
+  availability: "US-based · open to relocate",
 
   // Breakdown that backs the 'Cross-domain ML portfolio' pill - rendered
   // as a small evidence line beneath the stat pills in the RecruiterCTA.
@@ -43,8 +44,8 @@ export const profile = {
   ],
 
   hero: {
-    eyebrow: "Purdue MSBAIM · West Lafayette, Indiana · Open to 2026 Opportunities",
-    headline: "Seven years of pharma commercial analytics. Now decision science at Purdue.",
+    eyebrow: "Purdue MSBAIM · West Lafayette, Indiana · Open to Full-Time Opportunities Starting January 2027",
+    headline: "7+ years in healthcare and pharma analytics. Now building machine learning and decision science depth at Purdue.",
     subheadline:
       "Pipeline valuation, launch analytics, brand performance, and resource optimization - built so leaders can act on the numbers, not just read them.",
     panelLabel: "Decision-ready analytics",
