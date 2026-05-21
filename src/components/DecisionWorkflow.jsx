@@ -86,9 +86,9 @@ export default function DecisionWorkflow() {
                 >
                   <div
                     className={[
-                      "grid h-12 w-12 place-items-center rounded-2xl border transition-all",
+                      "grid h-12 w-12 place-items-center rounded-2xl border transition-colors",
                       isActive
-                        ? "border-lime-400/70 bg-lime-400/20 text-lime-200 ring-2 ring-lime-400/30 shadow-[0_0_18px_rgba(163,230,53,0.45)]"
+                        ? "border-white bg-white/[0.10] text-white ring-2 ring-white/30"
                         : isPast
                         ? "border-lime-400/40 bg-lime-400/10 text-lime-300"
                         : "border-white/10 bg-white/5 text-white/60 group-hover:border-white/20 group-hover:text-white",
