@@ -158,6 +158,13 @@ export default function App() {
 
   // Mode-specific link handling + initial deep-link resolution.
   useEffect(() => {
+    // Take control of scroll on history navigation - browsers (Safari
+    // especially) otherwise restore stale scroll positions when routed
+    // pages mount, dropping the user into the middle of /contact etc.
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
     const scrollToId = (id, behavior) => {
       const el = document.getElementById(id);
       if (!el) return false;
@@ -165,12 +172,12 @@ export default function App() {
       return true;
     };
 
-    // initial entry: scroll (single-page) or canonicalize (routed)
-    let entry = window.__entrySection || null;
-    if (!entry) {
-      const seg = window.location.pathname.replace(/^\/+|\/+$/g, "");
-      entry = seg || window.location.hash.slice(1) || null;
-    }
+    // Anchor entry only comes from the cross-route sessionStorage handoff
+    // or an explicit URL hash. The pathname is the route itself - NOT an
+    // anchor target. Treating "/contact" as #contact scrolled past the
+    // first two sections (Testimonials, RecruiterCTA) on that route.
+    const entry =
+      window.__entrySection || window.location.hash.slice(1) || null;
     if (!compact) {
       if (entry) {
         requestAnimationFrame(() =>
@@ -192,6 +199,10 @@ export default function App() {
             if (el) el.scrollIntoView({ block: "start" });
           })
         );
+      } else {
+        // No anchor - land at the top of the route. Explicit so Safari
+        // scroll restoration cannot leave us mid-page.
+        window.scrollTo(0, 0);
       }
     }
 
@@ -227,22 +238,31 @@ export default function App() {
         path !== "/" ? navigate("/") : window.scrollTo(0, 0);
         return;
       }
-      const route = PAGES["/" + id] ? "/" + id : SECTION_ROUTE[id] || null;
+      const isRouteName = !!PAGES["/" + id];
+      const route = isRouteName ? "/" + id : SECTION_ROUTE[id] || null;
       if (!route) return;
       e.preventDefault();
       if (route !== path) {
         navigate(route);
-        const elId = id;
-        requestAnimationFrame(() =>
-          requestAnimationFrame(() => {
-            const el = document.getElementById(elId);
-            if (el) el.scrollIntoView({ block: "start" });
-          })
-        );
-      } else {
+        if (!isRouteName) {
+          // Anchor click into a different route - land on the target
+          // section, not the top. Route-name clicks land at the top
+          // (navigate already did scrollTo 0,0).
+          const elId = id;
+          requestAnimationFrame(() =>
+            requestAnimationFrame(() => {
+              const el = document.getElementById(elId);
+              if (el) el.scrollIntoView({ block: "start" });
+            })
+          );
+        }
+      } else if (!isRouteName) {
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
         else window.scrollTo(0, 0);
+      } else {
+        // Re-click on the current route's nav link - scroll to top.
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     };
     document.addEventListener("click", onClick);
