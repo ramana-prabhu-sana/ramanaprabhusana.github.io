@@ -130,8 +130,14 @@ export default function App() {
       if (s) {
         sessionStorage.removeItem("scrollTo");
         entry = "/" + s;
-        // stash so single-page mode can still scroll to the section
-        window.__entrySection = s;
+        // 404.html stashes the failed pathname here and redirects to /.
+        // Only treat the stashed value as a scroll-anchor target if it
+        // is NOT itself a route name - route names (e.g. "contact") just
+        // navigate to that route; section IDs (e.g. "education") scroll
+        // to that section within their owning route.
+        if (!PAGES["/" + s]) {
+          window.__entrySection = s;
+        }
       }
     } catch {
       /* ignore */
