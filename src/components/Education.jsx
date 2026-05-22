@@ -57,12 +57,23 @@ export default function Education() {
                       </span>
                     </div>
 
-                    {ed.focus ? (
-                      <div className="mt-3 inline-flex items-center gap-1.5 rounded-md border border-amber-300/30 bg-amber-300/10 px-2.5 py-1 text-xs text-amber-100">
-                        <span className="text-[10px] uppercase tracking-wide opacity-70">
-                          Focus
-                        </span>
-                        <span className="font-medium">{ed.focus}</span>
+                    {(ed.gpa || ed.focus) ? (
+                      <div className="mt-3 flex flex-wrap items-center gap-2">
+                        {ed.gpa ? (
+                          <div className="inline-flex items-center gap-1.5 rounded-md border border-white/30 bg-white/[0.06] px-2.5 py-1 text-xs text-white/80">
+                            <span className="text-[10px] uppercase tracking-wide opacity-60">GPA</span>
+                            <span className="font-medium">{ed.gpa.value} / {ed.gpa.scale}</span>
+                          </div>
+                        ) : null}
+
+                        {ed.focus ? (
+                          <div className="inline-flex items-center gap-1.5 rounded-md border border-amber-300/30 bg-amber-300/10 px-2.5 py-1 text-xs text-amber-100">
+                            <span className="text-[10px] uppercase tracking-wide opacity-70">
+                              Focus
+                            </span>
+                            <span className="font-medium">{ed.focus}</span>
+                          </div>
+                        ) : null}
                       </div>
                     ) : null}
 

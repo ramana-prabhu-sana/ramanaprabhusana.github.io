@@ -9,6 +9,7 @@ export const education = [
     end: null,
     expectedGraduation: "December 2026",
     dates: "August 2025 - December 2026 (Expected)",
+    gpa: { value: "3.72", scale: "4.00" },
     logo: "brand/purdue.svg",
     coursework: [
       "Machine Learning",
@@ -37,6 +38,7 @@ export const education = [
     end: "2017-05",
     expectedGraduation: null,
     dates: "2013 - 2017",
+    gpa: { value: "3.81", scale: "4.00" },
     logo: "brand/vit.png",
     coursework: [],
   },
