@@ -1,14 +1,10 @@
-import { Suspense, lazy, useState } from "react";
 import { motion } from "motion/react";
 import { Calendar, Download, Eye, Github, Linkedin, Mail } from "lucide-react";
 import Container from "./Container";
 import Button from "./Button";
 import { profile } from "../data/profile";
 
-const ResumePreviewModal = lazy(() => import("./ResumePreviewModal"));
-
 export default function RecruiterCTA() {
-  const [resumeOpen, setResumeOpen] = useState(false);
   return (
     <section data-reveal className="relative scroll-mt-24 py-16 sm:py-20">
       <Container>
@@ -73,8 +69,10 @@ export default function RecruiterCTA() {
 
             <div className="flex flex-col gap-3">
               <Button
-                type="button"
-                onClick={() => setResumeOpen(true)}
+                as="a"
+                href={profile.links.resume}
+                target="_blank"
+                rel="noreferrer"
                 variant="primary"
                 size="lg"
                 icon={Eye}
@@ -137,12 +135,6 @@ export default function RecruiterCTA() {
           </div>
         </motion.div>
       </Container>
-
-      {resumeOpen ? (
-        <Suspense fallback={null}>
-          <ResumePreviewModal open={resumeOpen} onClose={() => setResumeOpen(false)} />
-        </Suspense>
-      ) : null}
     </section>
   );
 }

@@ -1,4 +1,3 @@
-import { Suspense, lazy, useState } from "react";
 import { motion } from "motion/react";
 import { ArrowDown, ArrowRight, Calendar, Download, Eye, Mail, Sparkles } from "lucide-react";
 import Container from "./Container";
@@ -7,10 +6,7 @@ import Badge from "./Badge";
 import CommandPanel from "./CommandPanel";
 import { profile } from "../data/profile";
 
-const ResumePreviewModal = lazy(() => import("./ResumePreviewModal"));
-
 export default function Hero() {
-  const [resumeOpen, setResumeOpen] = useState(false);
   const _headlineParts = profile.hero.headline.split(". ");
   const headlineTop = _headlineParts[0] + ".";
   const headlineBottom = _headlineParts.slice(1).join(". ");
@@ -98,8 +94,10 @@ export default function Hero() {
               className="mt-7 flex flex-wrap items-center gap-3"
             >
               <Button
-                type="button"
-                onClick={() => setResumeOpen(true)}
+                as="a"
+                href={profile.links.resume}
+                target="_blank"
+                rel="noreferrer"
                 variant="primary"
                 size="lg"
                 icon={Eye}
@@ -175,14 +173,6 @@ export default function Hero() {
           </div>
         </div>
       </Container>
-
-      {/* Resume preview - lazy-loaded only when opened (conditional render
-          keeps the PDF + iframe component out of the initial bundle). */}
-      {resumeOpen ? (
-        <Suspense fallback={null}>
-          <ResumePreviewModal open={resumeOpen} onClose={() => setResumeOpen(false)} />
-        </Suspense>
-      ) : null}
     </section>
   );
 }
