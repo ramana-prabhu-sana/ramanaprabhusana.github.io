@@ -14,7 +14,7 @@ export default function Education() {
         <SectionHeading
           eyebrow="Education"
           title="Graduate analytics training at Purdue"
-          subtitle="MS Business Analytics and Information Management with a Consulting and Data Science focus."
+          subtitle="MS Business Analytics and Information Management with a Consulting and Data Science minor."
           accent="gold"
         />
 
@@ -57,7 +57,7 @@ export default function Education() {
                       </span>
                     </div>
 
-                    {(ed.gpa || ed.focus) ? (
+                    {(ed.gpa || ed.minor) ? (
                       <div className="mt-3 flex flex-wrap items-center gap-2">
                         {ed.gpa ? (
                           <div className="inline-flex items-center gap-1.5 rounded-md border border-white/30 bg-white/[0.06] px-2.5 py-1 text-xs text-white/80">
@@ -66,12 +66,12 @@ export default function Education() {
                           </div>
                         ) : null}
 
-                        {ed.focus ? (
+                        {ed.minor ? (
                           <div className="inline-flex items-center gap-1.5 rounded-md border border-amber-300/30 bg-amber-300/10 px-2.5 py-1 text-xs text-amber-100">
                             <span className="text-[10px] uppercase tracking-wide opacity-70">
-                              Focus
+                              Minor
                             </span>
-                            <span className="font-medium">{ed.focus}</span>
+                            <span className="font-medium">{ed.minor}</span>
                           </div>
                         ) : null}
                       </div>

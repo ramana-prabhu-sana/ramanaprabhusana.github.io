@@ -29,7 +29,7 @@ export default function RecruiterCTA() {
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
                 Seven years of forecasts, dashboards, and decision models leaders actually used.
-                Now at Purdue MSBAIM with a Consulting and Data Science focus, graduating
+                Now at Purdue MSBAIM with a Consulting and Data Science minor, graduating
                 December 2026. Email is the fastest path - I reply same-day.
               </p>
 

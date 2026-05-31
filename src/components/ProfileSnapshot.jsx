@@ -111,8 +111,13 @@ export default function ProfileSnapshot() {
               Purdue University, Daniels School of Business
             </div>
             <div className="mt-1 flex flex-col gap-0.5 text-[11px] sm:flex-row sm:items-center sm:justify-between sm:gap-2">
-              <span className="text-cyan-300">
-                {purdue.focus || "Consulting + Data Science"}
+              <span className="inline-flex items-center gap-1.5">
+                <span className="text-[9px] font-semibold uppercase tracking-[0.15em] text-white/40">
+                  Minor
+                </span>
+                <span className="text-cyan-300">
+                  {purdue.minor || "Consulting and Data Science"}
+                </span>
               </span>
               <span className="font-mono text-[10px] text-white/40">
                 Expected {purdue.expectedGraduation}
