@@ -79,11 +79,15 @@ export default function Hero() {
               initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.12 }}
-              className="group mt-4 inline-flex items-center gap-2 rounded-full border border-lime-400/30 bg-lime-400/[0.06] px-3 py-1.5 text-[12px] text-lime-200 transition-colors hover:border-lime-400/60 hover:bg-lime-400/[0.12] hover:text-lime-100"
+              className="group mt-5 inline-flex items-center gap-2 rounded-full border border-lime-400/60 bg-lime-400/[0.14] px-4 py-2 text-[13px] font-medium text-lime-100 shadow-[0_0_24px_-8px_rgba(163,230,53,0.55)] transition-colors hover:border-lime-400/80 hover:bg-lime-400/[0.22]"
             >
-              <Sparkles className="h-3.5 w-3.5 text-lime-300" aria-hidden="true" />
+              <span className="relative inline-flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime-400/70" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-lime-300" />
+              </span>
+              <Sparkles className="h-4 w-4 text-lime-300" aria-hidden="true" />
               Try the live launch model
-              <ArrowDown className="h-3 w-3 transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
+              <ArrowDown className="h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
             </motion.a>
 
             {/* CTAs - lifted above field pills so Download Resume lands above the fold */}
