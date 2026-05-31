@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="bg-ambient relative scroll-mt-24 overflow-hidden pt-24 pb-20 sm:pt-32 lg:pt-36"
+      className="bg-ambient relative scroll-mt-24 overflow-hidden pt-20 pb-20 sm:pt-24 lg:pt-28"
     >
       <Container>
         <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
