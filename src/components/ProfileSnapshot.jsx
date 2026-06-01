@@ -26,18 +26,18 @@ export default function ProfileSnapshot() {
     return [
       {
         label: "Currently",
-        title: byId("msbaim-practicum")?.title || "PharmaACE Practicum",
-        href: "#recognition",
-      },
-      {
-        label: "Next",
         title: "Novartis IDS, Resource Optimization (Summer 2026)",
         href: "#experience",
       },
       {
+        label: "Next",
+        title: "Full-time, January 2027",
+        href: null,
+      },
+      {
         label: "Recent",
-        title: "Krenicki x Accenture",
-        href: "#projects",
+        title: byId("msbaim-practicum")?.title || "PharmaACE Practicum",
+        href: "#recognition",
       },
       {
         label: "Recognition",

@@ -12,8 +12,8 @@ export const experience = [
     focus:
       "Resource Optimization analytics for US Commercial - ROI of investments across brand, therapeutic area, and portfolio strategy.",
     bullets: [
-      "Joining the Novartis Insights and Decision Science (IDS), Resource Optimization team in East Hanover, NJ for Summer 2026.",
-      "Will support advanced analytics and AI/ML models that measure ROI of US commercial investments and inform product, therapeutic area, and portfolio strategy.",
+      "On the Novartis Insights and Decision Science (IDS), Resource Optimization team in East Hanover, NJ for Summer 2026.",
+      "Supporting advanced analytics and AI/ML models that measure ROI of US commercial investments and inform product, therapeutic area, and portfolio strategy.",
       "Hands-on work spanning analytics modeling, consumer behavior analysis, KPI tracking, and ROI on digital campaigns and marketing automation.",
     ],
     tags: ["Healthcare", "Strategy", "Decision Support", "Data Science"],
