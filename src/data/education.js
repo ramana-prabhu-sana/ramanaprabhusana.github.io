@@ -2,7 +2,7 @@ export const education = [
   {
     id: "purdue-msbaim",
     school: "Purdue University, Daniels School of Business",
-    degree: "MS Business Analytics and Information Management",
+    degree: "MS in Business Analytics and Information Management",
     minor: "Consulting and Data Science",
     location: "West Lafayette, Indiana",
     start: "2025-08",

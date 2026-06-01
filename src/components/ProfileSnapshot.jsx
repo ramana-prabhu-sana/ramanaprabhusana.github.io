@@ -102,10 +102,7 @@ export default function ProfileSnapshot() {
           />
           <div className="min-w-0 flex-1">
             <div className="text-sm font-semibold leading-tight text-white">
-              {purdue.degree.replace(
-                "MS Business Analytics and Information Management",
-                "MSBAIM"
-              )}
+              {purdue.degree}
             </div>
             <div className="mt-0.5 truncate text-[11px] text-white/55">
               Purdue University, Daniels School of Business
