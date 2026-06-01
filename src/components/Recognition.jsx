@@ -17,7 +17,7 @@ export default function Recognition() {
         <SectionHeading
           eyebrow="Additional project work"
           title="More projects with public artifacts"
-          subtitle="Lighter-weight coursework and side projects with linkable artifacts. The deep-dive case studies for these themes live in the Cases section above."
+          subtitle="Coursework and side projects with linkable artifacts."
           accent="amber"
         />
 

@@ -51,7 +51,7 @@ export default function DecisionWorkflow() {
         <SectionHeading
           eyebrow="Commercial analytics decision workflow"
           title="From data to business decision"
-          subtitle="Click any step to see how I move from a fuzzy business question to a sharp recommendation."
+          subtitle="Fuzzy business question to sharp recommendation."
           accent="violet"
         />
 

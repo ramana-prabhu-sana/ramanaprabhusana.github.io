@@ -91,7 +91,7 @@ export default function Contact() {
         <SectionHeading
           eyebrow="Get in touch"
           title="Let's talk analytics, decisions, and what to build next"
-          subtitle="Email is fastest. The form below opens your default mail client pre-filled."
+          subtitle="Email is fastest."
           accent="lime"
         />
 

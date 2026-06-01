@@ -110,7 +110,7 @@ export default function CaseStudies() {
         <SectionHeading
           eyebrow="Featured projects"
           title="Selected projects"
-          subtitle="Six projects with public artifacts you can verify. Industry impact lives in the experience timeline and recommendations below."
+          subtitle="Six projects with public artifacts you can verify."
           accent="lime"
         />
 

@@ -76,7 +76,7 @@ export default function IndustryHighlights() {
         <SectionHeading
           eyebrow="Industry highlights"
           title="Real-world commercial decisions, redacted for the public web"
-          subtitle="Selected industry engagements from Novartis and ZS Associates - molecule names, customers, and exact internal figures withheld so the methodology and decision scope can be shown publicly."
+          subtitle="Novartis and ZS Associates engagements — names and figures withheld under NDA."
           accent="lime"
           className="lg:max-w-5xl"
         />

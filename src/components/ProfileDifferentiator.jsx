@@ -16,7 +16,7 @@ export default function ProfileDifferentiator() {
         <SectionHeading
           eyebrow="Why this profile stands out"
           title="A rare combination of industry depth and graduate analytics training"
-          subtitle="Industry analytics experience, forecasting depth, technical execution, and business-facing communication - wired into the same operator."
+          subtitle="Industry analytics, forecasting, technical execution, business-facing communication — one operator."
           accent="lime"
         />
 

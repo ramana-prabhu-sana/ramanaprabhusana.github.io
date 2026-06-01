@@ -44,10 +44,10 @@ export const profile = {
   ],
 
   hero: {
-    eyebrow: "Purdue MSBAIM · West Lafayette, Indiana · Open to Full-Time Opportunities Starting January 2027",
+    eyebrow: "Purdue MSBAIM · West Lafayette, Indiana",
     headline: "7+ years in healthcare and pharma analytics. Now building machine learning and decision science depth at Purdue.",
     subheadline:
-      "Pipeline valuation, launch analytics, brand performance, and resource optimization - built so leaders can act on the numbers, not just read them.",
+      "Pipeline valuation, launch analytics, brand performance, resource optimization.",
     panelLabel: "Decision-ready analytics",
     toolStack: [
       "Excel",

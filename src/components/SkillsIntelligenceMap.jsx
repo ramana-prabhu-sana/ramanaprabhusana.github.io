@@ -64,7 +64,7 @@ export default function SkillsIntelligenceMap() {
         <SectionHeading
           eyebrow="Skills intelligence map"
           title="Pick a domain - see what it connects to"
-          subtitle="Each capability area links to the case studies, experience, and business value it actually shows up in."
+          subtitle="Each capability links to where it shows up."
           accent="cyan"
         />
 

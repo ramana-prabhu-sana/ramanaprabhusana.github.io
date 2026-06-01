@@ -15,7 +15,7 @@ export default function Certifications() {
         <SectionHeading
           eyebrow="Certifications"
           title="Credentials across data, BI, and cloud"
-          subtitle="AWS, Azure AI, INFORMS, DataCamp, Coursera - verifiable badges that cover the foundations."
+          subtitle="AWS, Azure AI, INFORMS, DataCamp, Coursera — verifiable badges."
           accent="violet"
         />
 

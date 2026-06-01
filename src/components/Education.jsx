@@ -14,7 +14,6 @@ export default function Education() {
         <SectionHeading
           eyebrow="Education"
           title="Graduate analytics training at Purdue"
-          subtitle="MS Business Analytics and Information Management with a Consulting and Data Science minor."
           accent="gold"
         />
 
