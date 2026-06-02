@@ -16,7 +16,7 @@ export const profile = {
 
   photo: "brand/profile.jpg",
 
-  status: "Open to Full-Time Opportunities Starting January 2027",
+  status: "Open · Full-time, January 2027",
 
   // Surfaced in the hero subline and the RecruiterCTA section. Kept here
   // so updates flow to both places from one source of truth. Start date
@@ -45,7 +45,7 @@ export const profile = {
 
   hero: {
     eyebrow: "Purdue MSBAIM · West Lafayette, Indiana",
-    headline: "7+ years in healthcare and pharma analytics. Now building machine learning and decision science depth at Purdue.",
+    headline: "7+ years in healthcare and pharma analytics. Now building machine learning and decision science at Purdue.",
     subheadline:
       "Pipeline valuation, launch analytics, brand performance, resource optimization.",
     panelLabel: "Decision-ready analytics",
