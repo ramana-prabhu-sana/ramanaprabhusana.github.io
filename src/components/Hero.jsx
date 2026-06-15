@@ -150,25 +150,8 @@ export default function Hero() {
               </Button>
             </motion.div>
 
-            {/* Field tags */}
-            <motion.div
-              initial={false}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-6 flex flex-wrap gap-2"
-            >
-              {profile.fields.map((f) => (
-                <span
-                  key={f}
-                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
-                >
-                  {f}
-                </span>
-              ))}
-            </motion.div>
-
-            {/* Credibility cards removed - right ProfileSnapshot panel already
-                surfaces years, toolkit, education, and domain coverage. */}
+            {/* Field tags removed - subhead already names the work, right
+                ProfileSnapshot panel covers domain breadth. */}
           </div>
 
           {/* Right: command panel */}

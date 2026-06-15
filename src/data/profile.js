@@ -34,15 +34,6 @@ export const profile = {
     "Consulting",
   ],
 
-  fields: [
-    "Brand Performance",
-    "Launch Analytics",
-    "Pipeline Valuation",
-    "Resource Optimization",
-    "Decision Science",
-    "Advanced Analytics",
-  ],
-
   hero: {
     eyebrow: "Purdue MSBAIM · West Lafayette, Indiana",
     headline: "7+ years in healthcare and pharma analytics. Now building machine learning and decision science at Purdue.",
