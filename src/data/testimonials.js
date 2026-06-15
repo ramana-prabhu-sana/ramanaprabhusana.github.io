@@ -39,7 +39,7 @@ export const testimonials = [
     id: "sagar-vadali",
     name: "Sagar Vadali",
     title: "Senior Manager, Commercial Forecasting",
-    company: "Novartis",
+    company: "Amgen India",
     relationship: "Senior to Ramana, multi-year collaborator",
     date: "November 2022",
     quote:
