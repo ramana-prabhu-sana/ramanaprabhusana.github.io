@@ -27,7 +27,7 @@ export const testimonials = [
   {
     id: "prashant-vyas",
     name: "Prashant Vyas",
-    title: "Associate Director, Insights and Analytics",
+    title: "Associate Director (Group Lead), Insights and Analytics",
     company: "Novartis",
     relationship: "Senior to Ramana on the same team",
     date: "October 2022",

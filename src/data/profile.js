@@ -2,7 +2,7 @@
 export const profile = {
   name: "Ramana Prabhu Sana",
   initials: "RPS",
-  location: "West Lafayette, Indiana",
+  location: "East Hanover, New Jersey",
   email: "ramanaprabhu.sana@gmail.com",
   phone: "(347) 269-9365",
 
@@ -35,7 +35,7 @@ export const profile = {
   ],
 
   hero: {
-    eyebrow: "Purdue MSBAIM · West Lafayette, Indiana",
+    eyebrow: "Purdue MSBAIM · East Hanover, New Jersey",
     headline: "7+ years in healthcare and pharma analytics. Now building machine learning and decision science at Purdue.",
     subheadline:
       "Pipeline valuation, launch analytics, brand performance, resource optimization.",
