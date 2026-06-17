@@ -90,7 +90,10 @@ export default function Hero() {
               <ArrowDown className="h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
             </motion.a>
 
-            {/* CTAs - lifted above field pills so Download Resume lands above the fold */}
+            {/* CTAs - one clear primary (Preview Resume) plus a single
+                high-intent secondary (Schedule a call). Utility actions are
+                demoted to the quiet row below so a scanning recruiter has one
+                obvious next step instead of five competing buttons. */}
             <motion.div
               initial={false}
               animate={{ opacity: 1, y: 0 }}
@@ -110,26 +113,6 @@ export default function Hero() {
               </Button>
               <Button
                 as="a"
-                href={profile.links.resume}
-                download
-                variant="outline"
-                size="lg"
-                icon={Download}
-              >
-                Download
-              </Button>
-              <Button
-                as="a"
-                href="#industry"
-                variant="outline"
-                size="lg"
-                icon={ArrowRight}
-                iconPosition="right"
-              >
-                See Industry Work
-              </Button>
-              <Button
-                as="a"
                 href={profile.links.calendly}
                 target="_blank"
                 rel="noreferrer"
@@ -139,14 +122,47 @@ export default function Hero() {
               >
                 Schedule a call
               </Button>
+            </motion.div>
+
+            {/* Utility actions - quiet tertiary row, deliberately low-contrast
+                so they never compete with the primary CTA. Same destinations
+                as before (download / industry / contact), just de-emphasized. */}
+            <motion.div
+              initial={false}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.18 }}
+              className="mt-3 flex flex-wrap items-center gap-x-1 gap-y-1 text-white/55"
+            >
+              <Button
+                as="a"
+                href={profile.links.resume}
+                download
+                variant="ghost"
+                size="sm"
+                icon={Download}
+              >
+                Download
+              </Button>
+              <span aria-hidden="true" className="px-1 text-white/20">·</span>
+              <Button
+                as="a"
+                href="#industry"
+                variant="ghost"
+                size="sm"
+                icon={ArrowRight}
+                iconPosition="right"
+              >
+                See industry work
+              </Button>
+              <span aria-hidden="true" className="px-1 text-white/20">·</span>
               <Button
                 as="a"
                 href="#contact"
                 variant="ghost"
-                size="lg"
+                size="sm"
                 icon={Mail}
               >
-                Contact Me
+                Contact
               </Button>
             </motion.div>
 

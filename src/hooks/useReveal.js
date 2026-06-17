@@ -15,7 +15,12 @@ export function useReveal() {
           }
         }
       },
-      { threshold: 0.14 }
+      // Pre-trigger: threshold 0 + a positive bottom rootMargin fires the
+      // reveal while the section is still ~30% of a viewport BELOW the fold,
+      // giving the fade a head start. Combined with the shorter transition in
+      // index.css, content is fully painted by the time it scrolls into view,
+      // so fast scrolling no longer catches sections mid-fade (blank/washed).
+      { threshold: 0, rootMargin: "0px 0px 30% 0px" }
     );
 
     els.forEach((el) => io.observe(el));
