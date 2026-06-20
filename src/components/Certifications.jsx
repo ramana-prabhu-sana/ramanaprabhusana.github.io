@@ -8,19 +8,14 @@ import { certifications } from "../data/certifications";
 
 const accents = ["lime", "cyan", "violet", "amber", "rose", "sky"];
 
-export default function Certifications() {
-  return (
-    <section id="certifications" data-reveal className="relative scroll-mt-24 py-16 sm:py-20">
-      <Container>
-        <SectionHeading
-          eyebrow="Certifications"
-          title="Credentials across data, BI, and cloud"
-          subtitle="AWS, Azure AI, INFORMS, DataCamp, Coursera — verifiable badges."
-          accent="violet"
-        />
-
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {certifications.map((c, idx) => {
+export default function Certifications({ embedded = false }) {
+  const grid = (
+    <div
+      className={`grid gap-4 md:grid-cols-2 lg:grid-cols-3 ${
+        embedded ? "mt-6" : "mt-10"
+      }`}
+    >
+      {certifications.map((c, idx) => {
             const accent = accents[idx % accents.length];
             const inner = (
               <Card accent={accent} className="h-full">
@@ -100,7 +95,36 @@ export default function Certifications() {
               </motion.div>
             );
           })}
-        </div>
+    </div>
+  );
+
+  // Embedded: anchored sub-block inside the combined Education &
+  // certifications section (see EducationCertifications.jsx).
+  if (embedded) {
+    return (
+      <div id="certifications" data-reveal className="scroll-mt-24">
+        <h3 className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">
+          <Award className="h-4 w-4" aria-hidden="true" />
+          Certifications
+          <span className="font-normal normal-case tracking-normal text-white/45">
+            AWS, Azure AI, INFORMS, DataCamp, Coursera — verifiable badges.
+          </span>
+        </h3>
+        {grid}
+      </div>
+    );
+  }
+
+  return (
+    <section id="certifications" data-reveal className="relative scroll-mt-24 py-16 sm:py-20">
+      <Container>
+        <SectionHeading
+          eyebrow="Certifications"
+          title="Credentials across data, BI, and cloud"
+          subtitle="AWS, Azure AI, INFORMS, DataCamp, Coursera — verifiable badges."
+          accent="violet"
+        />
+        {grid}
       </Container>
     </section>
   );

@@ -13,8 +13,7 @@ import LaunchForecastDemo from "./components/LaunchForecastDemo";
 import CaseStudies from "./components/CaseStudies";
 import ExperienceTimeline from "./components/ExperienceTimeline";
 import SkillsIntelligenceMap from "./components/SkillsIntelligenceMap";
-import Education from "./components/Education";
-import Certifications from "./components/Certifications";
+import EducationCertifications from "./components/EducationCertifications";
 import Recognition from "./components/Recognition";
 import Testimonials from "./components/Testimonials";
 import RecruiterCTA from "./components/RecruiterCTA";
@@ -41,7 +40,7 @@ const PAGES = {
   "/industry": { label: "Industry", render: () => <IndustryHighlights /> },
   "/projects": { label: "Projects", render: () => <CaseStudies /> },
   "/experience": { label: "Experience", render: () => (<><ExperienceTimeline /><Recognition /></>) },
-  "/skills": { label: "Skills", render: () => (<><SkillsIntelligenceMap /><Education /><Certifications /></>) },
+  "/skills": { label: "Skills", render: () => (<><SkillsIntelligenceMap /><EducationCertifications /></>) },
   "/contact": { label: "Contact", render: () => (<><Testimonials /><RecruiterCTA /><Contact /></>) },
 };
 
@@ -310,8 +309,7 @@ export default function App() {
             <CaseStudies />
             <ExperienceTimeline />
             <SkillsIntelligenceMap />
-            <Education />
-            <Certifications />
+            <EducationCertifications />
             <Recognition />
             <Testimonials />
             <RecruiterCTA />

@@ -7,18 +7,14 @@ import Badge from "./Badge";
 import Avatar from "./Avatar";
 import { education } from "../data/education";
 
-export default function Education() {
-  return (
-    <section id="education" data-reveal className="relative scroll-mt-24 py-16 sm:py-20">
-      <Container>
-        <SectionHeading
-          eyebrow="Education"
-          title="Graduate analytics training at Purdue"
-          accent="gold"
-        />
-
-        <div className="mt-10 grid items-start gap-5 lg:grid-cols-2">
-          {education.map((ed, idx) => (
+export default function Education({ embedded = false }) {
+  const grid = (
+    <div
+      className={`grid items-start gap-5 lg:grid-cols-2 ${
+        embedded ? "mt-6" : "mt-10"
+      }`}
+    >
+      {education.map((ed, idx) => (
             <motion.div
               key={ed.id}
               initial={false}
@@ -95,7 +91,33 @@ export default function Education() {
               </Card>
             </motion.div>
           ))}
-        </div>
+    </div>
+  );
+
+  // Embedded: an anchored sub-block inside the combined Education &
+  // certifications section (no section wrapper / full SectionHeading) so the
+  // two credential blocks read as one band instead of two separate stops.
+  if (embedded) {
+    return (
+      <div id="education" data-reveal className="scroll-mt-24">
+        <h3 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-gold-light">
+          <GraduationCap className="h-4 w-4" aria-hidden="true" />
+          Education
+        </h3>
+        {grid}
+      </div>
+    );
+  }
+
+  return (
+    <section id="education" data-reveal className="relative scroll-mt-24 py-16 sm:py-20">
+      <Container>
+        <SectionHeading
+          eyebrow="Education"
+          title="Graduate analytics training at Purdue"
+          accent="gold"
+        />
+        {grid}
       </Container>
     </section>
   );

@@ -74,26 +74,26 @@ export default function Hero() {
             {/* Discoverability hook for the interactive forecast demo. Sits
                 under the subhead so a recruiter scanning the hero learns the
                 site is interactive before they decide whether to scroll. */}
+            {/* Quiet neutral chip (no lime glow / pulse) so the primary
+                Preview Resume button is the single lime focal point. A small
+                static lime dot keeps a subtle "live" hint without competing. */}
             <motion.a
               href="#forecast-demo"
               initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.12 }}
-              className="group mt-5 inline-flex items-center gap-2 rounded-full border border-lime-400/60 bg-lime-400/[0.14] px-4 py-2 text-[13px] font-medium text-lime-100 shadow-[0_0_24px_-8px_rgba(163,230,53,0.55)] transition-colors hover:border-lime-400/80 hover:bg-lime-400/[0.22]"
+              className="group mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-[13px] font-medium text-white/70 transition-colors hover:border-white/30 hover:bg-white/[0.07] hover:text-white/90"
             >
-              <span className="relative inline-flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime-400/70" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-lime-300" />
-              </span>
-              <Sparkles className="h-4 w-4 text-lime-300" aria-hidden="true" />
+              <span className="inline-flex h-1.5 w-1.5 rounded-full bg-lime-400/80" aria-hidden="true" />
+              <Sparkles className="h-4 w-4 text-white/55" aria-hidden="true" />
               Try the live launch model
-              <ArrowDown className="h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
+              <ArrowDown className="h-3.5 w-3.5 text-white/50 transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
             </motion.a>
 
-            {/* CTAs - one clear primary (Preview Resume) plus a single
-                high-intent secondary (Schedule a call). Utility actions are
-                demoted to the quiet row below so a scanning recruiter has one
-                obvious next step instead of five competing buttons. */}
+            {/* CTAs - one clear primary (Preview Resume) paired with its
+                natural secondary (Download): a recruiter on a first visit
+                wants to evaluate the resume, not commit to a call. Engagement
+                actions live in the quiet row below. */}
             <motion.div
               initial={false}
               animate={{ opacity: 1, y: 0 }}
@@ -113,20 +113,18 @@ export default function Hero() {
               </Button>
               <Button
                 as="a"
-                href={profile.links.calendly}
-                target="_blank"
-                rel="noreferrer"
+                href={profile.links.resume}
+                download
                 variant="outline"
                 size="lg"
-                icon={Calendar}
+                icon={Download}
               >
-                Schedule a call
+                Download
               </Button>
             </motion.div>
 
             {/* Utility actions - quiet tertiary row, deliberately low-contrast
-                so they never compete with the primary CTA. Same destinations
-                as before (download / industry / contact), just de-emphasized. */}
+                so they never compete with the primary CTA. */}
             <motion.div
               initial={false}
               animate={{ opacity: 1, y: 0 }}
@@ -135,13 +133,14 @@ export default function Hero() {
             >
               <Button
                 as="a"
-                href={profile.links.resume}
-                download
+                href={profile.links.calendly}
+                target="_blank"
+                rel="noreferrer"
                 variant="ghost"
                 size="sm"
-                icon={Download}
+                icon={Calendar}
               >
-                Download
+                Schedule a call
               </Button>
               <span aria-hidden="true" className="px-1 text-white/20">·</span>
               <Button
